@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class TrajectoryController : MonoBehaviour
 {
     [SerializeField] [Range(4, 100)] private int frameCount = 4;
-    [SerializeField] [Range(1, 10)] private int frameOffset = 1;
+    [SerializeField] [Range(1, 5)] private int frameOffset = 1;
 
 
     public event Action<GameObject> NewObjectAddedToSimulationScene;
@@ -66,8 +66,9 @@ public class TrajectoryController : MonoBehaviour
 
     public void SetProjectile(GameObject projectile)
     {
-        _projectile = projectile;
         AddObjectToSimulationScene(projectile.transform);
+        
+        _projectile = _scenesGameObjectsMap[projectile.transform].gameObject;
         ProjectileChanged?.Invoke(projectile);
     }
     
@@ -89,7 +90,7 @@ public class TrajectoryController : MonoBehaviour
     }
 
 
-    private void SimulateTrajectory()
+    public void SimulateTrajectory()
     {
         if (_projectile == null)
         {
@@ -104,6 +105,7 @@ public class TrajectoryController : MonoBehaviour
 
         for (int i = 0; i < frameCount; i++)
         {
+            
             _lineRenderer.SetPosition(i, _projectile.transform.position);
             
             _physicsScene.Simulate(Time.fixedDeltaTime * frameOffset);

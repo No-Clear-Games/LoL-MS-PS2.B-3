@@ -151,5 +151,6 @@ sysinfo.txt
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/[Aa]ssets/Dummies
 
 # End of https://www.toptal.com/developers/gitignore/api/unity,rider
