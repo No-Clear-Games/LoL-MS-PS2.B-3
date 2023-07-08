@@ -43,7 +43,7 @@ namespace Inventory
         {
             if (_inventoryItemButtons.TryGetValue(itemId, out InventoryItemButton button))
             {
-                Destroy(button);
+                Destroy(button.gameObject);
                 _inventoryItemButtons.Remove(itemId);
                 return true;
             }

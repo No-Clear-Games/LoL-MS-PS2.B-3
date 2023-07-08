@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemButtonsParent: {fileID: 1246817340802894741}
-  inventoryItemButtonPrefab: {fileID: 0}
+  inventoryItemButtonPrefab: {fileID: 2672575810803847139, guid: ebf15aa138e65e94fbc9b283872db5c2, type: 3}
 --- !u!1 &1246817340124436863
 GameObject:
   m_ObjectHideFlags: 0

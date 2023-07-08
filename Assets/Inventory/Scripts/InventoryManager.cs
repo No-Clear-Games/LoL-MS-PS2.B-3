@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
-namespace Inventory
+namespace Inventory.Scripts
 {
-    public class InventoryManager : MonoBehaviour
+    [Serializable]
+    public class InventoryManager
     {
         [SerializeField] private InventoryUiController inventoryUiControllerPrefab;
         [SerializeField] private Canvas inventoryParentCanvas;
@@ -21,7 +23,7 @@ namespace Inventory
         public void InitInventory(InventoryConfig inventoryConfig)
         {
             _inventorySupplies = new Dictionary<string, InventorySupply>();
-            _inventoryUiController = Instantiate(inventoryUiControllerPrefab.gameObject, inventoryParentCanvas.transform)
+            _inventoryUiController = Object.Instantiate(inventoryUiControllerPrefab.gameObject, inventoryParentCanvas.transform)
                 .GetComponent<InventoryUiController>();
             
             _inventoryUiController.Initialize();
@@ -83,7 +85,15 @@ namespace Inventory
             if (supply.count == 0)
             {
                 _inventorySupplies.Remove(itemId);
+                _inventoryUiController.RemoveItemButton(itemId);
                 ItemSupplyEnded?.Invoke(itemId);
+            }
+            else
+            {
+                if (_inventoryUiController.TryGetButton(itemId, out InventoryItemButton button))
+                {
+                    button.SetCount(supply.count);
+                }
             }
         }
 
