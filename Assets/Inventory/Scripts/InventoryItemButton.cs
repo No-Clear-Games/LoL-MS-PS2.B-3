@@ -12,6 +12,7 @@ namespace Inventory
         [SerializeField] private TMP_Text remainingCountText;
         [SerializeField] private TMP_Text nameText;
         [SerializeField] private Button itemBtn;
+        [SerializeField] private Transform objectParent;
 
 
         private InventorySupply _inventorySupply;
@@ -25,6 +26,9 @@ namespace Inventory
             SetCount(supply.count);
             nameText.text = supply.item.name;
             itemBtn.onClick.AddListener(OnItemBtnClicked);
+            GameObject iconObject = Instantiate(supply.item, objectParent);
+            iconObject.transform.localPosition = Vector3.zero;
+            iconObject.layer = LayerMask.NameToLayer("UI");
         }
 
         private void OnItemBtnClicked()

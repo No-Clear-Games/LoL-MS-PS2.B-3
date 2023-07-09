@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace Inventory
 {
@@ -8,6 +9,7 @@ namespace Inventory
     {
         [SerializeField] private Transform itemButtonsParent;
         [SerializeField] private InventoryItemButton inventoryItemButtonPrefab;
+        [SerializeField] private Camera uiCamera;
         
         private Dictionary<string, InventoryItemButton> _inventoryItemButtons;
 
@@ -16,6 +18,7 @@ namespace Inventory
         public void Initialize()
         {
             _inventoryItemButtons = new Dictionary<string, InventoryItemButton>();
+            Camera.main.GetUniversalAdditionalCameraData().cameraStack.Add(uiCamera);
         }
 
         public bool TryGetButton(string itemId, out InventoryItemButton button)

@@ -9,7 +9,6 @@ namespace Inventory.Scripts
     public class InventoryManager
     {
         [SerializeField] private InventoryUiController inventoryUiControllerPrefab;
-        [SerializeField] private Canvas inventoryParentCanvas;
 
         private Dictionary<string, InventorySupply> _inventorySupplies;
         private InventoryUiController _inventoryUiController;
@@ -23,7 +22,7 @@ namespace Inventory.Scripts
         public void InitInventory(InventoryConfig inventoryConfig)
         {
             _inventorySupplies = new Dictionary<string, InventorySupply>();
-            _inventoryUiController = Object.Instantiate(inventoryUiControllerPrefab.gameObject, inventoryParentCanvas.transform)
+            _inventoryUiController = Object.Instantiate(inventoryUiControllerPrefab.gameObject)
                 .GetComponent<InventoryUiController>();
             
             _inventoryUiController.Initialize();
