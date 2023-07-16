@@ -24,16 +24,19 @@ public class TrainController : MonoBehaviour
 
     public void StartTrainMove()
     {
+        Vector3[] positions = new Vector3[trackLine.positionCount];
+        trackLine.GetPositions(positions);
         Sequence sequence = DOTween.Sequence();
         Vector3 firstPosition = trackLine.GetPosition(0);
         sequence.Append(trainHead.transform.DOMove(firstPosition, 1).SetSpeedBased());
+        sequence.Append(trainHead.transform.DOPath(positions, 10, PathType.CatmullRom).SetLookAt(0.1f));
 
-        for (int i = 1; i < trackLine.positionCount; i++)
-        {
-            
-            Vector3 position = trackLine.GetPosition(i);
-            sequence.Append(trainHead.transform.DOMove(position, 1).SetEase(Ease.Linear ));
-        }
+        // for (int i = 1; i < trackLine.positionCount; i++)
+        // {
+        //     
+        //     Vector3 position = trackLine.GetPosition(i);
+        //     sequence.Append(trainHead.transform.DoPa)
+        // }
 
         sequence.Play();
     }
