@@ -1,43 +1,46 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Serialization;
 
 public class TrainController : MonoBehaviour
 {
 
     [SerializeField] private LineRenderer trackLine;
-    [SerializeField] private GameObject trainHead;
+    [SerializeField] private GameObject[] carts;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartTrainMove();
-    }
+    [SerializeField] private float speed;
 
-    // Update is called once per frame
-    void Update()
+
+    public GameObject[] Carts => carts;
+
+
+    public void StartTrainMove(StationController from, StationController to, Vector3[] path)
     {
+        // Vector3[] positions = new Vector3[trackLine.positionCount];
+        // trackLine.GetPositions(positions);
+
+        int i = 0;
+        foreach (GameObject wagon in Carts)
+        {
+            from.GetCartPosition(i, out Vector3 start);
+            to.GetCartPosition(i, out Vector3 end);
+            List<Vector3> pathList = new List<Vector3> {start, from.ExitPoint};
+            pathList.AddRange(path);
+            pathList.Add(to.EnterPoint);
+            pathList.Add(end);
+            
+            
+            wagon.transform.DOPath(pathList.ToArray(), speed, PathType.CatmullRom).SetSpeedBased().SetLookAt(0f).SetEase(Ease.InOutCubic);
+            
+            i++;
+        }
         
     }
 
 
-    public void StartTrainMove()
-    {
-        Vector3[] positions = new Vector3[trackLine.positionCount];
-        trackLine.GetPositions(positions);
-        Sequence sequence = DOTween.Sequence();
-        Vector3 firstPosition = trackLine.GetPosition(0);
-        sequence.Append(trainHead.transform.DOMove(firstPosition, 1).SetSpeedBased());
-        sequence.Append(trainHead.transform.DOPath(positions, 10, PathType.CatmullRom).SetLookAt(0.1f));
-
-        // for (int i = 1; i < trackLine.positionCount; i++)
-        // {
-        //     
-        //     Vector3 position = trackLine.GetPosition(i);
-        //     sequence.Append(trainHead.transform.DoPa)
-        // }
-
-        sequence.Play();
-    }
+  
 }
