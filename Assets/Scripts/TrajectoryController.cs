@@ -10,6 +10,7 @@ public class TrajectoryController : MonoBehaviour
 {
     [SerializeField] [Range(4, 100)] private int frameCount = 4;
     [SerializeField] [Range(1, 5)] private int frameOffset = 1;
+   
 
 
     public event Action<GameObject> NewObjectAddedToSimulationScene;

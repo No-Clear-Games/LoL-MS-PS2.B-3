@@ -13,6 +13,10 @@ public class TrainController : MonoBehaviour
     [SerializeField] private GameObject[] carts;
 
     [SerializeField] private float speed;
+    
+    [SerializeField] private TrainMotor motor;
+
+    public TrainMotor Motor => motor;
 
 
     public GameObject[] Carts => carts;
