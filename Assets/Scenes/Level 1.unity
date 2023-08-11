@@ -791,7 +791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1678575130850169458, guid: 87fa5fa1314bd424883df5514dab2338, type: 3}
       propertyPath: frameOffset
-      value: 5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678575130850169458, guid: 87fa5fa1314bd424883df5514dab2338, type: 3}
+      propertyPath: distanceLimit
+      value: 33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87fa5fa1314bd424883df5514dab2338, type: 3}

@@ -10,6 +10,9 @@ public class  TrajectoryController : MonoBehaviour
 {
     [SerializeField] [Range(4, 100)] private int frameCount = 4;
     [SerializeField] [Range(1, 100)] private int frameOffset = 1;
+
+
+    [SerializeField] private float distanceLimit;
    
 
 
@@ -101,14 +104,21 @@ public class  TrajectoryController : MonoBehaviour
         Scene mainScene = SceneManager.GetActiveScene();
         SceneManager.SetActiveScene(_simulationScene);
         
-        Debug.Log("Sim");
-        
         _lineRenderer.positionCount = frameCount;
+
+        Vector3 firstPos = _projectile.transform.position;
+        Vector3 forward = _projectile.transform.forward;
 
         for (int i = 0; i < frameCount; i++)
         {
+            Vector3 pos = _projectile.transform.position;
+
+            if (distanceLimit > 0 && Vector3.Dot(pos - firstPos, forward) > distanceLimit)
+            {
+                break;
+            }
             
-            _lineRenderer.SetPosition(i, _projectile.transform.position);
+            _lineRenderer.SetPosition(i, pos);
             
             _physicsScene.Simulate(Time.fixedDeltaTime * frameOffset);
             // for (int j = 0; j < frameOffset; j++)
