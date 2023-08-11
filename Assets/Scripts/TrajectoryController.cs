@@ -70,7 +70,7 @@ public class TrajectoryController : MonoBehaviour
         AddObjectToSimulationScene(projectile.transform);
         
         _projectile = _scenesGameObjectsMap[projectile.transform].gameObject;
-        ProjectileChanged?.Invoke(projectile);
+        ProjectileChanged?.Invoke(_projectile);
     }
     
     private void CreatePhysicsScene()

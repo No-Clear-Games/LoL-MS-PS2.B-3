@@ -50,7 +50,9 @@ public class StationController : MonoBehaviour
             
             if(GetCartPosition(i, out Vector3 p))
             {
-                train.Carts[i].transform.position = p;
+                Transform t = train.Carts[i].transform;
+                t.position = p;
+                t.forward = this.transform.forward;
             }
         }
     }

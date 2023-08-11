@@ -8,6 +8,8 @@ TagManager:
   - Projectile
   - StationEnter
   - Cart
+  - Magnet
+  - Neutral
   layers:
   - Default
   - TransparentFX

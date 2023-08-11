@@ -12,7 +12,7 @@ public class TrainMotor : MonoBehaviour
     private Transform _transform;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _transform = GetComponent<Transform>();
@@ -23,7 +23,11 @@ public class TrainMotor : MonoBehaviour
 
     public void Run()
     {
-        _rigidbody.AddForce(_transform.forward * speed);
+        if (_rigidbody == null)
+        {
+            _rigidbody = GetComponent<Rigidbody>();
+        }
+        _rigidbody.velocity = _transform.forward * speed;
     }
     
 }
