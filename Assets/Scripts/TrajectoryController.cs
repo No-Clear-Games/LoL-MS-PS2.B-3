@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 
 [RequireComponent(typeof(LineRenderer))]
-public class TrajectoryController : MonoBehaviour
+public class  TrajectoryController : MonoBehaviour
 {
     [SerializeField] [Range(4, 100)] private int frameCount = 4;
-    [SerializeField] [Range(1, 5)] private int frameOffset = 1;
+    [SerializeField] [Range(1, 100)] private int frameOffset = 1;
    
 
 
@@ -98,6 +98,7 @@ public class TrajectoryController : MonoBehaviour
             return;
         }
 
+        Scene mainScene = SceneManager.GetActiveScene();
         SceneManager.SetActiveScene(_simulationScene);
         
         Debug.Log("Sim");
@@ -115,5 +116,7 @@ public class TrajectoryController : MonoBehaviour
             //     tr.FixedUpdate();
             // }
         }
+
+        SceneManager.SetActiveScene(mainScene);
     }
 }
