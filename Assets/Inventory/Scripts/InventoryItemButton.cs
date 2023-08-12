@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,6 +28,8 @@ namespace Inventory
             nameText.text = supply.item.name;
             itemBtn.onClick.AddListener(OnItemBtnClicked);
             GameObject iconObject = Instantiate(supply.item, objectParent);
+            DisablePhysics(iconObject);
+            iconObject.transform.localScale = Vector3.one;
             iconObject.transform.localPosition = Vector3.zero;
             iconObject.layer = LayerMask.NameToLayer("UI");
         }
@@ -35,8 +38,19 @@ namespace Inventory
         {
             ButtonClicked?.Invoke(_inventorySupply.GetItemId());
         }
-        
-        
+
+        private void DisablePhysics(GameObject obj)
+        {
+            List<Component> list = new List<Component>();
+            obj.GetComponents(list);
+            foreach (Component component in list)
+            {
+                if (!(component is Transform) && !(component is Renderer) && !(component is MeshFilter))
+                {
+                    Destroy(component);
+                }
+            }
+        }
 
         public void SetCount(uint count)
         {

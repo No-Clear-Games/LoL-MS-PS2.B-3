@@ -6,10 +6,14 @@ using UnityEngine.SceneManagement;
 
 
 [RequireComponent(typeof(LineRenderer))]
-public class TrajectoryController : MonoBehaviour
+public class  TrajectoryController : MonoBehaviour
 {
     [SerializeField] [Range(4, 100)] private int frameCount = 4;
-    [SerializeField] [Range(1, 5)] private int frameOffset = 1;
+    [SerializeField] [Range(1, 100)] private int frameOffset = 1;
+
+
+    [SerializeField] private float distanceLimit;
+   
 
 
     public event Action<GameObject> NewObjectAddedToSimulationScene;
@@ -69,7 +73,7 @@ public class TrajectoryController : MonoBehaviour
         AddObjectToSimulationScene(projectile.transform);
         
         _projectile = _scenesGameObjectsMap[projectile.transform].gameObject;
-        ProjectileChanged?.Invoke(projectile);
+        ProjectileChanged?.Invoke(_projectile);
     }
     
     private void CreatePhysicsScene()
@@ -97,16 +101,24 @@ public class TrajectoryController : MonoBehaviour
             return;
         }
 
+        Scene mainScene = SceneManager.GetActiveScene();
         SceneManager.SetActiveScene(_simulationScene);
-        
-        Debug.Log("Sim");
         
         _lineRenderer.positionCount = frameCount;
 
+        Vector3 firstPos = _projectile.transform.position;
+        Vector3 forward = _projectile.transform.forward;
+
         for (int i = 0; i < frameCount; i++)
         {
+            Vector3 pos = _projectile.transform.position;
+
+            if (distanceLimit > 0 && Vector3.Dot(pos - firstPos, forward) > distanceLimit)
+            {
+                break;
+            }
             
-            _lineRenderer.SetPosition(i, _projectile.transform.position);
+            _lineRenderer.SetPosition(i, pos);
             
             _physicsScene.Simulate(Time.fixedDeltaTime * frameOffset);
             // for (int j = 0; j < frameOffset; j++)
@@ -114,5 +126,7 @@ public class TrajectoryController : MonoBehaviour
             //     tr.FixedUpdate();
             // }
         }
+
+        SceneManager.SetActiveScene(mainScene);
     }
 }

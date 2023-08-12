@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Simulate
   - Projectile
+  - StationEnter
+  - Cart
+  - Magnet
+  - Neutral
   layers:
   - Default
   - TransparentFX
