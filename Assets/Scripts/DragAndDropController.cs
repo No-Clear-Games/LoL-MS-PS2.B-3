@@ -114,13 +114,19 @@ public class DragAndDropController
     
 
 
-    public void Drop()
+    public GameObject ForceDrop()
+    {
+        _isDragging = false;
+        return _draggedObject;
+    }
+    
+    public void TryDrop()
     {
         if (!_gotCurrentSlot)
         {
             return;
         }
-        
+
         _isDragging = false;
     }
 

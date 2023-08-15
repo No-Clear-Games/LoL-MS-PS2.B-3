@@ -79,6 +79,7 @@ namespace Inventory.Scripts
             AddItemAction?.Invoke(item);
             
         }
+        
 
 
         private void GetItem(string itemId)

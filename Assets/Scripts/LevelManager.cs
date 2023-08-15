@@ -95,17 +95,28 @@ public class LevelManager : MonoBehaviour
 
     private void DragAndDropControllerOnDropAction(GameObject obj)
     {
-        _gameInput.Gameplay.Click.performed -= ClickOnperformed;
+        _gameInput.Gameplay.Click.performed -= ClickOnPerformed;
+        _gameInput.Gameplay.RightClick.performed -= RightClickOnPerformed;
     }
 
     private void DragAndDropControllerOnStartDraggingAction(GameObject obj)
     {
-        _gameInput.Gameplay.Click.performed += ClickOnperformed;
+        _gameInput.Gameplay.Click.performed += ClickOnPerformed;
+        _gameInput.Gameplay.RightClick.performed += RightClickOnPerformed;
     }
 
-    private void ClickOnperformed(InputAction.CallbackContext obj)
+    private void RightClickOnPerformed(InputAction.CallbackContext context)
     {
-        dragAndDropController.Drop();
+        GameObject obj = dragAndDropController.ForceDrop();
+        inventoryManager.AddItem(obj, 1);
+        Destroy(obj);
+    
+        inventoryManager.Unlock();
+    }
+
+    private void ClickOnPerformed(InputAction.CallbackContext obj)
+    {
+        dragAndDropController.TryDrop();
         inventoryManager.Unlock();
     }
 
@@ -123,6 +134,7 @@ public class LevelManager : MonoBehaviour
     {
         GameObject obj = Instantiate(prefab);
         
+        obj.GetComponent<ICollectible>().SetInventoryId(InventorySupply.GetItemId(prefab));
         StartCoroutine(dragAndDropController.Drag(obj));
         
         inventoryManager.Lock();
