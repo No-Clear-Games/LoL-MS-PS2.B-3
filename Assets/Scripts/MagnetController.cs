@@ -84,7 +84,6 @@ public class MagnetController : MonoBehaviour
         }
         else if(other.CompareTag("Neutral"))
         {
-            Debug.Log("a");
             ImpactOnNeutral(other.gameObject);
         }
     }

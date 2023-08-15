@@ -17,14 +17,22 @@ public class  TrajectoryController : MonoBehaviour
 
 
     public event Action<GameObject> NewObjectAddedToSimulationScene;
+    public event Action<GameObject> ObjectRemovedFromSimulation;
     public event Action<GameObject> ObjectInSimulationSceneMoved;
     public event Action<GameObject> ProjectileChanged;
     
     
     private GameObject _projectile;
+    private GameObject _originalProjectile;
     private Scene _simulationScene;
     private PhysicsScene _physicsScene;
     private LineRenderer _lineRenderer;
+    private bool _hasProjectile;
+    private WaitForEndOfFrame _waitForEndOfFrame = new WaitForEndOfFrame();
+
+    public GameObject Projectile => _projectile;
+
+    public bool HasProjectile => _hasProjectile;
 
     private Dictionary<Transform, Transform> _scenesGameObjectsMap;
     
@@ -57,6 +65,22 @@ public class  TrajectoryController : MonoBehaviour
         NewObjectAddedToSimulationScene?.Invoke(go);
     }
 
+    public void RemoveObjectFromSimulation(Transform t)
+    {
+        StartCoroutine(RemoveObjectRoutine(t));
+    }
+
+    private IEnumerator RemoveObjectRoutine(Transform t)
+    {
+        if (_scenesGameObjectsMap.ContainsKey(t))
+        {
+            DestroyImmediate(_scenesGameObjectsMap[t].gameObject);
+            _scenesGameObjectsMap.Remove(t);
+            yield return _waitForEndOfFrame;
+            ObjectRemovedFromSimulation?.Invoke(t.gameObject);
+        }
+    }
+
     public void MoveObjectInSimulationScene(Transform t)
     {
         if (!_scenesGameObjectsMap.ContainsKey(t))
@@ -73,7 +97,15 @@ public class  TrajectoryController : MonoBehaviour
         AddObjectToSimulationScene(projectile.transform);
         
         _projectile = _scenesGameObjectsMap[projectile.transform].gameObject;
+        _originalProjectile = projectile;
+        _hasProjectile = true;
         ProjectileChanged?.Invoke(_projectile);
+    }
+
+    public void ResetProjectilePosition()
+    {
+        _projectile.transform.position = _originalProjectile.transform.position;
+        _projectile.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
     
     private void CreatePhysicsScene()
@@ -104,6 +136,7 @@ public class  TrajectoryController : MonoBehaviour
         Scene mainScene = SceneManager.GetActiveScene();
         SceneManager.SetActiveScene(_simulationScene);
         
+        
         _lineRenderer.positionCount = frameCount;
 
         Vector3 firstPos = _projectile.transform.position;
@@ -115,6 +148,7 @@ public class  TrajectoryController : MonoBehaviour
 
             if (distanceLimit > 0 && Vector3.Dot(pos - firstPos, forward) > distanceLimit)
             {
+                _lineRenderer.positionCount = i;
                 break;
             }
             
