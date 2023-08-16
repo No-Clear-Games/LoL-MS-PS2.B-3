@@ -12,12 +12,12 @@ namespace Inventory.Scripts
 
         private Dictionary<string, InventorySupply> _inventorySupplies;
         private InventoryUiController _inventoryUiController;
+        private bool _isLocked;
 
 
         public event Action<GameObject> AddItemAction; 
         public event Action<GameObject> GetItemAction; 
-        public event Action<string> ItemSupplyEnded; 
-
+        public event Action<string> ItemSupplyEnded;
 
         public void InitInventory(InventoryConfig inventoryConfig)
         {
@@ -33,6 +33,19 @@ namespace Inventory.Scripts
                 AddItem(supply);
             }
         }
+
+        public void Lock()
+        {
+            _isLocked = true;
+        }
+        
+        
+        public void Unlock()
+        {
+            _isLocked = false;
+        }
+        
+        
 
         private void InventoryUiControllerOnButtonCreated(InventoryItemButton button)
         {
@@ -66,10 +79,16 @@ namespace Inventory.Scripts
             AddItemAction?.Invoke(item);
             
         }
+        
 
 
         private void GetItem(string itemId)
         {
+            if (_isLocked)
+            {
+                return;
+            }
+            
             bool exists = _inventorySupplies.TryGetValue(itemId, out InventorySupply supply);
 
             if (!exists)

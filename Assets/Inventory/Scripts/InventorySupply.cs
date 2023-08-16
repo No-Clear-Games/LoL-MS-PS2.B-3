@@ -1,4 +1,5 @@
 using System;
+using Inventory.Scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -12,6 +13,13 @@ namespace Inventory
 
         public static string GetItemId(GameObject item)
         {
+            if (item.TryGetComponent(out ICollectible collectible))
+            {
+                if (collectible.HasInventoryId())
+                {
+                    return collectible.GetInventoryId();
+                }
+            }
             return item.GetHashCode().ToString();
         }
         

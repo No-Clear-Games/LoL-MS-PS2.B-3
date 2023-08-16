@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Inventory.Scripts;
 using UnityEngine;
 
-public class MagnetController : MonoBehaviour
+public class MagnetController : MonoBehaviour, ICollectible
 {
     public enum PoleSign
     {
@@ -18,17 +19,25 @@ public class MagnetController : MonoBehaviour
     [SerializeField] private Material sPoleMaterial;
     [SerializeField] private new Renderer renderer;
 
+    private string _inventoryId;
+    public string GetInventoryId()
+    {
+        return _inventoryId;
+    }
+
+    public bool HasInventoryId()
+    {
+        return _inventoryId != "";
+    }
+
+    public void SetInventoryId(string id)
+    {
+        _inventoryId = id;
+    }
 
     private void OnValidate()
     {
-        if (sign == PoleSign.N)
-        {
-            renderer.material = nPoleMaterial;
-        }
-        else
-        {
-            renderer.material = sPoleMaterial;
-        }
+        renderer.material = sign == PoleSign.N ? nPoleMaterial : sPoleMaterial;
     }
 
     public PoleSign Sign => sign;
@@ -84,7 +93,6 @@ public class MagnetController : MonoBehaviour
         }
         else if(other.CompareTag("Neutral"))
         {
-            Debug.Log("a");
             ImpactOnNeutral(other.gameObject);
         }
     }
