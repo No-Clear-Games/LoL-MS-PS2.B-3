@@ -1,0 +1,17 @@
+{
+    "name": "NoClearGames.Inventory",
+    "rootNamespace": "NoClearGames.Inventory",
+    "references": [
+        "Unity.TextMeshPro",
+        "Unity.RenderPipelines.Universal.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
