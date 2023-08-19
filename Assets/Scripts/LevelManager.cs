@@ -4,6 +4,7 @@ using Inventory;
 using Inventory.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private DragAndDropController dragAndDropController;
 
     private GameInput _gameInput;
+    private Camera _mainCamera;
     
     // Start is called before the first frame update
     void Start()
@@ -80,6 +82,7 @@ public class LevelManager : MonoBehaviour
 
     private void SetupCameras()
     {
+        _mainCamera = Camera.main;
         cameraController.Initialize();
         _gameInput.Gameplay.ChangeCamera.performed += ChangeCameraOnPerformed;
     }
@@ -91,33 +94,63 @@ public class LevelManager : MonoBehaviour
         dragAndDropController.ReleaseSlotAction += DragAndDropControllerOnReleaseSlotAction;
         dragAndDropController.StartDraggingAction += DragAndDropControllerOnStartDraggingAction;
         dragAndDropController.DropAction += DragAndDropControllerOnDropAction;
+        dragAndDropController.CancelAction += DragAndDropControllerOnCancelAction;
+        _gameInput.Gameplay.Click.performed += DragOnClick;
     }
 
-    private void DragAndDropControllerOnDropAction(GameObject obj)
+    private void DragAndDropControllerOnCancelAction(GameObject obj)
     {
-        _gameInput.Gameplay.Click.performed -= ClickOnPerformed;
-        _gameInput.Gameplay.RightClick.performed -= RightClickOnPerformed;
-    }
-
-    private void DragAndDropControllerOnStartDraggingAction(GameObject obj)
-    {
-        _gameInput.Gameplay.Click.performed += ClickOnPerformed;
-        _gameInput.Gameplay.RightClick.performed += RightClickOnPerformed;
-    }
-
-    private void RightClickOnPerformed(InputAction.CallbackContext context)
-    {
-        GameObject obj = dragAndDropController.ForceDrop();
         inventoryManager.AddItem(obj, 1);
         Destroy(obj);
     
         inventoryManager.Unlock();
     }
 
-    private void ClickOnPerformed(InputAction.CallbackContext obj)
+    private void DragAndDropControllerOnDropAction(GameObject obj)
+    {
+        _gameInput.Gameplay.Click.performed -= DropOnClick;
+        _gameInput.Gameplay.RightClick.performed -= RightClickOnPerformed;
+        _gameInput.Gameplay.Click.performed += DragOnClick;
+
+    }
+
+    private void DragAndDropControllerOnStartDraggingAction(GameObject obj)
+    {
+        _gameInput.Gameplay.Click.performed -= DragOnClick;
+
+        _gameInput.Gameplay.Click.performed += DropOnClick;
+        _gameInput.Gameplay.RightClick.performed += RightClickOnPerformed;
+    }
+
+    private void RightClickOnPerformed(InputAction.CallbackContext context)
+    {
+        dragAndDropController.CancelDrag();
+        
+    }
+    
+
+    private void DropOnClick(InputAction.CallbackContext obj)
     {
         dragAndDropController.TryDrop();
         inventoryManager.Unlock();
+    }
+    
+    private void DragOnClick(InputAction.CallbackContext context)
+    {
+
+        Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+        if (Physics.Raycast(ray, out RaycastHit hit, 100, LayerMask.GetMask("Slots")))
+        {
+            Debug.Log(hit.collider.gameObject.name);
+            MagnetSlot slot = hit.collider.gameObject.GetComponent<MagnetSlot>();
+            if (slot.Occupied)
+            {
+                return;
+            }
+            GameObject obj = slot.Release();
+            StartCoroutine(dragAndDropController.Drag(obj));
+            inventoryManager.Lock();
+        }
     }
 
     private void DragAndDropControllerOnReleaseSlotAction(GameObject obj)
@@ -152,14 +185,12 @@ public class LevelManager : MonoBehaviour
         _gameInput.Gameplay.Enable();
     }
 
-    private void SimulatePath()
-    {
-        
-    }
 
-    private void StartTrain()
+    public void StartTrain()
     {
+        Vector3[] path = trajectoryController.GetPath();
         
+        train.StartTrainMove(startStation, endStation, path);
     }
 
     // Update is called once per frame

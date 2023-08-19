@@ -29,5 +29,10 @@ public class TrainMotor : MonoBehaviour
         }
         _rigidbody.velocity = _transform.forward * speed;
     }
+
+    public void MakeKinematic(bool isKinematic)
+    {
+        _rigidbody.isKinematic = isKinematic;
+    }
     
 }

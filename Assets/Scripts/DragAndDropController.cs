@@ -17,10 +17,12 @@ public class DragAndDropController
     enum State
     {
         NotDragging,
-        Dragging
+        Dragging,
+        Canceling,
+        Dropping
     }
 
-    private bool _isDragging;
+    private State _state;
     private GameObject _draggedObject;
     private Camera _mainCamera;
     private WaitForFixedUpdate _waitForFixedUpdate;
@@ -33,24 +35,25 @@ public class DragAndDropController
     public event Action<GameObject> ReleaseSlotAction;
     public event Action<GameObject> StartDraggingAction;
     public event Action<GameObject> DropAction;
+    public event Action<GameObject> CancelAction; 
     
     // Start is called before the first frame update
     public void Initialize()
     {
-        _isDragging = false;
+        _state = State.NotDragging;
         _mainCamera = Camera.main;
         _waitForFixedUpdate = new WaitForFixedUpdate();
     }
 
     public IEnumerator Drag(GameObject draggedObject)
     {
-        _isDragging = true;
+        _state = State.Dragging;
         _draggedObject = draggedObject;
         StartDraggingAction?.Invoke(draggedObject);
         
         draggedObject.transform.position = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue())
             .GetPoint(distanceFromCamera);
-        while (_isDragging)
+        while (_state == State.Dragging)
         {
             yield return _waitForFixedUpdate;
             
@@ -61,6 +64,10 @@ public class DragAndDropController
                 _hoveringOverSlot = true;
                 if (slot != _currentHoveredSlot)
                 {
+                    if (_gotCurrentSlot)
+                    {
+                        ReleaseSlot(_currentHoveredSlot.GetComponent<MagnetSlot>());
+                    }
                     _gotCurrentSlot = false;
                     MagnetSlot mSlot = slot.GetComponent<MagnetSlot>();
                     _currentHoveredSlot = slot;
@@ -78,25 +85,54 @@ public class DragAndDropController
                 }
                 
             }
-            else if(_currentHoveredSlot != null && _gotCurrentSlot)
+            else 
             {
-                GameObject obj = _currentHoveredSlot.GetComponent<MagnetSlot>().Release();
+                if (_currentHoveredSlot != null && _gotCurrentSlot)
+                {
+                    ReleaseSlot(_currentHoveredSlot.GetComponent<MagnetSlot>());
+                }
                 _currentHoveredSlot = null;
                 _hoveringOverSlot = false;
                 _gotCurrentSlot = false;
-                ReleaseSlotAction?.Invoke(obj);
+            }
+
+
+            if (draggedObject != null)
+            {
+                draggedObject.transform.position = Vector3.SmoothDamp(draggedObject.transform.position,
+                    ray.GetPoint(distanceFromCamera),
+                    ref _velocity, mouseDragSpeed);
+            }
+        }
+        
+
+        _hoveringOverSlot = false;
+        _gotCurrentSlot = false;
+
+        if (_state == State.Canceling)
+        {
+            if (_gotCurrentSlot && _currentHoveredSlot != null)
+            {
+                ReleaseSlot(_currentHoveredSlot.GetComponent<MagnetSlot>());
             }
             
-            
-            draggedObject.transform.position = Vector3.SmoothDamp(draggedObject.transform.position, ray.GetPoint(distanceFromCamera),
-                ref _velocity, mouseDragSpeed);
+            CancelAction?.Invoke(_draggedObject);
         }
 
-        DropAction?.Invoke(draggedObject);
-        _draggedObject = null;
-        _hoveringOverSlot = false;
+        if (_state == State.Dropping)
+        {
+            DropAction?.Invoke(_draggedObject);
+        }
+        
         _currentHoveredSlot = null;
-        _gotCurrentSlot = false;
+        _draggedObject = null;
+        
+    }
+
+    private void ReleaseSlot(MagnetSlot magnetSlot)
+    {
+        GameObject obj = magnetSlot.Release();
+        ReleaseSlotAction?.Invoke(obj);
     }
 
     private bool CheckForSlots(Ray ray, out GameObject slot)
@@ -111,23 +147,25 @@ public class DragAndDropController
 
         return found;
     }
-    
 
 
-    public GameObject ForceDrop()
+    public void CancelDrag()
     {
-        _isDragging = false;
-        return _draggedObject;
-    }
-    
-    public void TryDrop()
-    {
-        if (!_gotCurrentSlot)
+        if (_state != State.Dragging)
         {
             return;
         }
 
-        _isDragging = false;
+        _state = State.Canceling;
+    }
+
+    public void TryDrop()
+    {
+        if (!_gotCurrentSlot || _state != State.Dragging)
+        {
+            return;
+        }
+        _state = State.Dropping;
     }
 
 }

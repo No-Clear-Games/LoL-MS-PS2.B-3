@@ -31,6 +31,7 @@ public class  TrajectoryController : MonoBehaviour
     private WaitForEndOfFrame _waitForEndOfFrame = new WaitForEndOfFrame();
 
     public GameObject Projectile => _projectile;
+    
 
     public bool HasProjectile => _hasProjectile;
 
@@ -79,6 +80,13 @@ public class  TrajectoryController : MonoBehaviour
             yield return _waitForEndOfFrame;
             ObjectRemovedFromSimulation?.Invoke(t.gameObject);
         }
+    }
+
+    public Vector3[] GetPath()
+    {
+        Vector3[] arr = new Vector3[_lineRenderer.positionCount];
+        _lineRenderer.GetPositions(arr);
+        return arr;
     }
 
     public void MoveObjectInSimulationScene(Transform t)
