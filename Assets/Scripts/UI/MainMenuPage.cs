@@ -21,7 +21,7 @@ namespace NoClearGames.UI
 
         private void Start()
         {
-            
+            Helper.StateButtonInitialize<PlayerState>(startBtn, continueBtn, OnLoad);
         }
 
         private void OnLoad(PlayerState loadedPlayerState)

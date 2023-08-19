@@ -2,11 +2,13 @@
     "name": "NoClearGames",
     "rootNamespace": "NoClearGames",
     "references": [
-        "UniTask",
         "NoClearGames.Patterns",
         "NoClearGames.Inventory",
         "NoClearGames.UI",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Unity.InputSystem",
+        "Cinemachine",
+        "UniTask"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
