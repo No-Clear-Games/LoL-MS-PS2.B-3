@@ -137,13 +137,11 @@ public class LevelManager : MonoBehaviour
     
     private void DragOnClick(InputAction.CallbackContext context)
     {
-
         Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
         if (Physics.Raycast(ray, out RaycastHit hit, 100, LayerMask.GetMask("Slots")))
         {
-            Debug.Log(hit.collider.gameObject.name);
             MagnetSlot slot = hit.collider.gameObject.GetComponent<MagnetSlot>();
-            if (slot.Occupied)
+            if (!slot.Occupied)
             {
                 return;
             }
