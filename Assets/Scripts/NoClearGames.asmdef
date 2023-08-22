@@ -1,0 +1,25 @@
+{
+    "name": "NoClearGames",
+    "rootNamespace": "NoClearGames",
+    "references": [
+        "NoClearGames.Patterns",
+        "NoClearGames.Inventory",
+        "NoClearGames.UI",
+        "Unity.TextMeshPro",
+        "Unity.InputSystem",
+        "Cinemachine",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "DOTween.dll",
+        "LoLSDKCrossPlatform.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
