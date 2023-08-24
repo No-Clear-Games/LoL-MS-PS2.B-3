@@ -8,7 +8,8 @@
         "Unity.TextMeshPro",
         "Unity.InputSystem",
         "Cinemachine",
-        "UniTask"
+        "UniTask",
+        "LoLSDK"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
