@@ -1,0 +1,18 @@
+{
+    "name": "LoLSDK.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:19f1eec8c2b689042a484d4d357713dc"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

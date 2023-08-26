@@ -37,12 +37,21 @@ public class LevelManager : MonoBehaviour
     private void SetupTrain()
     {
         startStation.PlaceTrainInStation(train);
+        Debug.Log("Train setup succeeded");
     }
 
     private void SetupInventory()
     {
+        Debug.Log(inventoryConfig);
+
+        foreach (InventorySupply supply in inventoryConfig.inventorySupplies)
+        {
+            Debug.Log($"{supply} - {supply.item}");
+        }
         inventoryManager.InitInventory(inventoryConfig);
         inventoryManager.GetItemAction += InventoryManagerOnGetItemAction;
+        Debug.Log("Inventory setup succeeded");
+
     }
 
     private void SetupTrajectory()
@@ -52,11 +61,14 @@ public class LevelManager : MonoBehaviour
         trajectoryController.ObjectRemovedFromSimulation += TrajectoryControllerOnObjectRemovedFromSimulation;
         
         trajectoryController.SetProjectile(train.Motor.gameObject);
+        Debug.Log("Trajectory setup succeeded");
+
     }
 
     private void TrajectoryControllerOnProjectileChanged(GameObject obj)
     {
         TrajectoryControllerSimulateProjectileMove();
+        
     }
 
     private void TrajectoryControllerOnObjectRemovedFromSimulation(GameObject obj)
@@ -85,6 +97,8 @@ public class LevelManager : MonoBehaviour
         _mainCamera = Camera.main;
         cameraController.Initialize();
         _gameInput.Gameplay.ChangeCamera.performed += ChangeCameraOnPerformed;
+        Debug.Log("Cam setup succeeded");
+
     }
 
     private void SetupDragAndDrop()
@@ -181,6 +195,8 @@ public class LevelManager : MonoBehaviour
     {
         _gameInput = new GameInput();
         _gameInput.Gameplay.Enable();
+        Debug.Log("Inputs setup succeeded");
+
     }
 
 

@@ -19,7 +19,7 @@ public class MagnetController : MonoBehaviour, ICollectible
     [SerializeField] private Material sPoleMaterial;
     [SerializeField] private new Renderer renderer;
 
-    private string _inventoryId;
+    private string _inventoryId = "";
     public string GetInventoryId()
     {
         return _inventoryId;

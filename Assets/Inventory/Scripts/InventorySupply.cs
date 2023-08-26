@@ -16,7 +16,7 @@ namespace Inventory
             if (item.TryGetComponent(out ICollectible collectible))
             {
                 if (collectible.HasInventoryId())
-                {
+                {            
                     return collectible.GetInventoryId();
                 }
             }
@@ -28,8 +28,6 @@ namespace Inventory
             return InventorySupply.GetItemId(item);
         }
         
-        
-
         public InventorySupply(InventorySupply i)
         {
             item = i.item;
