@@ -731,10 +731,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3282844108677979761, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: abf11e1eeee92d4429fce166f0a26b08, type: 2}
     - target: {fileID: 3282844108677979763, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
       propertyPath: m_Name
       value: Slot (1)
