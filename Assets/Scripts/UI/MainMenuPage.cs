@@ -16,7 +16,7 @@ namespace NoClearGames.UI
         {
             base.Awake();
             Show();
-            startBtn.onClick.AddListener(StartGame);
+            startBtn.onClick.AddListener(() => { StartGame("Level 1"); });
         }
 
         private void Start()
@@ -36,9 +36,9 @@ namespace NoClearGames.UI
             continueBtn.onClick.AddListener(() => { SceneManager.LoadScene(loadedPlayerState.lastSceneName, LoadSceneMode.Single); });
         }
 
-        private void StartGame()
+        private void StartGame(string level)
         {
-            SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+            SceneManager.LoadScene(level, LoadSceneMode.Single);
             AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
         }
 
