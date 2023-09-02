@@ -1,13 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using Inventory;
 using Inventory.Scripts;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+
+    [SerializeField] private TMP_Text scoreText;
 
     [SerializeField] private StationController startStation;
     [SerializeField] private StationController endStation;
@@ -20,12 +25,24 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private CameraController cameraController;
     [SerializeField] private DragAndDropController dragAndDropController;
 
+    [Range(0, 1)]
+    [SerializeField] private float minimumTimeScale;
+    [SerializeField] private float scoreScale = 1;
+
     private GameInput _gameInput;
     private Camera _mainCamera;
-    
+    private float _score;
+    private bool _lost;
+
+    public float Score => _score;
+
+    public event Action PlayerWon;
+    public event Action PlayerLost;
+
     // Start is called before the first frame update
     void Start()
     {
+        _lost = false;
         SetupInputs();
         SetupTrain();
         SetupTrajectory();
@@ -37,13 +54,48 @@ public class LevelManager : MonoBehaviour
     private void SetupTrain()
     {
         startStation.PlaceTrainInStation(train);
+        endStation.TrainEntered += EndStationOnTrainEntered;
+        train.SpeedChanged += CalcAndSetScore;
+        train.TimeScaleChanged += CheckLose;
         Debug.Log("Train setup succeeded");
     }
 
+    private void EndStationOnTrainEntered()
+    {
+        Win();
+    }
+
+    private void CheckLose(float timeScale)
+    {
+        if (timeScale < minimumTimeScale)
+        {
+            _lost = true;
+            PlayerLost?.Invoke();;
+            Debug.Log("Lost");
+        }
+    }
+
+    private void Win()
+    {
+        if (!_lost)
+        {
+            PlayerWon?.Invoke();
+            Debug.Log("Won");
+        }
+    }
+
+
+    private float _tmpScore;
+    private void CalcAndSetScore(float trainVelocity)
+    {
+        _tmpScore = Mathf.Max(trainVelocity * scoreScale, _tmpScore);   
+        _score = _tmpScore * train.TrainTimeScale;
+        scoreText.text = ((int)_score).ToString(CultureInfo.InvariantCulture);
+    }
+
+
     private void SetupInventory()
     {
-        Debug.Log(inventoryConfig);
-
         foreach (InventorySupply supply in inventoryConfig.inventorySupplies)
         {
             Debug.Log($"{supply} - {supply.item}");

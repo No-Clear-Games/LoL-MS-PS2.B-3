@@ -22,7 +22,15 @@ public class StationController : MonoBehaviour
 
     private List<Vector3> _cartPositions;
     private bool _positionsInitialized;
-    
+    private bool _trainEntered;
+
+
+    public event Action TrainEntered;
+
+    private void Start()
+    {
+        _trainEntered = false;
+    }
 
     private void SetCartPositions()
     {
@@ -74,5 +82,13 @@ public class StationController : MonoBehaviour
         pos = _cartPositions[index];
         return true;
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!_trainEntered && other.CompareTag("Cart"))
+        {
+            TrainEntered?.Invoke();
+            _trainEntered = true;
+        }
+    }
 }

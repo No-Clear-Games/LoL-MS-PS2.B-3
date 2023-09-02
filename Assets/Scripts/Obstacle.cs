@@ -13,7 +13,6 @@ public class Obstacle : MonoBehaviour
     {
         if (other.CompareTag("Cart"))
         {
-            Debug.Log("a");
             TrainController train = other.transform.parent.gameObject.GetComponent<TrainController>();
             train.ChangeSpeed(-speedDecreasePercentage);
             Destroy(this.gameObject);
