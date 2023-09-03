@@ -1,6 +1,7 @@
 ﻿using System;
 using NoClearGames.Manager;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace NoClearGames.UI
@@ -40,6 +41,8 @@ namespace NoClearGames.UI
         private void ResetLevel()
         {
             //TODO RESET LEVEL
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
 
         private void ResumeGame()
