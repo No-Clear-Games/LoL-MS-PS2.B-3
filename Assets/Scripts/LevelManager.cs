@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using Inventory;
 using Inventory.Scripts;
+using NoClearGames;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -24,6 +25,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TrajectoryController trajectoryController;
     [SerializeField] private CameraController cameraController;
     [SerializeField] private DragAndDropController dragAndDropController;
+    [SerializeField] private AllowedArea allowedArea;
+    [SerializeField] private Button startButton;
 
     [Range(0, 1)]
     [SerializeField] private float minimumTimeScale;
@@ -33,6 +36,7 @@ public class LevelManager : MonoBehaviour
     private Camera _mainCamera;
     private float _score;
     private bool _lost;
+    private bool _pathIsValid;
 
     public float Score => _score;
 
@@ -111,10 +115,36 @@ public class LevelManager : MonoBehaviour
         trajectoryController.ProjectileChanged += TrajectoryControllerOnProjectileChanged ;
         trajectoryController.NewObjectAddedToSimulationScene += TrajectoryControllerOnNewObjectAddedToSimulationScene;
         trajectoryController.ObjectRemovedFromSimulation += TrajectoryControllerOnObjectRemovedFromSimulation;
-        
+        AllowedArea aArea = trajectoryController.AddObjectToSimulationScene(allowedArea.transform).GetComponent<AllowedArea>();
+        aArea.TrainTouched += AAreaOnTrainTouched;
+        trajectoryController.StartSimulation += TrajectoryControllerOnStartSimulation;
+        trajectoryController.EndSimulation += TrajectoryControllerOnEndSimulation;
         trajectoryController.SetProjectile(train.Motor.gameObject);
+        
         Debug.Log("Trajectory setup succeeded");
 
+    }
+
+    private void TrajectoryControllerOnEndSimulation()
+    {
+        if (_pathIsValid)
+        {
+            EnableStartTrain();
+        }
+        else
+        {
+            DisableStartTrain();
+        }
+    }
+
+    private void TrajectoryControllerOnStartSimulation()
+    {
+        _pathIsValid = false;
+    }
+
+    private void AAreaOnTrainTouched()
+    {
+        _pathIsValid = true;
     }
 
     private void TrajectoryControllerOnProjectileChanged(GameObject obj)
@@ -131,6 +161,18 @@ public class LevelManager : MonoBehaviour
     private void TrajectoryControllerOnNewObjectAddedToSimulationScene(GameObject obj)
     {
         TrajectoryControllerSimulateProjectileMove();
+    }
+
+    private void DisableStartTrain()
+    {
+        startButton.interactable = false;
+        trajectoryController.ShowErrorMode();
+    }
+    
+    private void EnableStartTrain()
+    {
+        startButton.interactable = true;
+        trajectoryController.ShowDefaultMode();
     }
 
     private void TrajectoryControllerSimulateProjectileMove()
