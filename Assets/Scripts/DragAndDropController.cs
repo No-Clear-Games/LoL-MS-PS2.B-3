@@ -14,7 +14,7 @@ public class DragAndDropController
     [SerializeField] private float physicsDragSpeed = 10;
     [SerializeField] private float mouseDragSpeed = 0.1f;
     
-    enum State
+    public enum State
     {
         NotDragging,
         Dragging,
@@ -30,6 +30,9 @@ public class DragAndDropController
     private GameObject _currentHoveredSlot;
     private bool _hoveringOverSlot;
     private bool _gotCurrentSlot;
+    private int _itemDefaultLayer;
+
+    public State DraggingState => _state;
 
     public event Action<GameObject> OccupySlotAction;
     public event Action<GameObject> ReleaseSlotAction;
@@ -50,6 +53,8 @@ public class DragAndDropController
         _state = State.Dragging;
         _draggedObject = draggedObject;
         StartDraggingAction?.Invoke(draggedObject);
+        _itemDefaultLayer = draggedObject.layer;
+        draggedObject.layer = LayerMask.NameToLayer("Highlighted");
         
         draggedObject.transform.position = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue())
             .GetPoint(distanceFromCamera);
@@ -104,8 +109,8 @@ public class DragAndDropController
                     ref _velocity, mouseDragSpeed);
             }
         }
-        
 
+        _draggedObject.layer = _itemDefaultLayer;
         _hoveringOverSlot = false;
         _gotCurrentSlot = false;
 

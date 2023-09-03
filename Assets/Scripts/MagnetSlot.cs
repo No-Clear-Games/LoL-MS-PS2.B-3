@@ -8,8 +8,11 @@ public class MagnetSlot : MonoBehaviour
 
     private bool _occupied;
     private GameObject _obj;
+    private bool _highigted;
+    private int _objDefaultLayer;
 
     public bool Occupied => _occupied;
+    
 
     public void Occupy(GameObject obj)
     {
@@ -23,9 +26,30 @@ public class MagnetSlot : MonoBehaviour
     {
         _obj.transform.parent = null;
         _occupied = false;
+        _highigted = false;
         GameObject tmp = _obj;
         _obj = null;
         return tmp;
+    }
+
+    public void HighlightObject(bool highlight)
+    {
+        if (_highigted == highlight || _obj == null)
+        {
+            return;
+        }
+
+        if(highlight)
+        {
+            _objDefaultLayer = _obj.layer;
+            _obj.layer = LayerMask.NameToLayer("Highlighted");
+        }
+        else
+        {
+            _obj.layer = _objDefaultLayer;
+        }
+
+        _highigted = highlight;
     }
 
     // Start is called before the first frame update

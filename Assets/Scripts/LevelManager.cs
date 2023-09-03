@@ -212,6 +212,7 @@ public class LevelManager : MonoBehaviour
         Destroy(obj);
     
         inventoryManager.Unlock();
+        StartCoroutine(HighLightOnHoverSlot());
     }
 
     private void DragAndDropControllerOnDropAction(GameObject obj)
@@ -219,6 +220,7 @@ public class LevelManager : MonoBehaviour
         _gameInput.Gameplay.Click.performed -= DropOnClick;
         _gameInput.Gameplay.RightClick.performed -= RightClickOnPerformed;
         _gameInput.Gameplay.Click.performed += DragOnClick;
+        StartCoroutine(HighLightOnHoverSlot());
 
     }
 
@@ -259,6 +261,47 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    private IEnumerator HighLightOnHoverSlot()
+    {
+        WaitForEndOfFrame waitForEndOfFrame = new WaitForEndOfFrame();
+        GameObject lastHoveredSlot = null;
+        
+        while (dragAndDropController.DraggingState != DragAndDropController.State.Dragging)
+        {        
+
+            yield return waitForEndOfFrame;
+            Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            if (Physics.Raycast(ray, out RaycastHit hit, 100, LayerMask.GetMask("Slots")))
+            {
+                if (lastHoveredSlot == hit.collider.gameObject)
+                {
+                    continue;
+                }
+                
+                
+                MagnetSlot slot = hit.collider.gameObject.GetComponent<MagnetSlot>();
+                if (!slot.Occupied)
+                {
+                    continue;
+                }
+                
+
+                slot.HighlightObject(true);
+                lastHoveredSlot = hit.collider.gameObject;
+                
+            }
+            else
+            {
+                // Debug.Log(lastHoveredSlot);
+                if (lastHoveredSlot != null)
+                {
+                    lastHoveredSlot.GetComponent<MagnetSlot>().HighlightObject(false);
+                    lastHoveredSlot = null;
+                }
+            }
+        }
+    }
+    
     private void DragAndDropControllerOnReleaseSlotAction(GameObject obj)
     {
         trajectoryController.RemoveObjectFromSimulation(obj.transform);
