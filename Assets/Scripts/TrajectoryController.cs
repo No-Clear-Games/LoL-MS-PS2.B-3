@@ -13,13 +13,18 @@ public class  TrajectoryController : MonoBehaviour
 
 
     [SerializeField] private float distanceLimit;
-   
 
+    [SerializeField] private Material errorMaterial;
+    [SerializeField] private Material defaultMaterial;
 
+    
     public event Action<GameObject> NewObjectAddedToSimulationScene;
     public event Action<GameObject> ObjectRemovedFromSimulation;
     public event Action<GameObject> ObjectInSimulationSceneMoved;
     public event Action<GameObject> ProjectileChanged;
+
+    public event Action StartSimulation;
+    public event Action EndSimulation;
     
     
     private GameObject _projectile;
@@ -52,11 +57,21 @@ public class  TrajectoryController : MonoBehaviour
         ProjectileChanged += o => SimulateTrajectory();
     }
 
-    public void AddObjectToSimulationScene(Transform t)
+    public void ShowErrorMode()
+    {
+        _lineRenderer.material = errorMaterial;
+    }
+    
+    public void ShowDefaultMode()
+    {
+        _lineRenderer.material = defaultMaterial;
+    }
+
+    public GameObject AddObjectToSimulationScene(Transform t)
     {
         if (_scenesGameObjectsMap.ContainsKey(t))
         {
-            return ;
+            return _scenesGameObjectsMap[t].gameObject;
         }
         
         GameObject go = Instantiate(t.gameObject, t.position, t.rotation);
@@ -64,6 +79,7 @@ public class  TrajectoryController : MonoBehaviour
         SceneManager.MoveGameObjectToScene(go, _simulationScene);
         _scenesGameObjectsMap[t] = go.transform;
         NewObjectAddedToSimulationScene?.Invoke(go);
+        return go;
     }
 
     public void RemoveObjectFromSimulation(Transform t)
@@ -140,6 +156,8 @@ public class  TrajectoryController : MonoBehaviour
         {
             return;
         }
+        
+        StartSimulation?.Invoke();
 
         Scene mainScene = SceneManager.GetActiveScene();
         SceneManager.SetActiveScene(_simulationScene);
@@ -170,5 +188,7 @@ public class  TrajectoryController : MonoBehaviour
         }
 
         SceneManager.SetActiveScene(mainScene);
+        
+        EndSimulation?.Invoke();
     }
 }

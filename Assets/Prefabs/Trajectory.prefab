@@ -152,3 +152,5 @@ MonoBehaviour:
   frameCount: 4
   frameOffset: 1
   distanceLimit: 0
+  errorMaterial: {fileID: 2100000, guid: 5d8a06ce2c00b4042a4252c423b4e547, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 3ab8cf1d0fe56174c86e6d1d19d6d996, type: 2}
