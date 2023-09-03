@@ -523,8 +523,10 @@ MonoBehaviour:
     mouseDragSpeed: 0.1
   allowedArea: {fileID: 1782855048}
   startButton: {fileID: 895894458}
+  obstacleMaterial: {fileID: 2100000, guid: dc1c88e49659df2478ee97166cc255c5, type: 2}
   minimumTimeScale: 0.214
   scoreScale: 10000
+  obstaclesDissolveDuration: 2
 --- !u!4 &223220554
 Transform:
   m_ObjectHideFlags: 0
@@ -678,7 +680,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 759
+    m_Bits: 1783
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0

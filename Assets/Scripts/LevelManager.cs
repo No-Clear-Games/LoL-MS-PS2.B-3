@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using DG.Tweening;
 using Inventory;
 using Inventory.Scripts;
 using NoClearGames;
@@ -27,10 +28,12 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private DragAndDropController dragAndDropController;
     [SerializeField] private AllowedArea allowedArea;
     [SerializeField] private Button startButton;
+    [SerializeField] private Material obstacleMaterial;
 
     [Range(0, 1)]
     [SerializeField] private float minimumTimeScale;
     [SerializeField] private float scoreScale = 1;
+    [SerializeField] private float obstaclesDissolveDuration = 1;
 
     private GameInput _gameInput;
     private Camera _mainCamera;
@@ -47,12 +50,19 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         _lost = false;
+        SetupObstacles();
         SetupInputs();
         SetupTrain();
         SetupTrajectory();
         SetupInventory();
         SetupCameras();
         SetupDragAndDrop();
+    }
+
+    private void SetupObstacles()
+    {
+        obstacleMaterial.SetFloat(DissolveProgress, 1);
+        obstacleMaterial.DOFloat(0, DissolveProgress, obstaclesDissolveDuration);
     }
 
     private void SetupTrain()
@@ -90,6 +100,8 @@ public class LevelManager : MonoBehaviour
 
 
     private float _tmpScore;
+    private static readonly int DissolveProgress = Shader.PropertyToID("_Dissolve_Progress");
+
     private void CalcAndSetScore(float trainVelocity)
     {
         _tmpScore = Mathf.Max(trainVelocity * scoreScale, _tmpScore);   
