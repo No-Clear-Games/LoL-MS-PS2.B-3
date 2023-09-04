@@ -526,7 +526,7 @@ MonoBehaviour:
   obstacleMaterial: {fileID: 2100000, guid: dc1c88e49659df2478ee97166cc255c5, type: 2}
   minimumTimeScale: 0.214
   scoreScale: 10000
-  obstaclesDissolveDuration: 2
+  obstaclesDissolveDuration: 1
 --- !u!4 &223220554
 Transform:
   m_ObjectHideFlags: 0
