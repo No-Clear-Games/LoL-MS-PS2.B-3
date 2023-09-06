@@ -304,9 +304,10 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                // Debug.Log(lastHoveredSlot);
                 if (lastHoveredSlot != null)
                 {
+                    
+                    Debug.Log(lastHoveredSlot);
                     lastHoveredSlot.GetComponent<MagnetSlot>().HighlightObject(false);
                     lastHoveredSlot = null;
                 }

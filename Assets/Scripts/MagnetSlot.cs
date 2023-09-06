@@ -19,6 +19,7 @@ public class MagnetSlot : MonoBehaviour
         _obj = obj;
         obj.transform.parent = this.transform;
         obj.transform.localPosition = Vector3.zero;
+        _highigted = obj.layer == LayerMask.NameToLayer("Highlighted");
         _occupied = true;
     }
 
