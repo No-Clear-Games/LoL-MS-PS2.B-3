@@ -41,7 +41,7 @@ namespace NoClearGames.UI
         private void ResetLevel()
         {
             //TODO RESET LEVEL
-
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
 

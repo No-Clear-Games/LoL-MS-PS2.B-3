@@ -8,22 +8,24 @@ namespace NoClearGames.UI
     public class UIManager : SingletonMonoBehaviour<UIManager>
     {
         //public HudPage hudPage;
-        //public PausePopUp pausePopUp;
+        public PausePopUp pausePopUp;
+
         //public GameOverPopUp gameOverPopUp;
-        //public DialoguePopUp dialoguePopUp;
-        //public HelpPopUp helpPopUp;
+        public DialoguePopUp tutorialDialoguePopUp;
 
-        public LevelDialogueData dialogueData;
-
-        public void ShowDialogue(string id, Action endAction)
+        public LevelDialogueData tutorialDialogueData;
+        
+        public void ShowTutorialDialogue(string id, Action endAction)
         {
-            DialogueMessage dialogue = dialogueData.GetDialogue(id);
+            DialogueMessage dialogue = tutorialDialogueData.GetDialogue(id);
 
             if (dialogue == null)
             {
                 Debug.Log($"Dialogue with id = {id} not found");
                 return;
             }
+
+            tutorialDialoguePopUp.Show(dialogue, endAction);
         }
     }
 }
