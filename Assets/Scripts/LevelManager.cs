@@ -128,10 +128,6 @@ public class LevelManager : MonoBehaviour
 
     private void SetupInventory()
     {
-        foreach (InventorySupply supply in inventoryConfig.inventorySupplies)
-        {
-            Debug.Log($"{supply} - {supply.item}");
-        }
         inventoryManager.InitInventory(inventoryConfig);
         inventoryManager.GetItemAction += InventoryManagerOnGetItemAction;
         Debug.Log("Inventory setup succeeded");
@@ -237,7 +233,15 @@ public class LevelManager : MonoBehaviour
 
     private void DragAndDropControllerOnCancelAction(GameObject obj)
     {
-        inventoryManager.AddItem(obj, 1);
+        ICollectible collectible = obj.GetComponent<ICollectible>();
+        if(inventoryConfig.GetInventorySupply(collectible.GetInventoryId(), out InventorySupply supply))
+        {
+            inventoryManager.AddItem(supply.item, 1);
+        }
+        else
+        {
+            Debug.LogError("Error Getting Inventory item");
+        }
         Destroy(obj);
     
         inventoryManager.Unlock();
@@ -323,8 +327,6 @@ public class LevelManager : MonoBehaviour
             {
                 if (lastHoveredSlot != null)
                 {
-                    
-                    Debug.Log(lastHoveredSlot);
                     lastHoveredSlot.GetComponent<MagnetSlot>().HighlightObject(false);
                     lastHoveredSlot = null;
                 }

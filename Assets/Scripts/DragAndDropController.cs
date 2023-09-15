@@ -11,7 +11,6 @@ public class DragAndDropController
 
 
     [SerializeField] private float distanceFromCamera = 10;
-    [SerializeField] private float physicsDragSpeed = 10;
     [SerializeField] private float mouseDragSpeed = 0.1f;
     
     public enum State

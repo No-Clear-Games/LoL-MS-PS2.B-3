@@ -30,8 +30,6 @@ public class TrainMotor : MonoBehaviour, IMagnet
 
     public void UpdateMode(TrainModes modes)
     {
-        
-        
         switch (modes)
         {
             case TrainModes.Neutral:
