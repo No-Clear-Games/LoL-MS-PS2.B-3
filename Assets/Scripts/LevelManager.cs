@@ -9,11 +9,12 @@ using NoClearGames;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-
+    
     [SerializeField] private TMP_Text scoreText;
 
     [SerializeField] private StationController startStation;
@@ -34,6 +35,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float minimumTimeScale;
     [SerializeField] private float scoreScale = 1;
     [SerializeField] private float obstaclesDissolveDuration = 1;
+    [SerializeField] private TrainModes trainMode;
 
     private GameInput _gameInput;
     private Camera _mainCamera;
@@ -41,7 +43,16 @@ public class LevelManager : MonoBehaviour
     private bool _lost;
     private bool _pathIsValid;
 
+
+    public static LevelManager GetCurrentLevelManager()
+    {
+        return GameObject.FindWithTag("LevelManager").GetComponent<LevelManager>();
+    }
+    
+
     public float Score => _score;
+
+    public TrainModes TrainMode => trainMode;
 
     public event Action PlayerWon;
     public event Action PlayerLost;
@@ -57,6 +68,11 @@ public class LevelManager : MonoBehaviour
         SetupInventory();
         SetupCameras();
         SetupDragAndDrop();
+    }
+
+    private void OnValidate()
+    {
+        if (train != null) train.Motor.UpdateMode(trainMode);
     }
 
     private void SetupObstacles()
@@ -157,6 +173,7 @@ public class LevelManager : MonoBehaviour
     private void AAreaOnTrainTouched()
     {
         _pathIsValid = true;
+        trajectoryController.ForceFinishSimulation();
     }
 
     private void TrajectoryControllerOnProjectileChanged(GameObject obj)

@@ -2,15 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Inventory.Scripts;
+using NoClearGames;
 using UnityEngine;
 
-public class MagnetController : MonoBehaviour, ICollectible
+
+public enum PoleSign
 {
-    public enum PoleSign
-    {
-        N,
-        S
-    }
+    N,
+    S
+}
+
+public class MagnetController : MonoBehaviour, ICollectible, IMagnet
+{
+    
 
     [SerializeField] private PoleSign sign;
     [SerializeField] private float power = 0.1f;
@@ -18,8 +22,12 @@ public class MagnetController : MonoBehaviour, ICollectible
     [SerializeField] private Material nPoleMaterial;
     [SerializeField] private Material sPoleMaterial;
     [SerializeField] private new Renderer renderer;
+    [SerializeField] private GameObject forceField;
 
     private string _inventoryId = "";
+    private static readonly int Speed = Shader.PropertyToID("_Speed");
+    private static readonly int Invard = Shader.PropertyToID("_Invard");
+
     public string GetInventoryId()
     {
         return _inventoryId;
@@ -40,6 +48,25 @@ public class MagnetController : MonoBehaviour, ICollectible
         renderer.material = sign == PoleSign.N ? nPoleMaterial : sPoleMaterial;
     }
 
+    private void Start()
+    {
+        Renderer fRenderer = forceField.GetComponent<Renderer>();
+        fRenderer.material = new Material(fRenderer.material);
+        fRenderer.material.SetFloat(Speed, power / 10);
+
+        TrainModes trainMode = LevelManager.GetCurrentLevelManager().TrainMode;
+
+        if (trainMode == TrainModes.Neutral || (trainMode == TrainModes.N && sign == PoleSign.S) ||
+            (trainMode == TrainModes.S && sign == PoleSign.N))
+        {
+            fRenderer.material.SetFloat(Invard, 1f);
+        }
+        else
+        {
+            fRenderer.material.SetFloat(Invard, 0);
+        }
+    }
+
     public PoleSign Sign => sign;
 
     public float Power => power;
@@ -51,7 +78,7 @@ public class MagnetController : MonoBehaviour, ICollectible
     }
 
 
-    private void ImpactOnMagnet(MagnetController other)
+    private void ImpactOnMagnet(GameObject other)
     {
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb.isKinematic)
@@ -62,8 +89,10 @@ public class MagnetController : MonoBehaviour, ICollectible
         Vector3 distanceTmp = this.transform.position - other.transform.position ;
         Vector3 forceDirection = distanceTmp.normalized;
         float distance = distanceTmp.magnitude;
-        int forceSign = CalculateForceType(other.Sign, this.Sign);
-        rb.AddForce((this.Power * other.power * forceDirection * forceSign) / Mathf.Pow(distance, 2));
+
+        IMagnet magnet = other.GetComponent<IMagnet>();
+        int forceSign = CalculateForceType(magnet.GetSign(), this.Sign);
+        rb.AddForce((this.Power * magnet.GetPower() * forceDirection * forceSign) / Mathf.Pow(distance, 2));
     } 
     
     
@@ -89,11 +118,21 @@ public class MagnetController : MonoBehaviour, ICollectible
     {
         if (other.CompareTag("Magnet"))
         {
-            ImpactOnMagnet(other.GetComponent<MagnetController>());
+            ImpactOnMagnet(other.gameObject);
         }
         else if(other.CompareTag("Neutral"))
         {
             ImpactOnNeutral(other.gameObject);
         }
+    }
+
+    public PoleSign GetSign()
+    {
+        return sign;
+    }
+
+    public float GetPower()
+    {
+        return power;
     }
 }

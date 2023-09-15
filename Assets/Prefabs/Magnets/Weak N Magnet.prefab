@@ -105,6 +105,7 @@ MonoBehaviour:
   nPoleMaterial: {fileID: 2100000, guid: cbd828f813e2d974fae88e2b6aa95471, type: 2}
   sPoleMaterial: {fileID: 2100000, guid: 2011cababded14d49b48149791e0ebc3, type: 2}
   renderer: {fileID: 6856708287060132304}
+  forceField: {fileID: 7850112153710616536}
 --- !u!135 &6856708287060132311
 SphereCollider:
   m_ObjectHideFlags: 0

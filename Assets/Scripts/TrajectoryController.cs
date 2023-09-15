@@ -33,6 +33,7 @@ public class  TrajectoryController : MonoBehaviour
     private PhysicsScene _physicsScene;
     private LineRenderer _lineRenderer;
     private bool _hasProjectile;
+    private bool _forceFinish;
     private WaitForEndOfFrame _waitForEndOfFrame = new WaitForEndOfFrame();
 
     public GameObject Projectile => _projectile;
@@ -149,6 +150,11 @@ public class  TrajectoryController : MonoBehaviour
         }
     }
 
+    public void ForceFinishSimulation()
+    {
+        _forceFinish = true;
+    }
+
 
     public void SimulateTrajectory()
     {
@@ -156,7 +162,8 @@ public class  TrajectoryController : MonoBehaviour
         {
             return;
         }
-        
+
+        _forceFinish = false;
         StartSimulation?.Invoke();
 
         Scene mainScene = SceneManager.GetActiveScene();
@@ -172,7 +179,7 @@ public class  TrajectoryController : MonoBehaviour
         {
             Vector3 pos = _projectile.transform.position;
 
-            if (distanceLimit > 0 && Vector3.Dot(pos - firstPos, forward) > distanceLimit)
+            if (_forceFinish || distanceLimit > 0 && Vector3.Dot(pos - firstPos, forward) > distanceLimit)
             {
                 _lineRenderer.positionCount = i;
                 break;
@@ -181,10 +188,6 @@ public class  TrajectoryController : MonoBehaviour
             _lineRenderer.SetPosition(i, pos);
             
             _physicsScene.Simulate(Time.fixedDeltaTime * frameOffset);
-            // for (int j = 0; j < frameOffset; j++)
-            // {
-            //     tr.FixedUpdate();
-            // }
         }
 
         SceneManager.SetActiveScene(mainScene);

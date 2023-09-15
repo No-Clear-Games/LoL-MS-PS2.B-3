@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7659474677519800385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2834028192430793137}
+  - component: {fileID: 1793630337581836996}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: LevelManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2834028192430793137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7659474677519800385}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.912057, y: -2.086227, z: 1.5699514}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1793630337581836996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7659474677519800385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa96ddf503e83af4db6e46d9f1cd40d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  startStation: {fileID: 0}
+  endStation: {fileID: 0}
+  train: {fileID: 0}
+  inventoryManager:
+    inventoryUiControllerPrefab: {fileID: 3900120985000793799, guid: fad89d3b77861624eb9fc1d856f268b8, type: 3}
+  inventoryConfig: {fileID: 11400000, guid: 6f2c5841fe126064cbd451bdd0afbdd1, type: 2}
+  trajectoryController: {fileID: 0}
+  cameraController:
+    virtualCameras:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  dragAndDropController:
+    distanceFromCamera: 4
+    physicsDragSpeed: 10
+    mouseDragSpeed: 0.1
+  allowedArea: {fileID: 0}
+  startButton: {fileID: 0}
+  obstacleMaterial: {fileID: 2100000, guid: dc1c88e49659df2478ee97166cc255c5, type: 2}
+  minimumTimeScale: 0.214
+  scoreScale: 10000
+  obstaclesDissolveDuration: 1
+  trainMode: 1

@@ -12,6 +12,7 @@ TagManager:
   - Neutral
   - Obstacle
   - Train
+  - LevelManager
   layers:
   - Default
   - TransparentFX
