@@ -23,7 +23,7 @@ namespace NoClearGames
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Neutral"))
+            if (other.CompareTag("Neutral") || other.CompareTag("Magnet"))
             {
                 TrainTouched?.Invoke();
             }

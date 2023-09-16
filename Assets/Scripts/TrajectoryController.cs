@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(LineRenderer))]
 public class  TrajectoryController : MonoBehaviour
 {
-    [SerializeField] [Range(4, 100)] private int frameCount = 4;
-    [SerializeField] [Range(1, 100)] private int frameOffset = 1;
+    [SerializeField] [Range(4, 400)] private int frameCount = 4;
+    [SerializeField] [Range(1, 3)] private int frameOffset = 1;
 
 
     [SerializeField] private float distanceLimit;
@@ -94,8 +94,8 @@ public class  TrajectoryController : MonoBehaviour
         {
             DestroyImmediate(_scenesGameObjectsMap[t].gameObject);
             _scenesGameObjectsMap.Remove(t);
-            yield return _waitForEndOfFrame;
             ObjectRemovedFromSimulation?.Invoke(t.gameObject);
+            yield return _waitForEndOfFrame;
         }
     }
 

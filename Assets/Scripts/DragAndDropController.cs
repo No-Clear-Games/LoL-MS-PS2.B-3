@@ -109,9 +109,7 @@ public class DragAndDropController
             }
         }
 
-        _draggedObject.layer = _itemDefaultLayer;
-        _hoveringOverSlot = false;
-        _gotCurrentSlot = false;
+        
 
         if (_state == State.Canceling)
         {
@@ -127,6 +125,10 @@ public class DragAndDropController
         {
             DropAction?.Invoke(_draggedObject);
         }
+        
+        _draggedObject.layer = _itemDefaultLayer;
+        _hoveringOverSlot = false;
+        _gotCurrentSlot = false;
         
         _currentHoveredSlot = null;
         _draggedObject = null;

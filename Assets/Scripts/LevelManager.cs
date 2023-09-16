@@ -245,6 +245,9 @@ public class LevelManager : MonoBehaviour
         Destroy(obj);
     
         inventoryManager.Unlock();
+        _gameInput.Gameplay.Click.performed -= DropOnClick;
+        _gameInput.Gameplay.RightClick.performed -= RightClickOnPerformed;
+        _gameInput.Gameplay.Click.performed += DragOnClick;
         StartCoroutine(HighLightOnHoverSlot());
     }
 
