@@ -313,16 +313,23 @@ public class LevelManager : MonoBehaviour
                 {
                     continue;
                 }
-                
-                
+
+                if (lastHoveredSlot != null)
+                {
+                    lastHoveredSlot.GetComponent<MagnetSlot>().HighlightObject(false);
+                }
+
+
                 MagnetSlot slot = hit.collider.gameObject.GetComponent<MagnetSlot>();
                 if (!slot.Occupied)
                 {
                     continue;
                 }
-                
+
 
                 slot.HighlightObject(true);
+                
+
                 lastHoveredSlot = hit.collider.gameObject;
                 
             }
