@@ -20,38 +20,59 @@ MonoBehaviour:
         the exciting world of magnetic fields and electric forces.
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-1-tutorial-message-1-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: Welcome to "Magnetic Mayhem," where we're going to have a blast while
         learning about the magical world of magnets.
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-1-tutorial-message-2-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: In this game, you'll dive into the fascinating realms of magnetic
         and electric fields.
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-1-tutorial-message-3-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: You'll control a wooden roller coaster with an iron ball at the front,
         and your mission is to navigate it safely through a variety of obstacles
         by using magnets.
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-1-tutorial-message-4-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: "The roller coaster moves along a straight path from the starting
         station to the ending station, but there's a twist \u2013 there's no fixed
         track! You can steer it in different directions using magnets."
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-1-tutorial-message-5-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: Your job is to make sure the roller coaster avoids obstacles and maintains
         a high speed to keep its passengers joyful. Your score depends on the final
         speed and the happiness of your roller coaster riders.
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-1-tutorial-message-6-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: Let's jump right in! You're about to tackle your first challenge.
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-1-tutorial-message-7-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: 'In this level, you''ll find:
 
@@ -65,16 +86,25 @@ MonoBehaviour:
         one Strong S magnet.'
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-1-tutorial-message-8-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: Your mission, should you choose to accept it, is to use these magnets
         wisely to steer the roller coaster safely around the red obstacle.
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-1-tutorial-message-9-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: For your ease. I've put a handbook about how things work here. you
         can access it anytime by clicking on the "Info" button
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-1-tutorial-message-10-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: Remember, you're not just playing a game; you're learning about the
         incredible power of magnets and how they influence electric forces. So, have
@@ -82,4 +112,7 @@ MonoBehaviour:
         scientist!
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-1-tutorial-message-11-message
+      titleLanguageId: 
+      btnLanguageId: 
     claimed: 1

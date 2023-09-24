@@ -19,5 +19,8 @@ namespace NoClearGames.DialogueSystem
         [TextArea] public string message;
         public Sprite spr;
         public string btnMessage;
+        public string messageLanguageId;
+        public string titleLanguageId;
+        public string btnLanguageId;
     }
 }

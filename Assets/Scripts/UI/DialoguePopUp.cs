@@ -40,8 +40,19 @@ namespace NoClearGames
 
         private async UniTaskVoid TypingMessage()
         {
+#if UNITY_EDITOR
             titleText.text = _dialogueMessage.messages[_messageId].title;
             btnText.text = _dialogueMessage.messages[_messageId].btnMessage;
+            string translatedMessage =
+                _dialogueMessage.messages[_messageId].message;
+            
+#elif UNITY_WEBGL
+            
+            titleText.text = SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].titleLanguageId];
+            btnText.text = SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].btnLanguageId];
+            string translatedMessage =
+                SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].messageLanguageId];
+#endif
             img.sprite = _dialogueMessage.messages[_messageId].spr;
 
             img.gameObject.SetActive(img.sprite != null);
@@ -49,8 +60,8 @@ namespace NoClearGames
             nextBtn.transform.localScale = Vector3.zero;
 
             StringBuilder msg = new StringBuilder();
-
-            foreach (char ctx in _dialogueMessage.messages[_messageId].message)
+            
+            foreach (char ctx in translatedMessage)
             {
                 msg.Append(ctx.ToString());
                 messageText.text = msg.ToString();
