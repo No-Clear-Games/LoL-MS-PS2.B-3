@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8788f28f4e4e4db4895250149f552d16, type: 3}
+  m_Name: General Tutorial
+  m_EditorClassIdentifier: 
+  dialogueSequence:
+  - id: tutorial
+    messages:
+    - title: Placing the Magnets
+      message: Click on the magnets in your inventory to drag them. Then drop the
+        magnets in one of the orange slots.
+      spr: {fileID: 0}
+      btnMessage: Cool, what would they do?
+    - title: Observe the Magic
+      message: Watch as the magnets work their magic! The roller coaster should now
+        deviate from its original path, bypassing the red obstacle. Keep an eye on
+        the roller coaster's speed and the joy of its passengers. That's how you'll
+        earn a high score
+      spr: {fileID: 0}
+      btnMessage: Great
+    - title: Experiment
+      message: Feel free to experiment with different magnet placements. You can
+        switch the magnets or even try placing them in different positions to see
+        how it affects the roller coaster's path and speed.
+      spr: {fileID: 0}
+      btnMessage: Sounds Cool
+    - title: Level Complete
+      message: Once your roller coaster safely reaches the ending station, you've
+        completed the level! Celebrate your success and get ready for more magnetic
+        adventures in the upcoming levels.
+      spr: {fileID: 0}
+      btnMessage: Let's do this
+    claimed: 1

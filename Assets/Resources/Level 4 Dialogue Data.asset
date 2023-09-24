@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8788f28f4e4e4db4895250149f552d16, type: 3}
+  m_Name: Level 4 Dialogue Data
+  m_EditorClassIdentifier: 
+  dialogueSequence:
+  - id: start
+    messages:
+    - title: 
+      message: Welcome back, magnetic genius! Professor Magno here, and you've been
+        absolutely crushing it in the previous levels of "Magnetic Mayhem." Now,
+        let's dive into Level 4, where things are about to get even more interesting!
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: But before we get to the new challenge, let's celebrate your accomplishments
+        in Level 3. Navigating that roller coaster with both N and S magnets was
+        a real feat, and you did it with style!
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: "Now, let's talk about Level 4. This level has a unique twist \u2013
+        there are only two obstacles, but there's more than one way to pass them."
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: Your creativity and magnet mastery will shine here. You'll have the
+        freedom to choose your path and strategize to earn the highest score possible.
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: Intriguingly, for this level, you'll have a different set of challenges.
+        You will only have N magnets in your inventory. That's right, N magnets only!
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: Get ready to unleash your magnetic creativity and have a blast exploring
+        different strategies in this electrifying level. You're on your way to becoming
+        a true magnetic mastermind, even with the limited N magnets at your disposal!
+      spr: {fileID: 0}
+      btnMessage: 
+    claimed: 1

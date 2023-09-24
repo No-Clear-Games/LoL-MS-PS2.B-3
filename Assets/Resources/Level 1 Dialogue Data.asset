@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8788f28f4e4e4db4895250149f552d16, type: 3}
+  m_Name: Level 1 Dialogue Data
+  m_EditorClassIdentifier: 
+  dialogueSequence:
+  - id: start
+    messages:
+    - title: 
+      message: Hey there, future magnet master! I'm Professor Magno, your guide through
+        the exciting world of magnetic fields and electric forces.
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: Welcome to "Magnetic Mayhem," where we're going to have a blast while
+        learning about the magical world of magnets.
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: In this game, you'll dive into the fascinating realms of magnetic
+        and electric fields.
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: You'll control a wooden roller coaster with an iron ball at the front,
+        and your mission is to navigate it safely through a variety of obstacles
+        by using magnets.
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: "The roller coaster moves along a straight path from the starting
+        station to the ending station, but there's a twist \u2013 there's no fixed
+        track! You can steer it in different directions using magnets."
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: Your job is to make sure the roller coaster avoids obstacles and maintains
+        a high speed to keep its passengers joyful. Your score depends on the final
+        speed and the happiness of your roller coaster riders.
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: Let's jump right in! You're about to tackle your first challenge.
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: 'In this level, you''ll find:
+
+        1. One red obstacle blocking
+        the roller coaster''s path.
+
+        2. Two slots flashing like bright orange
+        circles.
+
+        3. In your inventory, there''s one Strong N magnet and
+        one Strong S magnet.'
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: Your mission, should you choose to accept it, is to use these magnets
+        wisely to steer the roller coaster safely around the red obstacle.
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: For your ease. I've put a handbook about how things work here. you
+        can access it anytime by clicking on the "Info" button
+      spr: {fileID: 0}
+      btnMessage: 
+    - title: 
+      message: Remember, you're not just playing a game; you're learning about the
+        incredible power of magnets and how they influence electric forces. So, have
+        fun, experiment, and get ready to become a magnetic genius! Good luck, young
+        scientist!
+      spr: {fileID: 0}
+      btnMessage: 
+    claimed: 1

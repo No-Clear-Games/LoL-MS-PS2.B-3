@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 namespace NoClearGames
 {
-    public class DialoguePopUp : BasePage
+    public partial class DialoguePopUp : BasePage
     {
         [Space] public Image img;
         public TextMeshProUGUI titleText;
@@ -19,20 +19,20 @@ namespace NoClearGames
         public TextMeshProUGUI btnText;
         public Button nextBtn;
 
-        private DialogueMessage dialogueMessage;
-        private int messageId;
+        private DialogueMessage _dialogueMessage;
+        private int _messageId;
 
         [SerializeField] private float delayBetweenTyping = 0.02f;
 
         public void Show(DialogueMessage dialogueMessage, Action endAction)
         {
-            messageId = 0;
-            this.dialogueMessage = dialogueMessage;
+            _messageId = 0;
+            this._dialogueMessage = dialogueMessage;
 
             dialogueMessage.onEndAction += () =>
             {
                 Hide();
-                endAction();
+                endAction?.Invoke();
             };
 
             Show(TypingMessage().Forget);
@@ -40,9 +40,9 @@ namespace NoClearGames
 
         private async UniTaskVoid TypingMessage()
         {
-            titleText.text = dialogueMessage.messages[messageId].title;
-            btnText.text = dialogueMessage.messages[messageId].btnMessage;
-            img.sprite = dialogueMessage.messages[messageId].spr;
+            titleText.text = _dialogueMessage.messages[_messageId].title;
+            btnText.text = _dialogueMessage.messages[_messageId].btnMessage;
+            img.sprite = _dialogueMessage.messages[_messageId].spr;
 
             img.gameObject.SetActive(img.sprite != null);
 
@@ -50,7 +50,7 @@ namespace NoClearGames
 
             StringBuilder msg = new StringBuilder();
 
-            foreach (char ctx in dialogueMessage.messages[messageId].message)
+            foreach (char ctx in _dialogueMessage.messages[_messageId].message)
             {
                 msg.Append(ctx.ToString());
                 messageText.text = msg.ToString();
@@ -61,13 +61,13 @@ namespace NoClearGames
 
             nextBtn.onClick.AddListener(() =>
             {
-                messageId++;
+                _messageId++;
 
                 AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
 
-                if (messageId > dialogueMessage.messages.Length - 1)
+                if (_messageId > _dialogueMessage.messages.Length - 1)
                 {
-                    dialogueMessage.onEndAction?.Invoke();
+                    _dialogueMessage.onEndAction?.Invoke();
                     return;
                 }
 

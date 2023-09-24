@@ -6,6 +6,7 @@ using DG.Tweening;
 using Inventory;
 using Inventory.Scripts;
 using NoClearGames;
+using NoClearGames.DialogueSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -30,6 +31,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private AllowedArea allowedArea;
     [SerializeField] private Button startButton;
     [SerializeField] private Material obstacleMaterial;
+    [SerializeField] private DialoguePopUp tutorialPopUp;
+    [SerializeField] private DialoguePopUp dialoguePopUp;
+    [SerializeField] private LevelDialogueData tutorialDialogueData;
+    [SerializeField] private LevelDialogueData levelDialogueData;
 
     [Range(0, 1)]
     [SerializeField] private float minimumTimeScale;
@@ -48,7 +53,17 @@ public class LevelManager : MonoBehaviour
     {
         return GameObject.FindWithTag("LevelManager").GetComponent<LevelManager>();
     }
-    
+
+    public void ShowTutorialPage()
+    {
+        tutorialPopUp.Show(tutorialDialogueData.GetDialogue("tutorial"), null);
+    }
+
+    public void ShowDialoguePage()
+    {
+        dialoguePopUp.Show(levelDialogueData.GetDialogue("start"), null);
+        dialoguePopUp.MoveUp();
+    }
 
     public float Score => _score;
 
@@ -68,6 +83,7 @@ public class LevelManager : MonoBehaviour
         SetupInventory();
         SetupCameras();
         SetupDragAndDrop();
+        ShowDialoguePage();
     }
 
     private void OnValidate()
