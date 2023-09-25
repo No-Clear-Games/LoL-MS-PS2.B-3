@@ -20,6 +20,9 @@
      "en": {
        "welcome": "Welcome",
        "start": "Start",
+       "continue": "Continue",
+       "train-start": "Start The Train",
+       "info": "Info",
 
        "general-tutorial-message-1-title": "Placing the Magnets",
        "general-tutorial-message-1-message": "Click on the magnets in your inventory to drag them. Then drop the magnets in one of the orange slots.",
