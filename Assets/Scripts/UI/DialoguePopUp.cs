@@ -24,6 +24,8 @@ namespace NoClearGames
 
         [SerializeField] private float delayBetweenTyping = 0.02f;
 
+        private Coroutine _coroutine;
+
         public void Show(DialogueMessage dialogueMessage, Action endAction)
         {
             _messageId = 0;
@@ -35,19 +37,26 @@ namespace NoClearGames
                 endAction?.Invoke();
             };
 
-            Show(TypingMessage().Forget);
+            Show(() =>
+            {
+                if (_coroutine != null)
+                {
+                    StopCoroutine(_coroutine);
+                }
+
+                _coroutine = StartCoroutine(TypingMessage());
+            });
         }
 
-        private async UniTaskVoid TypingMessage()
+        private System.Collections.IEnumerator TypingMessage()
         {
 #if UNITY_EDITOR
             titleText.text = _dialogueMessage.messages[_messageId].title;
             btnText.text = _dialogueMessage.messages[_messageId].btnMessage;
             string translatedMessage =
                 _dialogueMessage.messages[_messageId].message;
-            
+
 #elif UNITY_WEBGL
-            
             titleText.text = SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].titleLanguageId];
             btnText.text = SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].btnLanguageId];
             string translatedMessage =
@@ -59,13 +68,14 @@ namespace NoClearGames
 
             nextBtn.transform.localScale = Vector3.zero;
 
-            StringBuilder msg = new StringBuilder();
-            
+            StringBuilder msg = new();
+
             foreach (char ctx in translatedMessage)
             {
                 msg.Append(ctx.ToString());
                 messageText.text = msg.ToString();
-                await UniTask.Delay(TimeSpan.FromSeconds(delayBetweenTyping), ignoreTimeScale: false);
+                yield return new WaitForSeconds(delayBetweenTyping);
+                //await UniTask.Delay(TimeSpan.FromSeconds(delayBetweenTyping), ignoreTimeScale: false);
             }
 
             nextBtn.onClick.RemoveAllListeners();
@@ -82,7 +92,13 @@ namespace NoClearGames
                     return;
                 }
 
-                TypingMessage().Forget();
+                if (_coroutine != null)
+                {
+                    StopCoroutine(_coroutine);
+                }
+
+                StartCoroutine(TypingMessage());
+                // TypingMessage().Forget();
             });
 
             nextBtn.transform.DOScale(Vector3.one, .5f).SetEase(Ease.OutBounce);
