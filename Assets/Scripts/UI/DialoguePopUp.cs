@@ -68,7 +68,7 @@ namespace NoClearGames
 
             nextBtn.transform.localScale = Vector3.zero;
 
-            StringBuilder msg = new();
+            StringBuilder msg = new StringBuilder();
 
             foreach (char ctx in translatedMessage)
             {

@@ -2,7 +2,32 @@
     "_meta": {
       "maxChars": {
          "welcome": 50,
-         "start": 20,
+         "start": 10,
+        "continue": 10,
+        "train-start": 20,
+        "info": 10,
+
+        "strong-n-magnet": 20,
+        "weak-n-magnet": 20,
+        "medium-n-magnet": 20,
+
+        "strong-s-magnet": 20,
+        "weak-s-magnet": 20,
+        "medium-s-magnet": 20,
+
+        "general-tutorial-message-1-title": 20,
+        "general-tutorial-message-1-message": 200,
+        "general-tutorial-message-1-btn": 20,
+        "general-tutorial-message-2-title": 20,
+        "general-tutorial-message-2-message": 200,
+        "general-tutorial-message-2-btn": 20,
+        "general-tutorial-message-3-title": 20,
+        "general-tutorial-message-3-message": 200,
+        "general-tutorial-message-3-btn": 20,
+        "general-tutorial-message-4-title": 20,
+        "general-tutorial-message-4-message": 200,
+        "general-tutorial-message-4-btn": 20,
+        
          "level-1-tutorial-message-1-message": 200,
          "level-1-tutorial-message-2-message": 200,
          "level-1-tutorial-message-3-message": 200,
@@ -13,7 +38,20 @@
          "level-1-tutorial-message-8-message": 200,
          "level-1-tutorial-message-9-message": 200,
          "level-1-tutorial-message-10-message": 200,
-         "level-1-tutorial-message-11-message": 200
+         "level-1-tutorial-message-11-message": 200,
+
+        "level-2-tutorial-message-1-message": 200,
+        "level-2-tutorial-message-2-message": 200,
+
+        "level-3-tutorial-message-1-message": 200,
+        "level-3-tutorial-message-2-message": 200,
+
+        "level-4-tutorial-message-1-message": 200,
+        "level-4-tutorial-message-2-message": 200,
+        "level-4-tutorial-message-3-message": 200,
+        "level-4-tutorial-message-4-message": 200,
+        "level-4-tutorial-message-5-message": 200,
+        "level-4-tutorial-message-6-message": 200
          
        }
      },
@@ -23,6 +61,14 @@
        "continue": "Continue",
        "train-start": "Start The Train",
        "info": "Info",
+       
+       "strong-n-magnet": "Strong N Magnet",
+       "weak-n-magnet": "Weak N Magnet",
+       "medium-n-magnet": "Medium N Magnet",
+
+       "strong-s-magnet": "Strong S Magnet",
+       "weak-s-magnet": "Weak S Magnet",
+       "medium-s-magnet": "Medium S Magnet",
 
        "general-tutorial-message-1-title": "Placing the Magnets",
        "general-tutorial-message-1-message": "Click on the magnets in your inventory to drag them. Then drop the magnets in one of the orange slots.",
@@ -47,9 +93,20 @@
        "level-1-tutorial-message-8-message": "In this level, you'll find: \n1. One red obstacle blocking the roller coaster's path.\n2. Two slots flashing like bright orange circles.\n3. In your inventory, there's one Strong N magnet and one Strong S magnet.",
        "level-1-tutorial-message-9-message": "Your mission, should you choose to accept it, is to use these magnets wisely to steer the roller coaster safely around the red obstacle.",
        "level-1-tutorial-message-10-message": "For your ease. I've put a handbook about how things work here. you can access it anytime by clicking on the \"Info\" button.",
-       "level-1-tutorial-message-11-message": "Remember, you're not just playing a game; you're learning about the incredible power of magnets and how they influence electric forces. So, have fun, experiment, and get ready to become a magnetic genius! Good luck, young scientist!"
-       
+       "level-1-tutorial-message-11-message": "Remember, you're not just playing a game; you're learning about the incredible power of magnets and how they influence electric forces. So, have fun, experiment, and get ready to become a magnetic genius! Good luck, young scientist!",
 
+       "level-2-tutorial-message-1-message": "I couldn't be prouder of your accomplishments so far. You've just conquered Level 1 with flying colors, and now, it's time to dive into Level 2 of \"Magnetic Mayhem.\" Get ready for an even more electrifying challenge!",
+       "level-2-tutorial-message-2-message": "In this level, we're cranking up the excitement! You'll face three obstacles blocking the roller coaster's path, and your inventory is stocked with magnets of different poles and powers. It's time to demonstrate your magnetic prowess and navigate your roller coaster to victory!",
+
+       "level-3-tutorial-message-1-message": "Welcome back, magnetic maestro! You've already shown incredible skills in Levels 1 and 2. Now, get ready for Level 3 in \"Magnetic Mayhem.\" You're in for an electrifying challenge!",
+       "level-3-tutorial-message-2-message": "Level 3 introduces a mind-bending twist to the game! You'll face three obstacles blocking the roller coaster's path, just like in Level 2. However, this time, the iron ball in front of the roller coaster has been replaced with an N magnet. That means any S magnet will pull the roller coaster, and any N magnet will push it..  Let's dive in!",
+
+       "level-4-tutorial-message-1-message": "Welcome back, magnetic genius! Professor Magno here, and you've been absolutely crushing it in the previous levels of \"Magnetic Mayhem.\" Now, let's dive into Level 4, where things are about to get even more interesting!",
+       "level-4-tutorial-message-2-message": "But before we get to the new challenge, let's celebrate your accomplishments in Level 3. Navigating that roller coaster with both N and S magnets was a real feat, and you did it with style!",
+       "level-4-tutorial-message-3-message": "Now, let's talk about Level 4. This level has a unique twist – there are only two obstacles, but there's more than one way to pass them.",
+       "level-4-tutorial-message-4-message": "Your creativity and magnet mastery will shine here. You'll have the freedom to choose your path and strategize to earn the highest score possible.",
+       "level-4-tutorial-message-5-message": "Intriguingly, for this level, you'll have a different set of challenges. You will only have N magnets in your inventory. That's right, N magnets only!",
+       "level-4-tutorial-message-6-message": "Get ready to unleash your magnetic creativity and have a blast exploring different strategies in this electrifying level. You're on your way to becoming a true magnetic mastermind, even with the limited N magnets at your disposal!"
      }, 
      "es": {
        "welcome": "Bienvenido"

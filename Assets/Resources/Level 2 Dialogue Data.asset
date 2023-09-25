@@ -21,6 +21,9 @@ MonoBehaviour:
         2 of "Magnetic Mayhem." Get ready for an even more electrifying challenge!
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-2-tutorial-message-1-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: In this level, we're cranking up the excitement! You'll face three
         obstacles blocking the roller coaster's path, and your inventory is stocked
@@ -28,4 +31,7 @@ MonoBehaviour:
         magnetic prowess and navigate your roller coaster to victory!
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-2-tutorial-message-2-message
+      titleLanguageId: 
+      btnLanguageId: 
     claimed: 1

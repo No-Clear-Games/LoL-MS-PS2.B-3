@@ -21,31 +21,49 @@ MonoBehaviour:
         let's dive into Level 4, where things are about to get even more interesting!
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-4-tutorial-message-1-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: But before we get to the new challenge, let's celebrate your accomplishments
         in Level 3. Navigating that roller coaster with both N and S magnets was
         a real feat, and you did it with style!
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-4-tutorial-message-2-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: "Now, let's talk about Level 4. This level has a unique twist \u2013
         there are only two obstacles, but there's more than one way to pass them."
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-4-tutorial-message-3-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: Your creativity and magnet mastery will shine here. You'll have the
         freedom to choose your path and strategize to earn the highest score possible.
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-4-tutorial-message-4-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: Intriguingly, for this level, you'll have a different set of challenges.
         You will only have N magnets in your inventory. That's right, N magnets only!
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-4-tutorial-message-5-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: Get ready to unleash your magnetic creativity and have a blast exploring
         different strategies in this electrifying level. You're on your way to becoming
         a true magnetic mastermind, even with the limited N magnets at your disposal!
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-4-tutorial-message-6-message
+      titleLanguageId: 
+      btnLanguageId: 
     claimed: 1
