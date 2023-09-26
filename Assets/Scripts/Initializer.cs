@@ -33,7 +33,9 @@ namespace NoClearGames
 
         public void Save(MainMenuPage.PlayerState playerState)
         {
+#if UNITY_WEBGL
             LOLSDK.Instance.SaveState(playerState);
+#endif
         }
     }
 }
