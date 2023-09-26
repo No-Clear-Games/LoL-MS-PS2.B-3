@@ -21,6 +21,7 @@ namespace NoClearGames
         public void GoToNextLevel()
         {
             var index = SceneManager.GetActiveScene().buildIndex;
+            index++;
             SceneManager.LoadScene(index, LoadSceneMode.Single);
             Save(new MainMenuPage.PlayerState() {lastSceneName = SceneManager.GetActiveScene().name});
         }
