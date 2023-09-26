@@ -21,6 +21,9 @@ MonoBehaviour:
         in for an electrifying challenge!
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-3-tutorial-message-1-message
+      titleLanguageId: 
+      btnLanguageId: 
     - title: 
       message: Level 3 introduces a mind-bending twist to the game! You'll face three
         obstacles blocking the roller coaster's path, just like in Level 2. However,
@@ -29,4 +32,7 @@ MonoBehaviour:
         any N magnet will push it..  Let's dive in!
       spr: {fileID: 0}
       btnMessage: 
+      messageLanguageId: level-3-tutorial-message-2-message
+      titleLanguageId: 
+      btnLanguageId: 
     claimed: 1

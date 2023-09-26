@@ -25,7 +25,7 @@ namespace Inventory
         {
             _inventorySupply = supply;
             SetCount(supply.count);
-            nameText.text = supply.item.name;
+            nameText.text = GetNameText(supply);
             itemBtn.onClick.AddListener(OnItemBtnClicked);
             GameObject iconObject = Instantiate(supply.item, objectParent);
             DisablePhysics(iconObject);
@@ -34,6 +34,25 @@ namespace Inventory
             iconObject.layer = LayerMask.NameToLayer("UI");
         }
 
+        private string GetNameText(InventorySupply supply)
+        {
+            
+            
+            string itemName = "";
+
+            Debug.Log(supply.item.name.ToLower().Replace(' ', '-'));
+            
+#if UNITY_EDITOR
+            itemName = supply.item.name;
+#elif UNITY_WEBGL
+            string langKey = supply.item.name.ToLower().Replace(' ', '-');
+            itemName = SharedState.LanguageDefs[langKey];
+#endif
+
+            return itemName;
+
+        }
+        
         private void OnItemBtnClicked()
         {
             ButtonClicked?.Invoke(_inventorySupply.GetItemId());
