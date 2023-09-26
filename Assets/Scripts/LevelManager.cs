@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TrainModes trainMode;
 
     private GameInput _gameInput;
-    private Camera _mainCamera;
+    private Camera _mainCamera => Camera.main;
     private float _score;
     private bool _lost;
     private bool _pathIsValid;
@@ -229,7 +229,6 @@ public class LevelManager : MonoBehaviour
 
     private void SetupCameras()
     {
-        _mainCamera = Camera.main;
         cameraController.Initialize();
         _gameInput.Gameplay.ChangeCamera.performed += ChangeCameraOnPerformed;
         Debug.Log("Cam setup succeeded");
