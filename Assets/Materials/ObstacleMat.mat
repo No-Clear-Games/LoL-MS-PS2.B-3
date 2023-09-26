@@ -116,7 +116,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _Dissolve_Edge_Width: 0.1
     - _Dissolve_Noise_Scale: 2
-    - _Dissolve_Progress: 0
+    - _Dissolve_Progress: 0.10492909
     - _DstBlend: 10
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
