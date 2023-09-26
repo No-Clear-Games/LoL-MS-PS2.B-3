@@ -10,9 +10,7 @@ namespace NoClearGames.UI
     {
         [SerializeField] private Button resumeBtn;
         [SerializeField] private Button resetBtn;
-        [Space(4)] [SerializeField] private Button musicBtn;
-        [SerializeField] private Sprite musicOnSpr, musicOffSpr;
-        [SerializeField] private Image musicImg;
+
         [Space(4)] [SerializeField] private Button sfxBtn;
         [SerializeField] private Image sfxImg;
         [SerializeField] private Sprite sfxOnSpr, sfxOffSpr;
@@ -21,7 +19,6 @@ namespace NoClearGames.UI
         {
             resumeBtn.onClick.AddListener(ResumeGame);
             resetBtn.onClick.AddListener(ResetLevel);
-            musicBtn.onClick.AddListener(ChangeMusicState);
             sfxBtn.onClick.AddListener(ChangeSfxState);
         }
 
@@ -29,7 +26,7 @@ namespace NoClearGames.UI
         {
             base.Show(doneAction);
             Application.runInBackground = false;
-            musicImg.sprite = AudioManager.Instance.MuteSFX ? musicOffSpr : musicOnSpr;
+            sfxImg.sprite = AudioManager.Instance.MuteSFX ? sfxOnSpr : sfxOffSpr;
         }
 
         public override void Hide(Action doneAction = null)
@@ -51,16 +48,11 @@ namespace NoClearGames.UI
             Hide();
         }
 
-        private void ChangeMusicState()
-        {
-            AudioManager.Instance.Mute_Music();
-            musicImg.sprite = AudioManager.Instance.MuteMusic ? musicOffSpr : musicOnSpr;
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
-        }
-
         private void ChangeSfxState()
         {
             AudioManager.Instance.Mute_SFX();
+            AudioManager.Instance.Mute_Music();
+
             sfxImg.sprite = AudioManager.Instance.MuteSFX ? sfxOffSpr : sfxOnSpr;
             AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
         }
