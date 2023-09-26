@@ -4116,10 +4116,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8097625726386837321, guid: 7744dfed0681e3f4b823ef659d1c3c49, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8545957130668905901, guid: 7744dfed0681e3f4b823ef659d1c3c49, type: 3}
       propertyPath: m_Name
       value: GreetingDialoguePoup

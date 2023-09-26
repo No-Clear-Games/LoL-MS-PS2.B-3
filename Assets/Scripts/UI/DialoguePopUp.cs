@@ -52,19 +52,24 @@ namespace NoClearGames
         {
 #if UNITY_EDITOR
             titleText.text = _dialogueMessage.messages[_messageId].title;
-            btnText.text = _dialogueMessage.messages[_messageId].btnMessage;
+            if (btnText)
+                btnText.text = _dialogueMessage.messages[_messageId].btnMessage;
             string translatedMessage =
                 _dialogueMessage.messages[_messageId].message;
 
 #elif UNITY_WEBGL
             titleText.text = SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].titleLanguageId];
-            btnText.text = SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].btnLanguageId];
+            if (btnText)
+                btnText.text = SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].btnLanguageId];
             string translatedMessage =
                 SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].messageLanguageId];
 #endif
-            img.sprite = _dialogueMessage.messages[_messageId].spr;
+            if (img)
+            {
+                img.sprite = _dialogueMessage.messages[_messageId].spr;
 
-            img.gameObject.SetActive(img.sprite != null);
+                img.gameObject.SetActive(img.sprite != null);
+            }
 
             nextBtn.transform.localScale = Vector3.zero;
 
