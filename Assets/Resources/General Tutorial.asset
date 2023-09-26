@@ -17,7 +17,7 @@ MonoBehaviour:
     messages:
     - title: Picking Up the Magnets
       message: 'Click on the magnets in your inventory to drag them. '
-      spr: {fileID: 0}
+      spr: {fileID: 21300000, guid: 92920b9ad4d0fcd4ba3208f150c038f3, type: 3}
       btnMessage: Cool, what next?
       messageLanguageId: general-tutorial-message-1-message
       titleLanguageId: general-tutorial-message-1-title
@@ -34,7 +34,7 @@ MonoBehaviour:
         deviate from its original path, bypassing the red obstacle. Keep an eye on
         the roller coaster's speed and the joy of its passengers. That's how you'll
         earn a high score
-      spr: {fileID: 0}
+      spr: {fileID: 21300000, guid: cf032011a9427704fabbdb7c9d205105, type: 3}
       btnMessage: Great
       messageLanguageId: general-tutorial-message-3-message
       titleLanguageId: general-tutorial-message-3-title
@@ -43,7 +43,7 @@ MonoBehaviour:
       message: Feel free to experiment with different magnet placements. You can
         switch the magnets or even try placing them in different positions to see
         how it affects the roller coaster's path and speed.
-      spr: {fileID: 0}
+      spr: {fileID: 21300000, guid: 068711d28c9c5dc4ea4c684c77b700d3, type: 3}
       btnMessage: Sounds Cool
       messageLanguageId: general-tutorial-message-4-message
       titleLanguageId: general-tutorial-message-4-title
@@ -52,7 +52,7 @@ MonoBehaviour:
       message: Once your roller coaster safely reaches the ending station, you've
         completed the level! Celebrate your success and get ready for more magnetic
         adventures in the upcoming levels.
-      spr: {fileID: 0}
+      spr: {fileID: 21300000, guid: 068711d28c9c5dc4ea4c684c77b700d3, type: 3}
       btnMessage: Let's Do This
       messageLanguageId: general-tutorial-message-5-message
       titleLanguageId: general-tutorial-message-5-title
