@@ -10,6 +10,8 @@ namespace NoClearGames.UI
         [SerializeField] private Button tutorialBtn;
         [SerializeField] private Button startTrainBtn;
 
+        [SerializeField] private LevelManager levelManager;
+
         public override void Awake()
         {
             base.Awake();
@@ -20,13 +22,14 @@ namespace NoClearGames.UI
 
         private void StartTrain()
         {
-            throw new System.NotImplementedException();
+            levelManager.StartTrain();
         }
 
         private void ShowTutorial()
         {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
-            UIManager.Instance.ShowTutorialDialogue("Tutorial", () => UIManager.Instance.tutorialDialoguePopUp.Hide());
+            levelManager.ShowTutorialPage();
+            //UIManager.Instance.ShowTutorialDialogue("Tutorial", () => UIManager.Instance.tutorialDialoguePopUp.Hide());
         }
 
         private void ShowPause()
