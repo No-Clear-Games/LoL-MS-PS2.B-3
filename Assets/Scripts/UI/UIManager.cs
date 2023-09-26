@@ -7,14 +7,15 @@ namespace NoClearGames.UI
 {
     public class UIManager : SingletonMonoBehaviour<UIManager>
     {
-        //public HudPage hudPage;
+        public HUDPage hudPage;
+        public ResultPopUp resultPop;
         public PausePopUp pausePopUp;
 
         //public GameOverPopUp gameOverPopUp;
         public DialoguePopUp tutorialDialoguePopUp;
 
         public LevelDialogueData tutorialDialogueData;
-        
+
         public void ShowTutorialDialogue(string id, Action endAction)
         {
             DialogueMessage dialogue = tutorialDialogueData.GetDialogue(id);

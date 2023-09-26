@@ -7,6 +7,7 @@ using Inventory;
 using Inventory.Scripts;
 using NoClearGames;
 using NoClearGames.DialogueSystem;
+using NoClearGames.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,7 +16,6 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    
     [SerializeField] private TMP_Text scoreText;
 
     [SerializeField] private StationController startStation;
@@ -36,8 +36,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private LevelDialogueData tutorialDialogueData;
     [SerializeField] private LevelDialogueData levelDialogueData;
 
-    [Range(0, 1)]
-    [SerializeField] private float minimumTimeScale;
+    [Range(0, 1)] [SerializeField] private float minimumTimeScale;
     [SerializeField] private float scoreScale = 1;
     [SerializeField] private float obstaclesDissolveDuration = 1;
     [SerializeField] private TrainModes trainMode;
@@ -84,6 +83,9 @@ public class LevelManager : MonoBehaviour
         SetupCameras();
         SetupDragAndDrop();
         ShowDialoguePage();
+
+        PlayerWon += () => { UIManager.Instance.resultPop.Win(Score.ToString()); };
+        PlayerLost += () => { UIManager.Instance.resultPop.Lose(Score.ToString()); };
     }
 
     private void OnValidate()
@@ -116,7 +118,8 @@ public class LevelManager : MonoBehaviour
         if (timeScale < minimumTimeScale)
         {
             _lost = true;
-            PlayerLost?.Invoke();;
+            PlayerLost?.Invoke();
+            ;
             Debug.Log("Lost");
         }
     }
@@ -136,9 +139,9 @@ public class LevelManager : MonoBehaviour
 
     private void CalcAndSetScore(float trainVelocity)
     {
-        _tmpScore = Mathf.Max(trainVelocity * scoreScale, _tmpScore);   
+        _tmpScore = Mathf.Max(trainVelocity * scoreScale, _tmpScore);
         _score = _tmpScore * train.TrainTimeScale;
-        scoreText.text = ((int)_score).ToString(CultureInfo.InvariantCulture);
+        scoreText.text = ((int) _score).ToString(CultureInfo.InvariantCulture);
     }
 
 
@@ -147,12 +150,11 @@ public class LevelManager : MonoBehaviour
         inventoryManager.InitInventory(inventoryConfig);
         inventoryManager.GetItemAction += InventoryManagerOnGetItemAction;
         Debug.Log("Inventory setup succeeded");
-
     }
 
     private void SetupTrajectory()
     {
-        trajectoryController.ProjectileChanged += TrajectoryControllerOnProjectileChanged ;
+        trajectoryController.ProjectileChanged += TrajectoryControllerOnProjectileChanged;
         trajectoryController.NewObjectAddedToSimulationScene += TrajectoryControllerOnNewObjectAddedToSimulationScene;
         trajectoryController.ObjectRemovedFromSimulation += TrajectoryControllerOnObjectRemovedFromSimulation;
         AllowedArea aArea = trajectoryController.AddObjectToSimulationScene(allowedArea.transform).GetComponent<AllowedArea>();
@@ -160,9 +162,8 @@ public class LevelManager : MonoBehaviour
         trajectoryController.StartSimulation += TrajectoryControllerOnStartSimulation;
         trajectoryController.EndSimulation += TrajectoryControllerOnEndSimulation;
         trajectoryController.SetProjectile(train.Motor.gameObject);
-        
-        Debug.Log("Trajectory setup succeeded");
 
+        Debug.Log("Trajectory setup succeeded");
     }
 
     private void TrajectoryControllerOnEndSimulation()
@@ -191,7 +192,6 @@ public class LevelManager : MonoBehaviour
     private void TrajectoryControllerOnProjectileChanged(GameObject obj)
     {
         TrajectoryControllerSimulateProjectileMove();
-        
     }
 
     private void TrajectoryControllerOnObjectRemovedFromSimulation(GameObject obj)
@@ -209,7 +209,7 @@ public class LevelManager : MonoBehaviour
         startButton.interactable = false;
         trajectoryController.ShowErrorMode();
     }
-    
+
     private void EnableStartTrain()
     {
         startButton.interactable = true;
@@ -233,7 +233,6 @@ public class LevelManager : MonoBehaviour
         cameraController.Initialize();
         _gameInput.Gameplay.ChangeCamera.performed += ChangeCameraOnPerformed;
         Debug.Log("Cam setup succeeded");
-
     }
 
     private void SetupDragAndDrop()
@@ -250,7 +249,7 @@ public class LevelManager : MonoBehaviour
     private void DragAndDropControllerOnCancelAction(GameObject obj)
     {
         ICollectible collectible = obj.GetComponent<ICollectible>();
-        if(inventoryConfig.GetInventorySupply(collectible.GetInventoryId(), out InventorySupply supply))
+        if (inventoryConfig.GetInventorySupply(collectible.GetInventoryId(), out InventorySupply supply))
         {
             inventoryManager.AddItem(supply.item, 1);
         }
@@ -258,8 +257,9 @@ public class LevelManager : MonoBehaviour
         {
             Debug.LogError("Error Getting Inventory item");
         }
+
         Destroy(obj);
-    
+
         inventoryManager.Unlock();
         _gameInput.Gameplay.Click.performed -= DropOnClick;
         _gameInput.Gameplay.RightClick.performed -= RightClickOnPerformed;
@@ -273,7 +273,6 @@ public class LevelManager : MonoBehaviour
         _gameInput.Gameplay.RightClick.performed -= RightClickOnPerformed;
         _gameInput.Gameplay.Click.performed += DragOnClick;
         StartCoroutine(HighLightOnHoverSlot());
-
     }
 
     private void DragAndDropControllerOnStartDraggingAction(GameObject obj)
@@ -287,16 +286,15 @@ public class LevelManager : MonoBehaviour
     private void RightClickOnPerformed(InputAction.CallbackContext context)
     {
         dragAndDropController.CancelDrag();
-        
     }
-    
+
 
     private void DropOnClick(InputAction.CallbackContext obj)
     {
         dragAndDropController.TryDrop();
         inventoryManager.Unlock();
     }
-    
+
     private void DragOnClick(InputAction.CallbackContext context)
     {
         Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
@@ -307,6 +305,7 @@ public class LevelManager : MonoBehaviour
             {
                 return;
             }
+
             GameObject obj = slot.Release();
             StartCoroutine(dragAndDropController.Drag(obj));
             inventoryManager.Lock();
@@ -317,10 +316,9 @@ public class LevelManager : MonoBehaviour
     {
         WaitForEndOfFrame waitForEndOfFrame = new WaitForEndOfFrame();
         GameObject lastHoveredSlot = null;
-        
-        while (dragAndDropController.DraggingState != DragAndDropController.State.Dragging)
-        {        
 
+        while (dragAndDropController.DraggingState != DragAndDropController.State.Dragging)
+        {
             yield return waitForEndOfFrame;
             Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
             if (Physics.Raycast(ray, out RaycastHit hit, 100, LayerMask.GetMask("Slots")))
@@ -344,10 +342,9 @@ public class LevelManager : MonoBehaviour
 
 
                 slot.HighlightObject(true);
-                
+
 
                 lastHoveredSlot = hit.collider.gameObject;
-                
             }
             else
             {
@@ -359,7 +356,7 @@ public class LevelManager : MonoBehaviour
             }
         }
     }
-    
+
     private void DragAndDropControllerOnReleaseSlotAction(GameObject obj)
     {
         trajectoryController.RemoveObjectFromSimulation(obj.transform);
@@ -373,16 +370,16 @@ public class LevelManager : MonoBehaviour
     private void InventoryManagerOnGetItemAction(GameObject prefab)
     {
         GameObject obj = Instantiate(prefab);
-        
+
         obj.GetComponent<ICollectible>().SetInventoryId(InventorySupply.GetItemId(prefab));
         StartCoroutine(dragAndDropController.Drag(obj));
-        
+
         inventoryManager.Lock();
     }
 
     private void ChangeCameraOnPerformed(InputAction.CallbackContext context)
     {
-        int value = (int)context.ReadValue<float>();
+        int value = (int) context.ReadValue<float>();
         cameraController.SwitchCamera(cameraController.ActiveIndex + value);
     }
 
@@ -391,20 +388,18 @@ public class LevelManager : MonoBehaviour
         _gameInput = new GameInput();
         _gameInput.Gameplay.Enable();
         Debug.Log("Inputs setup succeeded");
-
     }
 
 
     public void StartTrain()
     {
         Vector3[] path = trajectoryController.GetPath();
-        
+
         train.StartTrainMove(startStation, endStation, path);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
