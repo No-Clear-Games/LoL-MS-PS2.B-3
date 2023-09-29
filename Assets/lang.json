@@ -1,11 +1,18 @@
 {
     "_meta": {
       "maxChars": {
-         "welcome": 50,
-         "start": 10,
+        "welcome": 50,
+        "start": 10,
         "continue": 10,
         "train-start": 20,
         "info": 10,
+        "tutorial" : 10,
+        "next": 10,
+        "pause": 10,
+        "resume": 10,
+        "reset": 10,
+        "win": 10,
+
 
         "strong-n-magnet": 20,
         "weak-n-magnet": 20,
@@ -64,6 +71,12 @@
        "continue": "Continue",
        "train-start": "Start Train",
        "info": "Info",
+       "tutorial": "Tutorial",
+       "next": "Next",
+       "pause": "Pause",
+       "resume": "Resume",
+       "reset": "Reset",
+       "win": "Win",
        
        "strong-n-magnet": "Strong N Magnet",
        "weak-n-magnet": "Weak N Magnet",
@@ -116,5 +129,7 @@
      }, 
      "es": {
        "welcome": "Bienvenido"
+
+       
      }
    }
