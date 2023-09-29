@@ -48,13 +48,28 @@ MonoBehaviour:
   MuteSFX: 0
   Music:
     menu:
-      Clip: {fileID: 0}
+      Clip: {fileID: 8300000, guid: 41187dc6a04013d4f9ed73be922bb7dc, type: 3}
+      Volume: 1
+      Pitch: 1
+      Loop: 0
+    inGame:
+      Clip: {fileID: 8300000, guid: b906a5c488ad6b148a41928e655cdc2e, type: 3}
       Volume: 1
       Pitch: 1
       Loop: 0
   SFX:
     clickSfx:
-      Clip: {fileID: 0}
+      Clip: {fileID: 8300000, guid: 186c1b86a5969f94ea02e5edd66de670, type: 3}
+      Volume: 1
+      Pitch: 1
+      Loop: 0
+    winSfx:
+      Clip: {fileID: 8300000, guid: cb97694dc9bc26e47bd2acfd561f29db, type: 3}
+      Volume: 1
+      Pitch: 1
+      Loop: 0
+    loseSfx:
+      Clip: {fileID: 8300000, guid: bea3cab0cd3607e4f80d6af99b708366, type: 3}
       Volume: 1
       Pitch: 1
       Loop: 0

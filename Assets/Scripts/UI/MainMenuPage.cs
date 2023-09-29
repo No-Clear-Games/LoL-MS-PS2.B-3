@@ -1,3 +1,4 @@
+using System;
 using NoClearGames.Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,12 @@ namespace NoClearGames.UI
             base.Awake();
             Show();
             startBtn.onClick.AddListener(() => { StartGame("Level 1"); });
+        }
+
+        public override void Show(Action doneAction = null)
+        {
+            base.Show(doneAction);
+            AudioManager.Instance.PlayMusic(AudioManager.Instance.Music.menu);
         }
 
         private void Start()

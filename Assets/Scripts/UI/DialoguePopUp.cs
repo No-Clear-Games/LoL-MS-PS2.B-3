@@ -7,6 +7,7 @@ using NoClearGames.Manager;
 using NoClearGames.UI;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace NoClearGames
@@ -18,6 +19,7 @@ namespace NoClearGames
         public TextMeshProUGUI messageText;
         public TextMeshProUGUI btnText;
         public Button nextBtn;
+        public Button closeBtn;
 
         private DialogueMessage _dialogueMessage;
         private int _messageId;
@@ -30,6 +32,15 @@ namespace NoClearGames
         {
             _messageId = 0;
             this._dialogueMessage = dialogueMessage;
+
+            closeBtn.gameObject.SetActive(PlayerPrefs.HasKey(SceneManager.GetActiveScene().name));
+            closeBtn.onClick.RemoveAllListeners();
+            closeBtn.onClick.AddListener(() =>
+            {
+                dialogueMessage.onEndAction?.Invoke();
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
+
+            });
 
             dialogueMessage.onEndAction += () =>
             {
@@ -94,6 +105,7 @@ namespace NoClearGames
                 if (_messageId > _dialogueMessage.messages.Length - 1)
                 {
                     _dialogueMessage.onEndAction?.Invoke();
+                    PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "Displayed");
                     return;
                 }
 

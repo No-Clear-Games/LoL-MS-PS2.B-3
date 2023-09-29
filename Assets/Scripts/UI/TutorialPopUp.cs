@@ -6,7 +6,10 @@
         {
             base.Awake();
 
-            backBtn.onClick.AddListener(() => Hide());
+            backBtn.onClick.AddListener(() =>
+            {
+                Hide();
+            });
         }
     }
 }

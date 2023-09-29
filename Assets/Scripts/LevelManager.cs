@@ -7,6 +7,7 @@ using Inventory;
 using Inventory.Scripts;
 using NoClearGames;
 using NoClearGames.DialogueSystem;
+using NoClearGames.Manager;
 using NoClearGames.UI;
 using TMPro;
 using UnityEngine;
@@ -84,8 +85,19 @@ public class LevelManager : MonoBehaviour
         SetupDragAndDrop();
         ShowDialoguePage();
 
-        PlayerWon += () => { UIManager.Instance.resultPop.Win(Score.ToString()); };
-        PlayerLost += () => { UIManager.Instance.resultPop.Lose(Score.ToString()); };
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.Music.inGame);
+
+
+        PlayerWon += () =>
+        {
+            UIManager.Instance.resultPop.Win(Score.ToString());
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.winSfx);
+        };
+        PlayerLost += () =>
+        {
+            UIManager.Instance.resultPop.Lose(Score.ToString());
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.loseSfx);
+        };
     }
 
     private void OnValidate()

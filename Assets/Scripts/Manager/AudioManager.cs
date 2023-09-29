@@ -151,6 +151,7 @@ namespace NoClearGames.Manager
         public class MusicClass
         {
             public SoundClass menu;
+            public SoundClass inGame;
         }
 
         public MusicClass Music;
@@ -160,6 +161,8 @@ namespace NoClearGames.Manager
         public class SFXClass
         {
             public SoundClass clickSfx;
+            public SoundClass winSfx;
+            public SoundClass loseSfx;
         }
 
         public SFXClass SFX;

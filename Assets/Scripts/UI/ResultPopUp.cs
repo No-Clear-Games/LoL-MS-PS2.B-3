@@ -1,4 +1,5 @@
 using System;
+using NoClearGames.Manager;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ namespace NoClearGames.UI
         [SerializeField] private TextMeshProUGUI scoreTxt;
         [SerializeField] private Button nextBtn;
 
+        [SerializeField] private Image btnImg;
+        [SerializeField] private Sprite retry, next;
 
         public void Win(string score)
         {
@@ -20,8 +23,14 @@ namespace NoClearGames.UI
             loseTxt.SetActive(false);
             scoreTxt.text = score;
 
+            btnImg.sprite = next;
+
             nextBtn.onClick.RemoveAllListeners();
-            nextBtn.onClick.AddListener(() => { Initializer.Instance.GoToNextLevel(); });
+            nextBtn.onClick.AddListener(() =>
+            {
+                Initializer.Instance.GoToNextLevel();
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
+            });
         }
 
         public void Lose(string score)
@@ -32,9 +41,14 @@ namespace NoClearGames.UI
             loseTxt.SetActive(true);
             scoreTxt.text = score;
 
+            btnImg.sprite = retry;
 
             nextBtn.onClick.RemoveAllListeners();
-            nextBtn.onClick.AddListener(() => { Initializer.Instance.ResetLevel(); });
+            nextBtn.onClick.AddListener(() =>
+            {
+                Initializer.Instance.ResetLevel();
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
+            });
         }
     }
 }
