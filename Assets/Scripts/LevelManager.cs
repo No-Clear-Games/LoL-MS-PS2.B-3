@@ -391,7 +391,7 @@ public class LevelManager : MonoBehaviour
     private void ChangeCameraOnPerformed(InputAction.CallbackContext context)
     {
         int value = (int) context.ReadValue<float>();
-        // cameraController.SwitchCamera(cameraController.ActiveIndex + value);
+        cameraController.SwitchCamera(cameraController.ActiveIndex + value);
     }
 
     private void SetupInputs()

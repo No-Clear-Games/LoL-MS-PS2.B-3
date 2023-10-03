@@ -48,7 +48,7 @@ MonoBehaviour:
   MuteSFX: 0
   Music:
     menu:
-      Clip: {fileID: 8300000, guid: 41187dc6a04013d4f9ed73be922bb7dc, type: 3}
+      Clip: {fileID: 8300000, guid: 6bc307028441149409f34bef29e22202, type: 3}
       Volume: 1
       Pitch: 1
       Loop: 0
