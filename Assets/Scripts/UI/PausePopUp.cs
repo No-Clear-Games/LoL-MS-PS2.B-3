@@ -25,14 +25,7 @@ namespace NoClearGames.UI
         public override void Show(Action doneAction = null)
         {
             base.Show(doneAction);
-            Application.runInBackground = false;
-            sfxImg.sprite = AudioManager.Instance.MuteSFX ? sfxOnSpr : sfxOffSpr;
-        }
-
-        public override void Hide(Action doneAction = null)
-        {
-            base.Hide(doneAction);
-            Application.runInBackground = true;
+            sfxImg.sprite = AudioManager.Instance.MuteSFX ? sfxOffSpr : sfxOnSpr;
         }
 
         private void ResetLevel()

@@ -96,6 +96,14 @@ namespace NoClearGames.Manager
             sfxPlayer.PlayOneShot(clip.Clip, MuteSFX ? 0 : 1);
         }
 
+        public void PlayTTS(AudioClip clip)
+        {
+            sfxPlayer.clip = clip;
+            sfxPlayer.volume = 1;
+
+            sfxPlayer.PlayOneShot(clip);
+        }
+
         public void Mute_SFX()
         {
             MuteSFX = !MuteSFX;

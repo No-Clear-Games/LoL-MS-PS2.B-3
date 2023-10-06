@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using LoLSDK;
 using NoClearGames.DialogueSystem;
 using NoClearGames.Manager;
 using NoClearGames.UI;
@@ -39,7 +40,6 @@ namespace NoClearGames
             {
                 dialogueMessage.onEndAction?.Invoke();
                 AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
-
             });
 
             dialogueMessage.onEndAction += () =>
@@ -74,6 +74,7 @@ namespace NoClearGames
                 btnText.text = SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].btnLanguageId];
             string translatedMessage =
                 SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].messageLanguageId];
+            TextToSpeech(SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].messageLanguageId]);
 #endif
             if (img)
             {
@@ -119,6 +120,11 @@ namespace NoClearGames
             });
 
             nextBtn.transform.DOScale(Vector3.one, .5f).SetEase(Ease.OutBounce);
+        }
+
+        private void TextToSpeech(string key)
+        {
+            LOLSDK.Instance.SpeakText(key);
         }
     }
 }
