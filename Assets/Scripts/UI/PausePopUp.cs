@@ -20,6 +20,8 @@ namespace NoClearGames.UI
             resumeBtn.onClick.AddListener(ResumeGame);
             resetBtn.onClick.AddListener(ResetLevel);
             sfxBtn.onClick.AddListener(ChangeSfxState);
+            backBtn.onClick.RemoveAllListeners();
+            backBtn.onClick.AddListener(() => Hide());
         }
 
         public override void Show(Action doneAction = null)
