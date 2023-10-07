@@ -16,36 +16,22 @@ MonoBehaviour:
   - id: start
     messages:
     - title: 
-      message: Hey there, future magnet master! I'm Professor Magno, your guide through
-        the exciting world of magnetic fields and electric forces.
+      message: Hey there, future magnet master! I'm Professor Magno. Welcome to "Magnetic
+        Mayhem," where we're going to have a blast while learning about the magical
+        world of magnets.
       spr: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-1-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: Welcome to "Magnetic Mayhem," where we're going to have a blast while
-        learning about the magical world of magnets.
-      spr: {fileID: 0}
-      btnMessage: 
-      messageLanguageId: level-1-tutorial-message-2-message
-      titleLanguageId: 
-      btnLanguageId: 
-    - title: 
-      message: In this game, you'll dive into the fascinating realms of magnetic
-        and electric fields.
+      message: 'In this game, you''ll dive into the fascinating realms of magnetic
+        and electric fields. You''ll control a wooden roller coaster with an iron
+        ball at the front, and your mission is to navigate it safely through a variety
+        of obstacles by using magnets. '
       spr: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-3-message
-      titleLanguageId: 
-      btnLanguageId: 
-    - title: 
-      message: You'll control a wooden roller coaster with an iron ball at the front,
-        and your mission is to navigate it safely through a variety of obstacles
-        by using magnets.
-      spr: {fileID: 0}
-      btnMessage: 
-      messageLanguageId: level-1-tutorial-message-4-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
@@ -67,23 +53,16 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: Let's jump right in! You're about to tackle your first challenge.
-      spr: {fileID: 0}
-      btnMessage: 
-      messageLanguageId: level-1-tutorial-message-7-message
-      titleLanguageId: 
-      btnLanguageId: 
-    - title: 
-      message: 'In this level, you''ll find:
+      message: 'Let''s jump right in. In this level, you''ll find:
 
-        1. One red obstacle blocking
-        the roller coaster''s path.
+        1. One
+        red obstacle blocking the roller coaster''s path.
 
-        2. Two slots flashing like bright orange
-        circles.
+        2. Two slots flashing
+        like bright orange circles.
 
-        3. In your inventory, there''s one Strong N magnet and
-        one Strong S magnet.'
+        3. In your inventory, there''s one Strong
+        N magnet and one Strong S magnet.'
       spr: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-8-message
@@ -99,7 +78,8 @@ MonoBehaviour:
       btnLanguageId: 
     - title: 
       message: For your ease. I've put a handbook about how things work here. you
-        can access it anytime by clicking on the "Info" button
+        can access it anytime by clicking on the "Info" button. The one  that has
+        an "i" on it.
       spr: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-10-message
