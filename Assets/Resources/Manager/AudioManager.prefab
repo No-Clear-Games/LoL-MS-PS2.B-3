@@ -48,12 +48,12 @@ MonoBehaviour:
   MuteSFX: 0
   Music:
     menu:
-      Clip: {fileID: 8300000, guid: 6bc307028441149409f34bef29e22202, type: 3}
+      Clip: {fileID: 8300000, guid: c9c060f133d1b244f95a57cb69db855c, type: 3}
       Volume: 1
       Pitch: 1
       Loop: 1
     inGame:
-      Clip: {fileID: 8300000, guid: b906a5c488ad6b148a41928e655cdc2e, type: 3}
+      Clip: {fileID: 8300000, guid: 23dfa1c5b345c424f828c8fb596e52b5, type: 3}
       Volume: 1
       Pitch: 1
       Loop: 1

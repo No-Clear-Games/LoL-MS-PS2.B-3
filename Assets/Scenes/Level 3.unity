@@ -232,7 +232,7 @@ PrefabInstance:
     - target: {fileID: 2969970727030395148, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
       propertyPath: levelManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3802310605030822203}
     - target: {fileID: 5943881532852832941, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4360,6 +4360,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+--- !u!114 &3802310605030822203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+  m_PrefabInstance: {fileID: 3802310605030822202}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa96ddf503e83af4db6e46d9f1cd40d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6248638375574532103
 PrefabInstance:
   m_ObjectHideFlags: 0
