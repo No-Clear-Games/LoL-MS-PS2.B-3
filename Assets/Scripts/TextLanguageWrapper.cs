@@ -14,7 +14,7 @@ namespace NoClearGames
         // Start is called before the first frame update
         void Start()
         {
-#if UNITY_WEBGL
+#if UNITY_WEBGL && !UNITY_EDITOR
             TMP_Text text = GetComponent<TMP_Text>();
             text.text = SharedState.LanguageDefs[key];
 #endif
