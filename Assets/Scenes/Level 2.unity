@@ -2530,7 +2530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9060584418267700913, guid: 98d05eb1d9036f04baecd083a8c7e668, type: 3}
       propertyPath: speedDecreasePercentage
-      value: 0.84
+      value: 0.698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2916,7 +2916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9060584418267700913, guid: 98d05eb1d9036f04baecd083a8c7e668, type: 3}
       propertyPath: speedDecreasePercentage
-      value: 0.84
+      value: 0.698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4422,7 +4422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9060584418267700913, guid: 98d05eb1d9036f04baecd083a8c7e668, type: 3}
       propertyPath: speedDecreasePercentage
-      value: 0.84
+      value: 0.698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

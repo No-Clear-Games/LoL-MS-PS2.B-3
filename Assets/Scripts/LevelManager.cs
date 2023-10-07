@@ -127,7 +127,7 @@ public class LevelManager : MonoBehaviour
 
     private void CheckLose(float timeScale)
     {
-        if (timeScale < minimumTimeScale)
+        if (timeScale < minimumTimeScale && !_lost)
         {
             _lost = true;
             PlayerLost?.Invoke();
