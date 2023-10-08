@@ -19,61 +19,61 @@ MonoBehaviour:
       message: 'Click on the magnets in your inventory to drag them. '
       spr: {fileID: 21300000, guid: c88f73304cf929d4f82806aff9b42f2e, type: 3}
       btnMessage: Cool, what next?
-      messageLanguageId: general-tutorial-message-1-message
-      titleLanguageId: general-tutorial-message-1-title
-      btnLanguageId: general-tutorial-message-1-btn
+      messageLanguageId: general-tutorial-message-pickup-magnet-message
+      titleLanguageId: general-tutorial-message-pickup-magnet-title
+      btnLanguageId: general-tutorial-message-pickup-magnet-btn
     - title: Placing the Magnets
       message: 'Drop the magnets in one of the orange slots. They will effect on
         the train''s path. The train''s path is shown with the a striped line '
       spr: {fileID: 21300000, guid: a76e6145efbc1b5429aa5d94fe9f66e1, type: 3}
       btnMessage: Got it
-      messageLanguageId: general-tutorial-message-2-message
-      titleLanguageId: general-tutorial-message-2-title
-      btnLanguageId: general-tutorial-message-2-btn
+      messageLanguageId: general-tutorial-message-pickup-magnet-message
+      titleLanguageId: general-tutorial-message-pickup-magnet-title
+      btnLanguageId: general-tutorial-message-pickup-magnet-btn
     - title: Passengers Safety
       message: For your passengers safety, you can only start the train when the
         journey you've created for it ends near the destination station. If your
         path is not safe the line that shows you the path will become red. and if
         it is ok, the line becomes white
       spr: {fileID: 21300000, guid: 7ca110c86d1dd01439733fbec8b8fbd0, type: 3}
-      btnMessage: Let's Do This
-      messageLanguageId: general-tutorial-message-5-message
-      titleLanguageId: general-tutorial-message-5-title
-      btnLanguageId: general-tutorial-message-5-btn
+      btnMessage: Got it
+      messageLanguageId: general-tutorial-message-passengers-safety-message
+      titleLanguageId: general-tutorial-message-passengers-safety-title
+      btnLanguageId: general-tutorial-message-passengers-safety-btn
     - title: Hitting an Obstacle
       message: If your train is rushing to an obstacle, Don't worry, The obstacle
         can't hurt your train. It only slows the train down and your train can resume
         it's path if it has not been nearly stopped
       spr: {fileID: 21300000, guid: 5d9e4c5c2e5000e4ea6de5a9b9ff25e3, type: 3}
-      btnMessage: Let's Do This
-      messageLanguageId: general-tutorial-message-5-message
-      titleLanguageId: general-tutorial-message-5-title
-      btnLanguageId: general-tutorial-message-5-btn
+      btnMessage: Ok
+      messageLanguageId: general-tutorial-message-obstacle-hit-message
+      titleLanguageId: general-tutorial-message-obstacle-hit-title
+      btnLanguageId: general-tutorial-message-obstacle-hit-btn
     - title: Pick Already Placed Magnets
       message: If you've placed a magnet in a slot and want to pick it up again,
         there is no problem, just hover the mouse on the magnet and then click on
         it.
       spr: {fileID: 21300000, guid: 2b48c6eaf7feb4d488a6b1d2a1729512, type: 3}
       btnMessage: Ok
-      messageLanguageId: general-tutorial-message-5-message
-      titleLanguageId: general-tutorial-message-5-title
-      btnLanguageId: general-tutorial-message-5-btn
+      messageLanguageId: general-tutorial-message-pick-magnet-again-message
+      titleLanguageId: general-tutorial-message-pick-magnet-again-title
+      btnLanguageId: general-tutorial-message-pick-magnet-again-btn
     - title: Drop Magnets
       message: While you are dragging a magnet, if you decide to return the magnet
         to your inventory, you can do it by right-click with your mouse.
       spr: {fileID: 21300000, guid: d17bc8eb476159e4abeed614a5615c4c, type: 3}
-      btnMessage: Let's Do This
-      messageLanguageId: general-tutorial-message-5-message
-      titleLanguageId: general-tutorial-message-5-title
-      btnLanguageId: general-tutorial-message-5-btn
+      btnMessage: Ok
+      messageLanguageId: general-tutorial-message-drop-magnet-message
+      titleLanguageId: general-tutorial-message-drop-magnet-title
+      btnLanguageId: general-tutorial-message-drop-magnet-btn
     - title: Change The View
-      message: You can use keyboard's lef and right arrows to see the area from different
-        places
+      message: You can use keyboard's left and right arrows to see the area from
+        different places
       spr: {fileID: 21300000, guid: 91f83b2e87347a24a81df0a5cc94cae6, type: 3}
-      btnMessage: Let's Do This
-      messageLanguageId: general-tutorial-message-5-message
-      titleLanguageId: general-tutorial-message-5-title
-      btnLanguageId: general-tutorial-message-5-btn
+      btnMessage: Cool
+      messageLanguageId: general-tutorial-message-change-view-message
+      titleLanguageId: general-tutorial-message-change-view-title
+      btnLanguageId: general-tutorial-message-change-view-btn
     - title: Observe the Magic
       message: Watch as the magnets work their magic! The roller coaster should now
         deviate from its original path, bypassing the red obstacle. Keep an eye on
@@ -81,25 +81,25 @@ MonoBehaviour:
         earn a high score
       spr: {fileID: 21300000, guid: 92fc7965cf2516643ac23664e360a0c1, type: 3}
       btnMessage: Great
-      messageLanguageId: general-tutorial-message-3-message
-      titleLanguageId: general-tutorial-message-3-title
-      btnLanguageId: general-tutorial-message-3-btn
+      messageLanguageId: general-tutorial-message-observe-message
+      titleLanguageId: general-tutorial-message-observe-title
+      btnLanguageId: general-tutorial-message-observe-btn
     - title: Experiment
       message: Feel free to experiment with different magnet placements. You can
         switch the magnets or even try placing them in different positions to see
         how it affects the roller coaster's path and speed.
       spr: {fileID: 21300000, guid: 922ea0bd3d9c8224387b017ead48c32a, type: 3}
       btnMessage: Sounds Cool
-      messageLanguageId: general-tutorial-message-4-message
-      titleLanguageId: general-tutorial-message-4-title
-      btnLanguageId: general-tutorial-message-4-btn
+      messageLanguageId: general-tutorial-message-experiment-message
+      titleLanguageId: general-tutorial-message-experiment-title
+      btnLanguageId: general-tutorial-message-experiment-btn
     - title: Level Complete
       message: Once your roller coaster safely reaches the ending station, you've
         completed the level! Celebrate your success and get ready for more magnetic
         adventures in the upcoming levels.
       spr: {fileID: 21300000, guid: 922ea0bd3d9c8224387b017ead48c32a, type: 3}
       btnMessage: Let's Do This
-      messageLanguageId: general-tutorial-message-5-message
-      titleLanguageId: general-tutorial-message-5-title
-      btnLanguageId: general-tutorial-message-5-btn
+      messageLanguageId: general-tutorial-message-level-complete-message
+      titleLanguageId: general-tutorial-message-level-complete-title
+      btnLanguageId: general-tutorial-message-level-complete-btn
     claimed: 1

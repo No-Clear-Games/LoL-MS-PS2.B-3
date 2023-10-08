@@ -45,7 +45,8 @@ public class MagnetController : MonoBehaviour, ICollectible, IMagnet
 
     private void OnValidate()
     {
-        renderer.material = sign == PoleSign.N ? nPoleMaterial : sPoleMaterial;
+        if(renderer)
+            renderer.material = sign == PoleSign.N ? nPoleMaterial : sPoleMaterial;
     }
 
     private void Start()

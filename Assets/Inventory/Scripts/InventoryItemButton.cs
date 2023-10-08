@@ -32,6 +32,10 @@ namespace Inventory
             iconObject.transform.localScale = Vector3.one;
             iconObject.transform.localPosition = Vector3.zero;
             iconObject.layer = LayerMask.NameToLayer("UI");
+            foreach (Transform child in GetComponentsInChildren<Transform>())
+            {
+                child.gameObject.layer = LayerMask.NameToLayer("UI");
+            }
         }
 
         private string GetNameText(InventorySupply supply)

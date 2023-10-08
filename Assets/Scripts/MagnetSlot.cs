@@ -43,11 +43,17 @@ public class MagnetSlot : MonoBehaviour
         if(highlight)
         {
             _objDefaultLayer = _obj.layer;
-            _obj.layer = LayerMask.NameToLayer("Highlighted");
+            foreach (Transform child in _obj.GetComponentsInChildren<Transform>())
+            {
+                child.gameObject.layer = LayerMask.NameToLayer("Highlighted");
+            }
         }
         else
         {
-            _obj.layer = _objDefaultLayer;
+            foreach (Transform child in _obj.GetComponentsInChildren<Transform>())
+            {
+                child.gameObject.layer = _objDefaultLayer;
+            }
         }
 
         _highigted = highlight;

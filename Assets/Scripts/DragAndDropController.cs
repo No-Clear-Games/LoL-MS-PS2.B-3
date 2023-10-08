@@ -53,7 +53,11 @@ public class DragAndDropController
         _draggedObject = draggedObject;
         StartDraggingAction?.Invoke(draggedObject);
         _itemDefaultLayer = draggedObject.layer;
-        draggedObject.layer = LayerMask.NameToLayer("Highlighted");
+        
+        foreach (Transform child in draggedObject.GetComponentsInChildren<Transform>())
+        {
+            child.gameObject.layer = LayerMask.NameToLayer("Highlighted");
+        }
         
         draggedObject.transform.position = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue())
             .GetPoint(distanceFromCamera);
@@ -126,7 +130,11 @@ public class DragAndDropController
             DropAction?.Invoke(_draggedObject);
         }
         
-        _draggedObject.layer = _itemDefaultLayer;
+        foreach (Transform child in draggedObject.GetComponentsInChildren<Transform>())
+        {
+            _draggedObject.layer = _itemDefaultLayer;
+        }
+        
         _hoveringOverSlot = false;
         _gotCurrentSlot = false;
         

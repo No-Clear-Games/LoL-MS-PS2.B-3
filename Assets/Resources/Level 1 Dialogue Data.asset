@@ -31,7 +31,7 @@ MonoBehaviour:
         of obstacles by using magnets. '
       spr: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-1-tutorial-message-3-message
+      messageLanguageId: level-1-tutorial-message-2-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
@@ -40,7 +40,7 @@ MonoBehaviour:
         track! You can steer it in different directions using magnets."
       spr: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-1-tutorial-message-5-message
+      messageLanguageId: level-1-tutorial-message-3-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
@@ -49,7 +49,7 @@ MonoBehaviour:
         speed and the happiness of your roller coaster riders.
       spr: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-1-tutorial-message-6-message
+      messageLanguageId: level-1-tutorial-message-4-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
@@ -65,7 +65,7 @@ MonoBehaviour:
         N magnet and one Strong S magnet.'
       spr: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-1-tutorial-message-8-message
+      messageLanguageId: level-1-tutorial-message-5-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
@@ -73,7 +73,7 @@ MonoBehaviour:
         wisely to steer the roller coaster safely around the red obstacle.
       spr: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-1-tutorial-message-9-message
+      messageLanguageId: level-1-tutorial-message-6-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
@@ -82,7 +82,7 @@ MonoBehaviour:
         an "i" on it.
       spr: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-1-tutorial-message-10-message
+      messageLanguageId: level-1-tutorial-message-7-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
@@ -92,7 +92,7 @@ MonoBehaviour:
         scientist!
       spr: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-1-tutorial-message-11-message
+      messageLanguageId: level-1-tutorial-message-8-message
       titleLanguageId: 
       btnLanguageId: 
     claimed: 1
