@@ -15,8 +15,8 @@ namespace Inventory.Scripts
         private bool _isLocked;
 
 
-        public event Action<GameObject> AddItemAction; 
-        public event Action<GameObject> GetItemAction; 
+        public event Action<GameObject> AddItemAction;
+        public event Action<GameObject> GetItemAction;
         public event Action<string> ItemSupplyEnded;
 
         public void InitInventory(InventoryConfig inventoryConfig)
@@ -24,10 +24,12 @@ namespace Inventory.Scripts
             _inventorySupplies = new Dictionary<string, InventorySupply>();
             _inventoryUiController = Object.Instantiate(inventoryUiControllerPrefab.gameObject)
                 .GetComponent<InventoryUiController>();
-            
+
+            _inventoryUiController.transform.SetAsFirstSibling();
+
             _inventoryUiController.Initialize();
             _inventoryUiController.ButtonCreated += InventoryUiControllerOnButtonCreated;
-            
+
             foreach (InventorySupply supply in inventoryConfig.inventorySupplies)
             {
                 AddItem(supply);
@@ -38,14 +40,13 @@ namespace Inventory.Scripts
         {
             _isLocked = true;
         }
-        
-        
+
+
         public void Unlock()
         {
             _isLocked = false;
         }
-        
-        
+
 
         private void InventoryUiControllerOnButtonCreated(InventoryItemButton button)
         {
@@ -56,7 +57,7 @@ namespace Inventory.Scripts
         {
             AddItem(supply.item, supply.count);
         }
-        
+
         public void AddItem(GameObject item, uint count)
         {
             string id = InventorySupply.GetItemId(item);
@@ -65,7 +66,6 @@ namespace Inventory.Scripts
                 supply.count += count;
                 if (_inventoryUiController.TryGetButton(id, out InventoryItemButton button))
                 {
-                    
                     button.SetCount(supply.count);
                 }
             }
@@ -75,11 +75,9 @@ namespace Inventory.Scripts
                 _inventorySupplies[id] = newSupply;
                 _inventoryUiController.CreateItemButton(newSupply);
             }
-            
+
             AddItemAction?.Invoke(item);
-            
         }
-        
 
 
         private void GetItem(string itemId)
@@ -88,16 +86,16 @@ namespace Inventory.Scripts
             {
                 return;
             }
-            
+
             bool exists = _inventorySupplies.TryGetValue(itemId, out InventorySupply supply);
 
             if (!exists)
             {
-                return ;
+                return;
             }
 
             supply.count--;
-            
+
             GetItemAction?.Invoke(supply.item);
 
             if (supply.count == 0)
@@ -114,6 +112,5 @@ namespace Inventory.Scripts
                 }
             }
         }
-
     }
 }
