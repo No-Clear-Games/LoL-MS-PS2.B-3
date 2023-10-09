@@ -87,8 +87,8 @@
        "medium-neg-particle": "Medium - Charged Particle",
 
        "strong-bar-magnet": "Strong Bar Magnet",
-       "weak_bar-magnet": "Weak Bar Magnet",
-       "medium_bar-magnet": "Medium Bar Magnet",
+       "weak-bar-magnet": "Weak Bar Magnet",
+       "medium-bar-magnet": "Medium Bar Magnet",
 
        "general-tutorial-message-pickup-magnet-title": "Picking Up the Magnets",
        "general-tutorial-message-pickup-magnet-message": "Click on the magnets in your inventory to drag them.",

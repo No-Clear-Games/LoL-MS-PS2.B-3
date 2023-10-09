@@ -52,12 +52,15 @@ namespace NoClearGames.UI
                 Debug.Log("no data is loaded!");
                 return;
             }
-
+            
+            Debug.Log("Hello");
+            
             continueBtn.onClick.RemoveAllListeners();
             continueBtn.onClick.AddListener(() =>
             {
                 Hide();
-                SceneManager.LoadScene(loadedPlayerState.lastSceneName, LoadSceneMode.Single);
+                Debug.Log(loadedPlayerState.lastSceneName);
+                StartGame(loadedPlayerState.lastSceneName);
             });
         }
 
