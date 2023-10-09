@@ -50,14 +50,6 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: Intriguingly, for this level, you'll have a different set of challenges.
-        You will only have positive charged particles in your inventory.
-      spr: {fileID: 0}
-      btnMessage: 
-      messageLanguageId: level-4-tutorial-message-5-message
-      titleLanguageId: 
-      btnLanguageId: 
-    - title: 
       message: Get ready to unleash your magnetic creativity and have a blast exploring
         different strategies in this electrifying level. You're on your way to becoming
         a true magnelectric mastermind.
