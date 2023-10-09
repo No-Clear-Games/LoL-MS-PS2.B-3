@@ -12,6 +12,7 @@ using NoClearGames.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -255,6 +256,18 @@ public class LevelManager : MonoBehaviour
         dragAndDropController.DropAction += DragAndDropControllerOnDropAction;
         dragAndDropController.CancelAction += DragAndDropControllerOnCancelAction;
         _gameInput.Gameplay.Click.performed += DragOnClick;
+
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+
+    private void OnSceneUnloaded(Scene arg0)
+    {
+        dragAndDropController.OccupySlotAction -= DragAndDropControllerOnOccupySlotAction;
+        dragAndDropController.ReleaseSlotAction -= DragAndDropControllerOnReleaseSlotAction;
+        dragAndDropController.StartDraggingAction -= DragAndDropControllerOnStartDraggingAction;
+        dragAndDropController.DropAction -= DragAndDropControllerOnDropAction;
+        dragAndDropController.CancelAction -= DragAndDropControllerOnCancelAction;
+        _gameInput.Gameplay.Click.performed -= DragOnClick;
     }
 
     private void DragAndDropControllerOnCancelAction(GameObject obj)
@@ -318,6 +331,7 @@ public class LevelManager : MonoBehaviour
             }
 
             GameObject obj = slot.Release();
+
             StartCoroutine(dragAndDropController.Drag(obj));
             inventoryManager.Lock();
         }
@@ -383,6 +397,8 @@ public class LevelManager : MonoBehaviour
         GameObject obj = Instantiate(prefab);
 
         obj.GetComponent<ICollectible>().SetInventoryId(InventorySupply.GetItemId(prefab));
+
+
         StartCoroutine(dragAndDropController.Drag(obj));
 
         inventoryManager.Lock();
@@ -407,10 +423,5 @@ public class LevelManager : MonoBehaviour
         Vector3[] path = trajectoryController.GetPath();
 
         train.StartTrainMove(startStation, endStation, path);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }
