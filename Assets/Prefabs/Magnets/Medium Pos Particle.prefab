@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4492338325632462119}
   - component: {fileID: 182814804770840953}
   m_Layer: 0
-  m_Name: Medium + Charged Particle
+  m_Name: Medium Pos Particle
   m_TagString: Magnet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

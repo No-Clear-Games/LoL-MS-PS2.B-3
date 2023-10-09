@@ -26,13 +26,21 @@ MonoBehaviour:
       btnLanguageId: 
     - title: 
       message: Level 3 introduces a mind-bending twist to the game! You'll face three
-        obstacles blocking the roller coaster's path, just like in Level 2. However,
-        this time, the iron ball in front of the roller coaster has been replaced
-        with an N magnet. That means any S magnet will pull the roller coaster, and
-        any N magnet will push it..  Let's dive in!
+        obstacles blocking the roller coaster's path. However, this time, the iron
+        ball in front of the roller coaster has been replaced with a particle charged
+        with positive electrical charge.
       spr: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-3-tutorial-message-2-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: That means any particles that been charged with positive electrical
+        charge will push the roller coaster, and any negative particles that been
+        charged with positive electrical charge will push it..  Let's dive in!
+      spr: {fileID: 0}
+      btnMessage: 
+      messageLanguageId: level-3-tutorial-message-3-message
       titleLanguageId: 
       btnLanguageId: 
     claimed: 1

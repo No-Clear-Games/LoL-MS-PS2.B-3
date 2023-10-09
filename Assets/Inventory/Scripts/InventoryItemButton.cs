@@ -40,11 +40,7 @@ namespace Inventory
 
         private string GetNameText(InventorySupply supply)
         {
-            
-            
             string itemName = "";
-
-            Debug.Log(supply.item.name.ToLower().Replace(' ', '-'));
             
 #if UNITY_EDITOR
             itemName = supply.item.name;

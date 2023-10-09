@@ -61,8 +61,8 @@ MonoBehaviour:
         2. Two slots flashing
         like bright orange circles.
 
-        3. In your inventory, there''s one Strong
-        N magnet and one Strong S magnet.'
+        3. In your inventory, there are 2 Strong
+        bar magnets'
       spr: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-5-message

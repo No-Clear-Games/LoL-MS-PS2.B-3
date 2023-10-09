@@ -16,9 +16,9 @@ MonoBehaviour:
   - id: start
     messages:
     - title: 
-      message: Welcome back, magnetic genius! Professor Magno here, and you've been
-        absolutely crushing it in the previous levels of "Magnetic Mayhem." Now,
-        let's dive into Level 4, where things are about to get even more interesting!
+      message: Welcome back, magnelectric genius! Professor Magno here, and you've
+        been absolutely crushing it in the previous levels of "Magnetic Mayhem."
+        Now, let's dive into Level 4, where things are about to get even more interesting!
       spr: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-4-tutorial-message-1-message
@@ -26,8 +26,8 @@ MonoBehaviour:
       btnLanguageId: 
     - title: 
       message: But before we get to the new challenge, let's celebrate your accomplishments
-        in Level 3. Navigating that roller coaster with both N and S magnets was
-        a real feat, and you did it with style!
+        in Level 3. Navigating that roller coaster with both positive and negative
+        charged particles was a real feat, and you did it with style!
       spr: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-4-tutorial-message-2-message
@@ -51,7 +51,7 @@ MonoBehaviour:
       btnLanguageId: 
     - title: 
       message: Intriguingly, for this level, you'll have a different set of challenges.
-        You will only have N magnets in your inventory. That's right, N magnets only!
+        You will only have positive charged particles in your inventory.
       spr: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-4-tutorial-message-5-message
@@ -60,7 +60,7 @@ MonoBehaviour:
     - title: 
       message: Get ready to unleash your magnetic creativity and have a blast exploring
         different strategies in this electrifying level. You're on your way to becoming
-        a true magnetic mastermind, even with the limited N magnets at your disposal!
+        a true magnelectric mastermind.
       spr: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-4-tutorial-message-6-message

@@ -22,7 +22,6 @@ public class CameraController
     {
 
         ActivateCamera((index + virtualCameras.Length) % virtualCameras.Length);
-        Debug.Log(index);
     }
 
     private void ActivateCamera(int index)
