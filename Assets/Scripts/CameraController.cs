@@ -10,24 +10,23 @@ public class CameraController
 {
     [SerializeField] private Transform[] virtualCameras;
     private int _activeIndex;
-    
+    [SerializeField] private Camera camera;
+
     public int ActiveIndex => _activeIndex;
-    
+
     public void Initialize()
     {
         ActivateCamera(0);
     }
-    
+
     public void SwitchCamera(int index)
     {
-
         ActivateCamera((index + virtualCameras.Length) % virtualCameras.Length);
     }
 
     private void ActivateCamera(int index)
     {
         Transform target = virtualCameras[index];
-        Camera camera = Camera.main;
         _activeIndex = index;
 
         if (camera != null)
