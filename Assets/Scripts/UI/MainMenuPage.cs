@@ -20,7 +20,7 @@ namespace NoClearGames.UI
         {
             base.Awake();
             Show();
-            startBtn.onClick.AddListener(() => { StartGame("Level 1"); });
+            startBtn.onClick.AddListener(() => { StartGame(2); });
 
             sequence = DOTween.Sequence();
 
@@ -43,7 +43,16 @@ namespace NoClearGames.UI
         private void Start()
         {
             Helper.StateButtonInitialize<PlayerState>(startBtn, continueBtn, OnLoad);
+
+            continueBtn.onClick.AddListener(() =>
+            {
+                Debug.Log(_playerState.lastSceneName);
+                StartGame(_playerState.lastSceneName);
+                Hide();
+            });
         }
+
+        private PlayerState _playerState;
 
         private void OnLoad(PlayerState loadedPlayerState)
         {
@@ -52,19 +61,11 @@ namespace NoClearGames.UI
                 Debug.Log("no data is loaded!");
                 return;
             }
-            
-            Debug.Log("Hello");
-            
-            continueBtn.onClick.RemoveAllListeners();
-            continueBtn.onClick.AddListener(() =>
-            {
-                Hide();
-                Debug.Log(loadedPlayerState.lastSceneName);
-                StartGame(loadedPlayerState.lastSceneName);
-            });
+
+            _playerState = loadedPlayerState;
         }
 
-        private void StartGame(string level)
+        private void StartGame(int level)
         {
             Hide();
             SceneManager.LoadScene(level, LoadSceneMode.Single);
@@ -73,7 +74,7 @@ namespace NoClearGames.UI
 
         public class PlayerState
         {
-            public string lastSceneName;
+            public int lastSceneName;
         }
     }
 }

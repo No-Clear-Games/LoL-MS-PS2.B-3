@@ -22,7 +22,7 @@ namespace NoClearGames
         {
             var index = SceneManager.GetActiveScene().buildIndex;
             index++;
-            Save(new MainMenuPage.PlayerState() {lastSceneName = SceneManager.GetActiveScene().name});
+            Save(new MainMenuPage.PlayerState() {lastSceneName = SceneManager.GetActiveScene().buildIndex});
             SceneManager.LoadScene(index, LoadSceneMode.Single);
         }
 
@@ -33,9 +33,14 @@ namespace NoClearGames
 
         public void Save(MainMenuPage.PlayerState playerState)
         {
-#if UNITY_WEBGL
+            if (PlayerPrefs.GetInt("playerState", 2) >= playerState.lastSceneName)
+            {
+                return;
+            }
+
+            PlayerPrefs.SetInt("playerState", playerState.lastSceneName);
+
             LOLSDK.Instance.SaveState(playerState);
-#endif
         }
     }
 }
