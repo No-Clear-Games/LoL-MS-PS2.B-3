@@ -23,7 +23,7 @@ namespace NoClearGames
             var index = SceneManager.GetActiveScene().buildIndex;
             index++;
 
-            if (index > SceneManager.sceneCount)
+            if (index > SceneManager.sceneCountInBuildSettings)
             {
                 UIManager.Instance.resultPop.Hide();
                 UIManager.Instance.endGamePopUp.Show();
