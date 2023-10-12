@@ -44,6 +44,12 @@ namespace NoClearGames.UI
         {
             LOLSDK.Instance.LoadState<PlayerState>(callback =>
             {
+                if (callback == null)
+                {
+                    continueBtn.gameObject.SetActive(false);
+                    return;
+                }
+
                 _playerState = callback.data;
 
                 continueBtn.gameObject.SetActive(_playerState.lastSceneName > 2);
