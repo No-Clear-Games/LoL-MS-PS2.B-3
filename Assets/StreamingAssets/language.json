@@ -13,9 +13,12 @@
         "reset": 10,
         "win": 10,
         "arrows-hint": 25,
+        "congratulations": 25,
+
+        "end-message": 200,
 
 
-        "strong-n-magnet": 20,
+        "strong-n-magnet",: 20,
         "weak-n-magnet": 20,
         "medium-n-magnet": 20,
 
@@ -92,6 +95,9 @@
        "reset": "Reset",
        "win": "Win",
        "arrows-hint": "Press To Change View",
+       "congratulations": "Congratulations",
+       
+       "end-message": "Magnetic Master! You've conquered all the challenges and completed 'Magnetic Mayhem.' Your magnetic genius has guided the roller coaster through electrifying adventures. Thanks for exploring the power of magnets with us. Stay tuned for more magnetic mysteries!",
        
        "strong-pos-particle": "Strong + Charged Particle",
        "weak-pos-particle": "Weak + Charged Particle",
