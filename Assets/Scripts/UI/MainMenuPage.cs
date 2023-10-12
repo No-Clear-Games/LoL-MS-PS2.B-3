@@ -45,6 +45,10 @@ namespace NoClearGames.UI
             LOLSDK.Instance.LoadState<PlayerState>(callback =>
             {
                 _playerState = callback.data;
+
+                continueBtn.gameObject.SetActive(_playerState.lastSceneName > 2);
+
+                continueBtn.onClick.RemoveAllListeners();
                 continueBtn.onClick.AddListener(() =>
                 {
                     Debug.Log(_playerState.lastSceneName);
@@ -52,7 +56,7 @@ namespace NoClearGames.UI
                     Hide();
                 });
             });
-            Helper.StateButtonInitialize<PlayerState>(startBtn, continueBtn, OnLoad);
+            //Helper.StateButtonInitialize<PlayerState>(startBtn, continueBtn, OnLoad);
         }
 
         private PlayerState _playerState;
