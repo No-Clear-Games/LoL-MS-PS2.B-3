@@ -78,7 +78,7 @@ namespace NoClearGames.Manager
         {
             musicPlayer.clip = clip.Clip;
             musicPlayer.mute = MuteMusic;
-            musicPlayer.volume = clip.Volume;
+            musicPlayer.volume = pause ? 0 : clip.Volume;
             musicPlayer.pitch = clip.Pitch;
 
             musicPlayer.loop = clip.Loop;
@@ -118,16 +118,21 @@ namespace NoClearGames.Manager
             PlayerPrefs.SetInt(MUSICKEY, MuteMusic ? 1 : 0);
         }
 
+        private bool pause;
+
         public void PauseSounds()
         {
-            sfxPlayer.Pause();
-            musicPlayer.Pause();
+            pause = true;
+            sfxPlayer.volume = 0;
+            musicPlayer.volume = 0;
         }
 
         public void UnPauseSounds()
         {
-            sfxPlayer.UnPause();
-            musicPlayer.UnPause();
+            pause = false;
+
+            sfxPlayer.volume = 1;
+            musicPlayer.volume = 1;
         }
 
         public void StopMusic()
