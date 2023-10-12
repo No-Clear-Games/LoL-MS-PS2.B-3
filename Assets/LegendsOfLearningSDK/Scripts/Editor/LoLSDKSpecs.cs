@@ -133,6 +133,7 @@ namespace LoL.Editor
             {
                 FileInfo info = new FileInfo(name);
                 var (size, uncompressed) = GetFileSize(info);
+                Debug.Log($"{name} - {size} - {uncompressed}");
                 length += size;
                 rawLength += uncompressed;
             }
