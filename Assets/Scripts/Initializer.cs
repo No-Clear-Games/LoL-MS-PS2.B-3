@@ -27,6 +27,7 @@ namespace NoClearGames
             {
                 UIManager.Instance.resultPop.Hide();
                 UIManager.Instance.endGamePopUp.Show();
+                LOLSDK.Instance.CompleteGame();
                 return;
             }
 
