@@ -10,6 +10,7 @@ namespace NoClearGames.UI
         public HUDPage hudPage;
         public ResultPopUp resultPop;
         public PausePopUp pausePopUp;
+        public EndGamePopUp endGamePopUp;
 
         //public GameOverPopUp gameOverPopUp;
         public DialoguePopUp tutorialDialoguePopUp;

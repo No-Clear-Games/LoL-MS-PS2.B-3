@@ -355,10 +355,6 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 3802310605030822203}
-    - target: {fileID: 3430713937975000638, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
-      propertyPath: tutorialDialogueData
-      value: 
-      objectReference: {fileID: 11400000, guid: 009ddeb9b9468a240a37e239851f4eac, type: 2}
     - target: {fileID: 5943881532852832941, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
       propertyPath: m_Pivot.x
       value: 0

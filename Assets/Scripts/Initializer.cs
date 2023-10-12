@@ -22,6 +22,14 @@ namespace NoClearGames
         {
             var index = SceneManager.GetActiveScene().buildIndex;
             index++;
+
+            if (index > SceneManager.sceneCount)
+            {
+                UIManager.Instance.resultPop.Hide();
+                UIManager.Instance.endGamePopUp.Show();
+                return;
+            }
+
             Save(new MainMenuPage.PlayerState() {lastSceneName = SceneManager.GetActiveScene().buildIndex});
             SceneManager.LoadScene(index, LoadSceneMode.Single);
         }
