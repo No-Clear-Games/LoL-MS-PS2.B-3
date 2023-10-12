@@ -30,7 +30,7 @@ namespace NoClearGames
                 return;
             }
 
-            Save(new MainMenuPage.PlayerState() {lastSceneName = SceneManager.GetActiveScene().buildIndex});
+            Save(new MainMenuPage.PlayerState() {lastSceneName = index});
             SceneManager.LoadScene(index, LoadSceneMode.Single);
         }
 
