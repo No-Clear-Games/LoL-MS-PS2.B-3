@@ -34,7 +34,7 @@ namespace NoClearGames
             _messageId = 0;
             this._dialogueMessage = dialogueMessage;
 
-            AudioManager.Instance.StopMusic();
+            AudioManager.Instance.PauseSounds();
 
             closeBtn.gameObject.SetActive(PlayerPrefs.HasKey(SceneManager.GetActiveScene().name));
             closeBtn.onClick.RemoveAllListeners();
@@ -69,7 +69,6 @@ namespace NoClearGames
                 btnText.text = _dialogueMessage.messages[_messageId].btnMessage;
             string translatedMessage =
                 _dialogueMessage.messages[_messageId].message;
-
 #elif UNITY_WEBGL
             titleText.text = SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].titleLanguageId];
             if (btnText)
@@ -108,7 +107,7 @@ namespace NoClearGames
                 if (_messageId > _dialogueMessage.messages.Length - 1)
                 {
                     _dialogueMessage.onEndAction?.Invoke();
-                    AudioManager.Instance.PlayMusic(AudioManager.Instance.Music.inGame);
+                    AudioManager.Instance.UnPauseSounds();
 
                     PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "Displayed");
                     return;
