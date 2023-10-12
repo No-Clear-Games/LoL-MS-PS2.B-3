@@ -42,14 +42,17 @@ namespace NoClearGames.UI
 
         private void Start()
         {
-            Helper.StateButtonInitialize<PlayerState>(startBtn, continueBtn, OnLoad);
-
-            continueBtn.onClick.AddListener(() =>
+            LOLSDK.Instance.LoadState<PlayerState>(callback =>
             {
-                Debug.Log(_playerState.lastSceneName);
-                StartGame(_playerState.lastSceneName);
-                Hide();
+                _playerState = callback.data;
+                continueBtn.onClick.AddListener(() =>
+                {
+                    Debug.Log(_playerState.lastSceneName);
+                    StartGame(_playerState.lastSceneName);
+                    Hide();
+                });
             });
+            Helper.StateButtonInitialize<PlayerState>(startBtn, continueBtn, OnLoad);
         }
 
         private PlayerState _playerState;
