@@ -22,6 +22,7 @@ namespace NoClearGames.UI
 
         private void StartTrain()
         {
+            startTrainBtn.interactable = false;
             levelManager.StartTrain();
         }
 
