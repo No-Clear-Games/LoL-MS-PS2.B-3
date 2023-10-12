@@ -530,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3282844108677979767, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.38
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: 3282844108677979767, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3660,7 +3660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3282844108677979767, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.77
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 3282844108677979767, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4371,11 +4371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1678575130850169458, guid: 87fa5fa1314bd424883df5514dab2338, type: 3}
       propertyPath: frameCount
-      value: 325
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1678575130850169458, guid: 87fa5fa1314bd424883df5514dab2338, type: 3}
       propertyPath: frameOffset
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1678575130850169458, guid: 87fa5fa1314bd424883df5514dab2338, type: 3}
       propertyPath: distanceLimit

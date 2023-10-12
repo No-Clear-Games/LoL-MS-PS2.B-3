@@ -92,7 +92,8 @@ public class  TrajectoryController : MonoBehaviour
     {
         if (_scenesGameObjectsMap.ContainsKey(t))
         {
-            DestroyImmediate(_scenesGameObjectsMap[t].gameObject);
+            _scenesGameObjectsMap[t].gameObject.SetActive(false);
+            Destroy(_scenesGameObjectsMap[t].gameObject);
             _scenesGameObjectsMap.Remove(t);
             ObjectRemovedFromSimulation?.Invoke(t.gameObject);
             yield return _waitForEndOfFrame;
@@ -130,7 +131,10 @@ public class  TrajectoryController : MonoBehaviour
     public void ResetProjectilePosition()
     {
         _projectile.transform.position = _originalProjectile.transform.position;
+        Rigidbody rb = _projectile.GetComponent<Rigidbody>();
         _projectile.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        rb.AddForce(-rb.GetAccumulatedForce());
+        Debug.Log(rb.GetAccumulatedForce());
     }
     
     private void CreatePhysicsScene()

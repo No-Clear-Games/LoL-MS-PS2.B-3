@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Inventory;
 using Inventory.Scripts;
@@ -229,7 +230,7 @@ public class LevelManager : MonoBehaviour
         trajectoryController.ShowDefaultMode();
     }
 
-    private void TrajectoryControllerSimulateProjectileMove()
+    private UniTask TrajectoryControllerSimulateProjectileMove()
     {
         if (trajectoryController.HasProjectile)
         {
@@ -238,6 +239,8 @@ public class LevelManager : MonoBehaviour
             motor.Run();
             trajectoryController.SimulateTrajectory();
         }
+        
+        return UniTask.CompletedTask;
     }
 
     private void SetupCameras()
