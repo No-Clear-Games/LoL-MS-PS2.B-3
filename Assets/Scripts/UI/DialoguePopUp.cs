@@ -76,7 +76,7 @@ namespace NoClearGames
                 btnText.text = SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].btnLanguageId];
             string translatedMessage =
                 SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].messageLanguageId];
-            TextToSpeech(SharedState.LanguageDefs[_dialogueMessage.messages[_messageId].messageLanguageId]);
+            TextToSpeech(_dialogueMessage.messages[_messageId].messageLanguageId);
 #endif
             if (img)
             {
