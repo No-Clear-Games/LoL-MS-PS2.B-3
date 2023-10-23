@@ -9,7 +9,8 @@
         "Unity.InputSystem",
         "Cinemachine",
         "UniTask",
-        "LoLSDK"
+        "LoLSDK",
+        "Unity.RenderPipelines.Universal.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

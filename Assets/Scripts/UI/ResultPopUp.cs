@@ -2,6 +2,7 @@ using System;
 using NoClearGames.Manager;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 namespace NoClearGames.UI
@@ -15,10 +16,15 @@ namespace NoClearGames.UI
 
         [SerializeField] private Image btnImg;
         [SerializeField] private Sprite retry, next;
+        [SerializeField] private GameObject characters;
+
+        [SerializeField] private Camera charactersCamera;
 
         public void Win(string score)
         {
             Show();
+            SetupHappyCharacters();
+            characters.SetActive(true);
             winTxt.SetActive(true);
             loseTxt.SetActive(false);
             scoreTxt.text = score;
@@ -33,10 +39,16 @@ namespace NoClearGames.UI
             });
         }
 
+        private void SetupHappyCharacters()
+        {
+            Camera.main.GetUniversalAdditionalCameraData().cameraStack.Add(charactersCamera);
+        }
+
         public void Lose(string score)
         {
             Show();
 
+            characters.SetActive(false);
             winTxt.SetActive(false);
             loseTxt.SetActive(true);
             scoreTxt.text = score;
