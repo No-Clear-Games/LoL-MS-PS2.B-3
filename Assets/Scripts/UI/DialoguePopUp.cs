@@ -90,6 +90,12 @@ namespace NoClearGames
 
             foreach (char ctx in translatedMessage)
             {
+                if (Input.anyKey)
+                {
+                    messageText.text = translatedMessage;
+                    break;
+                }
+                
                 msg.Append(ctx.ToString());
                 messageText.text = msg.ToString();
                 yield return new WaitForSeconds(delayBetweenTyping);
