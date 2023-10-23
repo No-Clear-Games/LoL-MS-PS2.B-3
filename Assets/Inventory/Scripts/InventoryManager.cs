@@ -50,7 +50,13 @@ namespace Inventory.Scripts
 
         private void InventoryUiControllerOnButtonCreated(InventoryItemButton button)
         {
-            button.ButtonClicked += GetItem;
+            // button.ButtonClicked += GetItem;
+            button.PointerDownAction += ButtonOnPointerDownAction;
+        }
+
+        private void ButtonOnPointerDownAction(InventoryItemButton obj)
+        {
+            GetItem(obj.InventorySupply.GetItemId());
         }
 
         public void AddItem(InventorySupply supply)

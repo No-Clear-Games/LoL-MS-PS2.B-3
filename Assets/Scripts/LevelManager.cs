@@ -288,16 +288,14 @@ public class LevelManager : MonoBehaviour
         Destroy(obj);
 
         inventoryManager.Unlock();
-        _gameInput.Gameplay.Click.performed -= DropOnClick;
-        _gameInput.Gameplay.RightClick.performed -= RightClickOnPerformed;
+        _gameInput.Gameplay.HoldMouseLeftClick.canceled -= DropOnReleaseMouse;
         _gameInput.Gameplay.Click.performed += DragOnClick;
         StartCoroutine(HighLightOnHoverSlot());
     }
 
     private void DragAndDropControllerOnDropAction(GameObject obj)
     {
-        _gameInput.Gameplay.Click.performed -= DropOnClick;
-        _gameInput.Gameplay.RightClick.performed -= RightClickOnPerformed;
+        _gameInput.Gameplay.HoldMouseLeftClick.canceled -= DropOnReleaseMouse;
         _gameInput.Gameplay.Click.performed += DragOnClick;
         StartCoroutine(HighLightOnHoverSlot());
     }
@@ -306,20 +304,17 @@ public class LevelManager : MonoBehaviour
     {
         _gameInput.Gameplay.Click.performed -= DragOnClick;
 
-        _gameInput.Gameplay.Click.performed += DropOnClick;
-        _gameInput.Gameplay.RightClick.performed += RightClickOnPerformed;
-    }
-
-    private void RightClickOnPerformed(InputAction.CallbackContext context)
-    {
-        dragAndDropController.CancelDrag();
+        _gameInput.Gameplay.HoldMouseLeftClick.canceled += DropOnReleaseMouse;
     }
 
 
-    private void DropOnClick(InputAction.CallbackContext obj)
+
+    private void DropOnReleaseMouse(InputAction.CallbackContext obj)
     {
-        dragAndDropController.TryDrop();
-        inventoryManager.Unlock();
+        if(dragAndDropController.DropOrCancel())
+        {
+            inventoryManager.Unlock();
+        }
     }
 
     private void DragOnClick(InputAction.CallbackContext context)

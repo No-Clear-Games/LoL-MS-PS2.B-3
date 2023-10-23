@@ -173,13 +173,20 @@ public class DragAndDropController
         _state = State.Canceling;
     }
 
-    public void TryDrop()
+    public bool DropOrCancel()
     {
-        if (!_gotCurrentSlot || _state != State.Dragging)
+        if (_state != State.Dragging)
         {
-            return;
+            return false;
+        }
+
+        if (!_gotCurrentSlot)
+        {
+            CancelDrag();
+            return true;
         }
         _state = State.Dropping;
+        return true;
     }
 
 }

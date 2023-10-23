@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Inventory
 {
-    public class InventoryItemButton : MonoBehaviour
+    public class InventoryItemButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
 
         [SerializeField] private Image iconImage; //TODO: Do something for icon
@@ -14,11 +15,17 @@ namespace Inventory
         [SerializeField] private TMP_Text nameText;
         [SerializeField] private Button itemBtn;
         [SerializeField] private Transform objectParent;
+        [SerializeField] private float minHoldSeconds = 2;
 
 
         private InventorySupply _inventorySupply;
+        private DateTime _pointerDownDateTime;
+        // public event Action<string> ButtonClicked;
 
-        public event Action<string> ButtonClicked;
+        public InventorySupply InventorySupply => _inventorySupply;
+
+        public event Action<InventoryItemButton> PointerDownAction;
+        public event Action<InventoryItemButton> PointerUpAction;
 
 
         public void Initialize(InventorySupply supply)
@@ -26,7 +33,7 @@ namespace Inventory
             _inventorySupply = supply;
             SetCount(supply.count);
             nameText.text = GetNameText(supply);
-            itemBtn.onClick.AddListener(OnItemBtnClicked);
+            // itemBtn.onClick.AddListener(OnItemBtnClicked);
             GameObject iconObject = Instantiate(supply.item, objectParent);
             DisablePhysics(iconObject);
             iconObject.transform.localScale = Vector3.one;
@@ -53,10 +60,10 @@ namespace Inventory
 
         }
         
-        private void OnItemBtnClicked()
-        {
-            ButtonClicked?.Invoke(_inventorySupply.GetItemId());
-        }
+        // private void OnItemBtnClicked()
+        // {
+        //     ButtonClicked?.Invoke(_inventorySupply.GetItemId());
+        // }
 
         private void DisablePhysics(GameObject obj)
         {
@@ -74,6 +81,24 @@ namespace Inventory
         public void SetCount(uint count)
         {
             remainingCountText.text = count.ToString();
+        }
+        
+        
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            _pointerDownDateTime = DateTime.Now;
+            PointerDownAction?.Invoke(this);
+            Debug.Log("Pointer Down");
+        }
+        
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            if ((DateTime.Now - _pointerDownDateTime).Seconds < minHoldSeconds)
+            {
+                return;
+            }
+            PointerUpAction?.Invoke(this);
+            Debug.Log("Pointer Up");
         }
     }
 }

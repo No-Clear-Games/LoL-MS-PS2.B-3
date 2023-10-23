@@ -418,6 +418,7 @@ MonoBehaviour:
   nameText: {fileID: 8591413023613091089}
   itemBtn: {fileID: 5443104419941265258}
   objectParent: {fileID: 6751438005169329824}
+  minHoldSeconds: 1
 --- !u!1 &4736739419311758852
 GameObject:
   m_ObjectHideFlags: 0

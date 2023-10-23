@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UIElements;
 
 namespace Inventory
 {
@@ -12,6 +14,7 @@ namespace Inventory
         [SerializeField] private Camera uiCamera;
         
         private Dictionary<string, InventoryItemButton> _inventoryItemButtons;
+
 
         public event Action<InventoryItemButton> ButtonCreated; 
         
@@ -25,6 +28,7 @@ namespace Inventory
         {
             return _inventoryItemButtons.TryGetValue(itemId, out button);
         }
+        
 
         public bool CreateItemButton(InventorySupply supply)
         {
@@ -53,6 +57,6 @@ namespace Inventory
 
             return false;
         }
-        
+
     }
 }
