@@ -26,6 +26,7 @@ namespace NoClearGames
         private int _messageId;
 
         [SerializeField] private float delayBetweenTyping = 0.02f;
+        [SerializeField] private float delayBetweenTypingAndShowingNextBtn = 2f;
 
         private Coroutine _coroutine;
 
@@ -127,6 +128,8 @@ namespace NoClearGames
                 StartCoroutine(TypingMessage());
                 // TypingMessage().Forget();
             });
+            
+            yield return new WaitForSeconds(delayBetweenTypingAndShowingNextBtn);
 
             nextBtn.transform.DOScale(Vector3.one, .5f).SetEase(Ease.OutBounce);
         }

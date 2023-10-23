@@ -943,6 +943,7 @@ MonoBehaviour:
   nextBtn: {fileID: 5508722838383127494}
   closeBtn: {fileID: 7403546248762167417}
   delayBetweenTyping: 0.01
+  delayBetweenTypingAndShowingNextBtn: 1
 --- !u!1 &8802034205957278107
 GameObject:
   m_ObjectHideFlags: 0
