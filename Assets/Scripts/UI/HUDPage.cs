@@ -9,8 +9,11 @@ namespace NoClearGames.UI
         [SerializeField] private Button pauseBtn;
         [SerializeField] private Button tutorialBtn;
         [SerializeField] private Button startTrainBtn;
+        [SerializeField] private Button proffesorBtn;
 
         [SerializeField] private LevelManager levelManager;
+
+
 
         public override void Awake()
         {
@@ -18,6 +21,17 @@ namespace NoClearGames.UI
             pauseBtn.onClick.AddListener(ShowPause);
             tutorialBtn.onClick.AddListener(ShowTutorial);
             startTrainBtn.onClick.AddListener(StartTrain);
+            proffesorBtn.onClick.AddListener(OnProfessorBtnClick);
+        }
+
+        private void OnProfessorBtnClick()
+        {
+            levelManager.ShowDialoguePage();
+        }
+
+        public void SetProfessorBtnActive(bool active)
+        {
+            proffesorBtn.gameObject.SetActive(active);
         }
 
         private void StartTrain()

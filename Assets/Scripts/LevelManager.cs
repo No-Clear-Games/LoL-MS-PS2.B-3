@@ -93,7 +93,16 @@ public class LevelManager : MonoBehaviour
         SetupInventory();
         SetupCameras();
         SetupDragAndDrop();
-        ShowDialoguePage();
+
+        if (!PlayerPrefs.HasKey(SceneManager.GetActiveScene().name))
+        {
+            ShowDialoguePage();    
+        }
+        else
+        {
+            
+        }
+        
 
         AudioManager.Instance.PlayMusic(AudioManager.Instance.Music.inGame);
 
