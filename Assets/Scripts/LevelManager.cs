@@ -38,6 +38,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private DialoguePopUp dialoguePopUp;
     [SerializeField] private LevelDialogueData tutorialDialogueData;
     [SerializeField] private LevelDialogueData levelDialogueData;
+    [SerializeField] private LevelDialogueData invalidStartClickDialogue;
 
     [Range(0, 1)] [SerializeField] private float minimumTimeScale;
     [SerializeField] private float scoreScale = 1;
@@ -50,6 +51,8 @@ public class LevelManager : MonoBehaviour
     private bool _lost;
     private bool _pathIsValid;
 
+    public bool PathIsValid => _pathIsValid;
+
 
     public static LevelManager GetCurrentLevelManager()
     {
@@ -59,6 +62,11 @@ public class LevelManager : MonoBehaviour
     public void ShowTutorialPage()
     {
         tutorialPopUp.Show(tutorialDialogueData.GetDialogue("tutorial"), null);
+    }
+    
+    public void ShowInvalidStartTutorial()
+    {
+        tutorialPopUp.Show(invalidStartClickDialogue.GetDialogue("tutorial"), null);
     }
 
     public void ShowDialoguePage()
@@ -220,13 +228,13 @@ public class LevelManager : MonoBehaviour
 
     private void DisableStartTrain()
     {
-        startButton.interactable = false;
+        // startButton.interactable = false;
         trajectoryController.ShowErrorMode();
     }
 
     private void EnableStartTrain()
     {
-        startButton.interactable = true;
+        // startButton.interactable = true;
         trajectoryController.ShowDefaultMode();
     }
 

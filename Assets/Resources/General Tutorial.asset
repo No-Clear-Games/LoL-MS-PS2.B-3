@@ -16,15 +16,18 @@ MonoBehaviour:
   - id: tutorial
     messages:
     - title: Picking Up the Magnets
-      message: 'Click on the magnets in your inventory to drag them. '
+      message: 'Press and hold mouse button on the magnets in your inventory to drag
+        them. '
       spr: {fileID: 21300000, guid: c88f73304cf929d4f82806aff9b42f2e, type: 3}
       btnMessage: Cool, what next?
       messageLanguageId: general-tutorial-message-pickup-magnet-message
       titleLanguageId: general-tutorial-message-pickup-magnet-title
       btnLanguageId: general-tutorial-message-pickup-magnet-btn
     - title: Placing the Magnets
-      message: 'Drop the magnets in one of the orange slots. They will effect on
-        the train''s path. The train''s path is shown with the a striped line '
+      message: Release the mouse button to drop the magnets in one of the orange
+        slots. They will effect on the train's path. The train's path is shown with
+        the a striped line. If you release the mouse button while the magnet has
+        not reached a slot yet. It will return to the inventory
       spr: {fileID: 21300000, guid: a76e6145efbc1b5429aa5d94fe9f66e1, type: 3}
       btnMessage: Got it
       messageLanguageId: general-tutorial-message-pickup-magnet-message
@@ -51,21 +54,13 @@ MonoBehaviour:
       btnLanguageId: general-tutorial-message-obstacle-hit-btn
     - title: Pick Already Placed Magnets
       message: If you've placed a magnet in a slot and want to pick it up again,
-        there is no problem, just hover the mouse on the magnet and then click on
-        it.
+        there is no problem, just hover the mouse on the magnet and then press and
+        hold mouse buttont.
       spr: {fileID: 21300000, guid: 2b48c6eaf7feb4d488a6b1d2a1729512, type: 3}
       btnMessage: Ok
       messageLanguageId: general-tutorial-message-pick-magnet-again-message
       titleLanguageId: general-tutorial-message-pick-magnet-again-title
       btnLanguageId: general-tutorial-message-pick-magnet-again-btn
-    - title: Drop Magnets
-      message: While you are dragging a magnet, if you decide to return the magnet
-        to your inventory, you can do it by right-click with your mouse.
-      spr: {fileID: 21300000, guid: d17bc8eb476159e4abeed614a5615c4c, type: 3}
-      btnMessage: Ok
-      messageLanguageId: general-tutorial-message-drop-magnet-message
-      titleLanguageId: general-tutorial-message-drop-magnet-title
-      btnLanguageId: general-tutorial-message-drop-magnet-btn
     - title: Change The View
       message: You can use keyboard's left and right arrows to see the area from
         different places

@@ -22,8 +22,15 @@ namespace NoClearGames.UI
 
         private void StartTrain()
         {
-            startTrainBtn.interactable = false;
-            levelManager.StartTrain();
+            if(levelManager.PathIsValid)
+            {
+                startTrainBtn.interactable = false;
+                levelManager.StartTrain();
+            }
+            else
+            {
+                levelManager.ShowInvalidStartTutorial();
+            }
         }
 
         private void ShowTutorial()

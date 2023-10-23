@@ -58,13 +58,18 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    camera: {fileID: 0}
   dragAndDropController:
     distanceFromCamera: 4
-    physicsDragSpeed: 10
     mouseDragSpeed: 0.1
   allowedArea: {fileID: 0}
   startButton: {fileID: 0}
   obstacleMaterial: {fileID: 2100000, guid: dc1c88e49659df2478ee97166cc255c5, type: 2}
+  tutorialPopUp: {fileID: 0}
+  dialoguePopUp: {fileID: 0}
+  tutorialDialogueData: {fileID: 0}
+  levelDialogueData: {fileID: 0}
+  invalidStartClickDialogue: {fileID: 11400000, guid: 43fdae65d1260de4f9615aa3ae7a71ee, type: 2}
   minimumTimeScale: 0.214
   scoreScale: 10000
   obstaclesDissolveDuration: 1
