@@ -42,6 +42,8 @@ namespace NoClearGames.UI
         private void SetupHappyCharacters()
         {
             Camera.main.GetUniversalAdditionalCameraData().cameraStack.Add(charactersCamera);
+            // Debug.Log( Camera.main.scaledPixelHeight);
+            charactersCamera.orthographicSize = Camera.main.scaledPixelHeight / 2;
         }
 
         public void Lose(string score)
