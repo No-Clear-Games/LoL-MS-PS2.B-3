@@ -53,7 +53,7 @@ MonoBehaviour:
   root: {fileID: 782983667537410055}
   durationTime: 0.6
   ease: 13
-  backBtn: {fileID: 0}
+  backBtn: {fileID: 5699689331784631519}
   items:
   - {fileID: 2637661002226045870}
   - {fileID: 4607384524733314798}
@@ -66,8 +66,8 @@ MonoBehaviour:
   messageText: {fileID: 7888130546132682755}
   btnText: {fileID: 5919456427571291843}
   nextBtn: {fileID: 3202198333862901655}
-  closeBtn: {fileID: 5699689331784631519}
   delayBetweenTyping: 0.001
+  delayBetweenTypingAndShowingNextBtn: 2
 --- !u!1 &782983667537410055
 GameObject:
   m_ObjectHideFlags: 0

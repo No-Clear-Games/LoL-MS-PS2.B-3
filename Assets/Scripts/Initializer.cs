@@ -57,11 +57,9 @@ namespace NoClearGames
 
             var levelManager = FindObjectOfType<LevelManager>();
 
-            var score = PlayerPrefs.GetInt("Score", 0);
-            var newScore = score + (int) levelManager.Score;
-            PlayerPrefs.SetInt("Score", newScore);
+            PlayerPrefs.SetInt("Score", (int) levelManager.Score);
 
-            LOLSDK.Instance.SubmitProgress(newScore, SceneManager.GetActiveScene().buildIndex - 2, SceneManager.sceneCount - 2);
+            LOLSDK.Instance.SubmitProgress((int) levelManager.Score, SceneManager.GetActiveScene().buildIndex - 2, SceneManager.sceneCount - 2);
             LOLSDK.Instance.SaveState(playerState);
         }
     }

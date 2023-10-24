@@ -47,6 +47,7 @@ public class LevelManager : MonoBehaviour
     private GameInput _gameInput;
     private Camera _mainCamera => Camera.main;
     private float _score;
+    private float _lastScore;
     private bool _lost;
     private bool _pathIsValid;
 
@@ -108,14 +109,17 @@ public class LevelManager : MonoBehaviour
 
         PlayerWon += () =>
         {
-            UIManager.Instance.resultPop.Win(Score.ToString());
+            UIManager.Instance.resultPop.Win(((int) Score).ToString());
             AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.winSfx);
         };
         PlayerLost += () =>
         {
-            UIManager.Instance.resultPop.Lose(Score.ToString());
+            UIManager.Instance.resultPop.Lose(((int) Score).ToString());
             AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.loseSfx);
         };
+
+        _lastScore = PlayerPrefs.GetInt("Score", 0);
+        scoreText.text = _lastScore.ToString();
     }
 
     private void OnValidate()
@@ -171,6 +175,7 @@ public class LevelManager : MonoBehaviour
     {
         _tmpScore = Mathf.Max(trainVelocity * scoreScale, _tmpScore);
         _score = _tmpScore * train.TrainTimeScale;
+        _score += _lastScore;
         scoreText.text = ((int) _score).ToString(CultureInfo.InvariantCulture);
     }
 

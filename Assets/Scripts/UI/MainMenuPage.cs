@@ -20,7 +20,11 @@ namespace NoClearGames.UI
         {
             base.Awake();
             Show();
-            startBtn.onClick.AddListener(() => { StartGame(2); });
+            startBtn.onClick.AddListener(() =>
+            {
+                PlayerPrefs.DeleteKey("Score");
+                StartGame(2);
+            });
 
             sequence = DOTween.Sequence();
 

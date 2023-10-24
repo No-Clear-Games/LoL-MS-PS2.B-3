@@ -20,7 +20,6 @@ namespace NoClearGames
         public TextMeshProUGUI messageText;
         public TextMeshProUGUI btnText;
         public Button nextBtn;
-        public Button closeBtn;
 
         private DialogueMessage _dialogueMessage;
         private int _messageId;
@@ -35,14 +34,15 @@ namespace NoClearGames
             _messageId = 0;
             this._dialogueMessage = dialogueMessage;
 
-            AudioManager.Instance.PauseSounds();
+            AudioManager.Instance.StopMusic();
 
-            closeBtn.gameObject.SetActive(PlayerPrefs.HasKey(SceneManager.GetActiveScene().name));
-            closeBtn.onClick.RemoveAllListeners();
-            closeBtn.onClick.AddListener(() =>
+            backBtn.gameObject.SetActive(PlayerPrefs.HasKey(SceneManager.GetActiveScene().name));
+            backBtn.onClick.RemoveAllListeners();
+            backBtn.onClick.AddListener(() =>
             {
                 dialogueMessage.onEndAction?.Invoke();
                 AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
+                AudioManager.Instance.PlayMusic(AudioManager.Instance.Music.inGame);
             });
 
             dialogueMessage.onEndAction += () =>
@@ -96,7 +96,7 @@ namespace NoClearGames
                     messageText.text = translatedMessage;
                     break;
                 }
-                
+
                 msg.Append(ctx.ToString());
                 messageText.text = msg.ToString();
                 yield return new WaitForSeconds(delayBetweenTyping);
@@ -114,7 +114,7 @@ namespace NoClearGames
                 if (_messageId > _dialogueMessage.messages.Length - 1)
                 {
                     _dialogueMessage.onEndAction?.Invoke();
-                    AudioManager.Instance.UnPauseSounds();
+                    AudioManager.Instance.PlayMusic(AudioManager.Instance.Music.inGame);
 
                     PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "Displayed");
                     return;
@@ -128,7 +128,7 @@ namespace NoClearGames
                 StartCoroutine(TypingMessage());
                 // TypingMessage().Forget();
             });
-            
+
             yield return new WaitForSeconds(delayBetweenTypingAndShowingNextBtn);
 
             nextBtn.transform.DOScale(Vector3.one, .5f).SetEase(Ease.OutBounce);
