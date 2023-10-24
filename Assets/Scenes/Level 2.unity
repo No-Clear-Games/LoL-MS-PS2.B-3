@@ -373,6 +373,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c516211aeaece479f64c5246b1d336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &169472205 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2969970727030395148, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
+  m_PrefabInstance: {fileID: 169472200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8555e58682484f47b6848367a24ee79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &184956564 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1678575130850169458, guid: 87fa5fa1314bd424883df5514dab2338, type: 3}
@@ -4243,6 +4254,10 @@ PrefabInstance:
       propertyPath: train
       value: 
       objectReference: {fileID: 634933805}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hudPage
+      value: 
+      objectReference: {fileID: 169472205}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: scoreText
       value: 

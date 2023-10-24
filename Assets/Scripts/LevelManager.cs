@@ -34,6 +34,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Material obstacleMaterial;
     [SerializeField] private DialoguePopUp tutorialPopUp;
     [SerializeField] private DialoguePopUp dialoguePopUp;
+    [SerializeField] private HUDPage hudPage;
     [SerializeField] private LevelDialogueData tutorialDialogueData;
     [SerializeField] private LevelDialogueData levelDialogueData;
     [SerializeField] private LevelDialogueData invalidStartClickDialogue;
@@ -61,15 +62,15 @@ public class LevelManager : MonoBehaviour
     {
         tutorialPopUp.Show(tutorialDialogueData.GetDialogue("tutorial"), null);
     }
-    
+
     public void ShowInvalidStartTutorial()
     {
         tutorialPopUp.Show(invalidStartClickDialogue.GetDialogue("tutorial"), null);
     }
 
-    public void ShowDialoguePage()
+    public void ShowDialoguePage(Action endAction)
     {
-        dialoguePopUp.Show(levelDialogueData.GetDialogue("start"), null);
+        dialoguePopUp.Show(levelDialogueData.GetDialogue("start"), endAction);
         dialoguePopUp.MoveUp();
     }
 
@@ -94,13 +95,13 @@ public class LevelManager : MonoBehaviour
 
         if (!PlayerPrefs.HasKey(SceneManager.GetActiveScene().name))
         {
-            ShowDialoguePage();    
+            ShowDialoguePage(hudPage.StartInfoButtonAnimation);
         }
         else
         {
-            
+            hudPage.StartInfoButtonAnimation();
         }
-        
+
 
         AudioManager.Instance.PlayMusic(AudioManager.Instance.Music.inGame);
 
@@ -254,7 +255,7 @@ public class LevelManager : MonoBehaviour
             motor.Run();
             trajectoryController.SimulateTrajectory();
         }
-        
+
         return UniTask.CompletedTask;
     }
 
@@ -323,10 +324,9 @@ public class LevelManager : MonoBehaviour
     }
 
 
-
     private void DropOnReleaseMouse(InputAction.CallbackContext obj)
     {
-        if(dragAndDropController.DropOrCancel())
+        if (dragAndDropController.DropOrCancel())
         {
             inventoryManager.Unlock();
         }

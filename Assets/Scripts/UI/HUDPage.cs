@@ -24,17 +24,13 @@ namespace NoClearGames.UI
             proffesorBtn.onClick.AddListener(OnProfessorBtnClick);
         }
 
-        public override void Show(Action doneAction = null)
+        private void Start()
         {
-            base.Show(doneAction);
-
-            tutorialBtn.transform.DOScale(1.1f, .5f).SetEase(Ease.Linear).SetLoops(10, LoopType.Yoyo).onComplete +=
-                () => { tutorialBtn.transform.localScale = Vector3.one; };
         }
 
         private void OnProfessorBtnClick()
         {
-            levelManager.ShowDialoguePage();
+            levelManager.ShowDialoguePage(null);
         }
 
         public void SetProfessorBtnActive(bool active)
@@ -66,6 +62,12 @@ namespace NoClearGames.UI
         {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
             UIManager.Instance.pausePopUp.Show();
+        }
+
+        public void StartInfoButtonAnimation()
+        {
+            tutorialBtn.transform.DOScale(1.2f, .5f).SetEase(Ease.InOutBack).SetLoops(10, LoopType.Yoyo).onComplete +=
+                () => { tutorialBtn.transform.localScale = Vector3.one; };
         }
     }
 }
