@@ -25,20 +25,11 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: But before we get to the new challenge, let's celebrate your accomplishments
-        in Level 3. Navigating that roller coaster with both positive and negative
-        charged particles was a real feat, and you did it with style!
-      spr: {fileID: 0}
-      btnMessage: 
-      messageLanguageId: level-4-tutorial-message-2-message
-      titleLanguageId: 
-      btnLanguageId: 
-    - title: 
       message: "Now, let's talk about Level 4. This level has a unique twist \u2013
         there are only two obstacles, but there's more than one way to pass them."
       spr: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-4-tutorial-message-3-message
+      messageLanguageId: level-4-tutorial-message-2-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
@@ -46,7 +37,7 @@ MonoBehaviour:
         freedom to choose your path and strategize to earn the highest score possible.
       spr: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-4-tutorial-message-4-message
+      messageLanguageId: level-4-tutorial-message-3-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
@@ -55,7 +46,7 @@ MonoBehaviour:
         a true magnelectric mastermind.
       spr: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-4-tutorial-message-6-message
+      messageLanguageId: level-4-tutorial-message-4-message
       titleLanguageId: 
       btnLanguageId: 
     claimed: 1
