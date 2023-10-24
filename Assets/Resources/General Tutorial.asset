@@ -30,9 +30,9 @@ MonoBehaviour:
         not reached a slot yet. It will return to the inventory
       spr: {fileID: 21300000, guid: a76e6145efbc1b5429aa5d94fe9f66e1, type: 3}
       btnMessage: Got it
-      messageLanguageId: general-tutorial-message-pickup-magnet-message
-      titleLanguageId: general-tutorial-message-pickup-magnet-title
-      btnLanguageId: general-tutorial-message-pickup-magnet-btn
+      messageLanguageId: general-tutorial-message-place-magnett-message
+      titleLanguageId: general-tutorial-message-place-magnet-title
+      btnLanguageId: general-tutorial-message-place-magnet-btn
     - title: Passengers Safety
       message: For your passengers safety, you can only start the train when the
         journey you've created for it ends near the destination station. If your
