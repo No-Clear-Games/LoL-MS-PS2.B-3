@@ -1,3 +1,5 @@
+using System;
+using DG.Tweening;
 using NoClearGames.Manager;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,8 +15,6 @@ namespace NoClearGames.UI
 
         [SerializeField] private LevelManager levelManager;
 
-
-
         public override void Awake()
         {
             base.Awake();
@@ -22,6 +22,14 @@ namespace NoClearGames.UI
             tutorialBtn.onClick.AddListener(ShowTutorial);
             startTrainBtn.onClick.AddListener(StartTrain);
             proffesorBtn.onClick.AddListener(OnProfessorBtnClick);
+        }
+
+        public override void Show(Action doneAction = null)
+        {
+            base.Show(doneAction);
+
+            tutorialBtn.transform.DOScale(1.1f, .5f).SetEase(Ease.Linear).SetLoops(10, LoopType.Yoyo).onComplete +=
+                () => { tutorialBtn.transform.localScale = Vector3.one; };
         }
 
         private void OnProfessorBtnClick()
@@ -36,7 +44,7 @@ namespace NoClearGames.UI
 
         private void StartTrain()
         {
-            if(levelManager.PathIsValid)
+            if (levelManager.PathIsValid)
             {
                 startTrainBtn.interactable = false;
                 levelManager.StartTrain();

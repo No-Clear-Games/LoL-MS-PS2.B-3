@@ -8,6 +8,8 @@ namespace NoClearGames
 {
     public class Initializer : Singleton<Initializer>
     {
+        private Action<int> progressData;
+
         private void Awake()
         {
             DontDestroyOnLoad(this);
@@ -16,6 +18,10 @@ namespace NoClearGames
         private void Start()
         {
             Application.runInBackground = false;
+        }
+
+        private void LoadProgress()
+        {
         }
 
         public void GoToNextLevel()
@@ -49,6 +55,13 @@ namespace NoClearGames
 
             PlayerPrefs.SetInt("playerState", playerState.lastSceneName);
 
+            var levelManager = FindObjectOfType<LevelManager>();
+
+            var score = PlayerPrefs.GetInt("Score", 0);
+            var newScore = score + (int) levelManager.Score;
+            PlayerPrefs.SetInt("Score", newScore);
+
+            LOLSDK.Instance.SubmitProgress(newScore, SceneManager.GetActiveScene().buildIndex - 2, SceneManager.sceneCount - 2);
             LOLSDK.Instance.SaveState(playerState);
         }
     }
