@@ -42,6 +42,7 @@ namespace NoClearGames
             backBtn.onClick.AddListener(() =>
             {
                 dialogueMessage.onEndAction?.Invoke();
+                AudioManager.Instance.UnPauseSounds();
                 AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
                 AudioManager.Instance.PlayMusic(AudioManager.Instance.Music.inGame);
             });
