@@ -35,6 +35,7 @@ namespace NoClearGames
             this._dialogueMessage = dialogueMessage;
 
             AudioManager.Instance.StopMusic();
+            AudioManager.Instance.PauseSounds();
 
             backBtn.gameObject.SetActive(PlayerPrefs.HasKey(SceneManager.GetActiveScene().name));
             backBtn.onClick.RemoveAllListeners();
@@ -114,6 +115,7 @@ namespace NoClearGames
                 if (_messageId > _dialogueMessage.messages.Length - 1)
                 {
                     _dialogueMessage.onEndAction?.Invoke();
+                    AudioManager.Instance.UnPauseSounds();
                     AudioManager.Instance.PlayMusic(AudioManager.Instance.Music.inGame);
 
                     PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "Displayed");
