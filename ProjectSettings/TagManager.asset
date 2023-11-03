@@ -13,6 +13,7 @@ TagManager:
   - Obstacle
   - Train
   - LevelManager
+  - Slot
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Highlighted
   - Obstacles
   - HappyChars
-  - 
+  - SlotHL
   - 
   - 
   - 

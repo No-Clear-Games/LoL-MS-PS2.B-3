@@ -50,6 +50,7 @@ public class LevelManager : MonoBehaviour
     private float _lastScore;
     private bool _lost;
     private bool _pathIsValid;
+    private MagnetSlot[] _magnetSlots;
 
     public bool PathIsValid => _pathIsValid;
 
@@ -85,6 +86,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _magnetSlots = FindObjectsByType<MagnetSlot>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         _lost = false;
         SetupObstacles();
         SetupInputs();
@@ -326,6 +328,11 @@ public class LevelManager : MonoBehaviour
         _gameInput.Gameplay.Click.performed -= DragOnClick;
 
         _gameInput.Gameplay.HoldMouseLeftClick.canceled += DropOnReleaseMouse;
+
+        foreach (MagnetSlot slot in _magnetSlots)
+        {
+            slot.BlinkSilhouetteStart(obj);
+        }
     }
 
 
@@ -333,6 +340,10 @@ public class LevelManager : MonoBehaviour
     {
         if (dragAndDropController.DropOrCancel())
         {
+            foreach (MagnetSlot slot in _magnetSlots)
+            {
+                slot.BlinkSilhouetteStop();
+            }
             inventoryManager.Unlock();
         }
     }
@@ -400,14 +411,16 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void DragAndDropControllerOnReleaseSlotAction(GameObject obj)
+    private void DragAndDropControllerOnReleaseSlotAction(MagnetSlot slot, GameObject obj)
     {
         trajectoryController.RemoveObjectFromSimulation(obj.transform);
+        slot.BlinkSilhouetteStart(obj);
     }
 
-    private void DragAndDropControllerOnOccupySlotAction(GameObject obj)
+    private void DragAndDropControllerOnOccupySlotAction(MagnetSlot slot, GameObject obj)
     {
         trajectoryController.AddObjectToSimulationScene(obj.transform);
+        slot.BlinkSilhouetteStop();
     }
 
     private void InventoryManagerOnGetItemAction(GameObject prefab)

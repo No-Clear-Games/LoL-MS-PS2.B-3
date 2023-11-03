@@ -33,8 +33,8 @@ public class DragAndDropController
 
     public State DraggingState => _state;
 
-    public event Action<GameObject> OccupySlotAction;
-    public event Action<GameObject> ReleaseSlotAction;
+    public event Action<MagnetSlot, GameObject> OccupySlotAction;
+    public event Action<MagnetSlot, GameObject> ReleaseSlotAction;
     public event Action<GameObject> StartDraggingAction;
     public event Action<GameObject> DropAction;
     public event Action<GameObject> CancelAction; 
@@ -82,7 +82,7 @@ public class DragAndDropController
                     if (!mSlot.Occupied)
                     {
                         mSlot.Occupy(draggedObject);
-                        OccupySlotAction?.Invoke(draggedObject);
+                        OccupySlotAction?.Invoke(mSlot, draggedObject);
                         _gotCurrentSlot = true;
                     }
                 }
@@ -146,7 +146,7 @@ public class DragAndDropController
     private void ReleaseSlot(MagnetSlot magnetSlot)
     {
         GameObject obj = magnetSlot.Release();
-        ReleaseSlotAction?.Invoke(obj);
+        ReleaseSlotAction?.Invoke(magnetSlot, obj);
     }
 
     private bool CheckForSlots(Ray ray, out GameObject slot)
