@@ -13,11 +13,5 @@ MonoBehaviour:
   m_Name: InventoryConfig Level 3
   m_EditorClassIdentifier: 
   inventorySupplies:
-  - item: {fileID: 6856708287060132310, guid: 82fd42f53237e064f856702262000332, type: 3}
-    count: 1
-  - item: {fileID: 6856708287060132310, guid: 8321e9e0cd596a646804bbac7fa02cfa, type: 3}
-    count: 1
-  - item: {fileID: 6856708287060132310, guid: d6359525df7214a44b537be140b58211, type: 3}
-    count: 1
-  - item: {fileID: 6856708287060132310, guid: adb638bbab5bb0e40a9245648bf4bfe3, type: 3}
-    count: 1
+  - item: {fileID: 6856708287060132310, guid: 65fd127dd9ba6b445966b1a98e346bc7, type: 3}
+    count: 2

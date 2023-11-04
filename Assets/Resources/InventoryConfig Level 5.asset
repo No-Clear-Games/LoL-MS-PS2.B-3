@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2220b7f864e18d84caa39122e5f683c7, type: 3}
-  m_Name: InventoryConfig Level 2
+  m_Name: InventoryConfig Level 5
   m_EditorClassIdentifier: 
   inventorySupplies:
   - item: {fileID: 6856708287060132310, guid: d6359525df7214a44b537be140b58211, type: 3}
-    count: 2
+    count: 3

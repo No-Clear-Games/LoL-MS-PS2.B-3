@@ -259,6 +259,7 @@ public class LevelManager : MonoBehaviour
         {
             trajectoryController.ResetProjectilePosition();
             TrainMotor motor = trajectoryController.Projectile.GetComponent<TrainMotor>();
+            motor.UpdateMode(train.Motor.Modes);
             motor.Run();
             trajectoryController.SimulateTrajectory();
         }

@@ -75,6 +75,7 @@ public class MagnetController : MonoBehaviour, ICollectible, IMagnet
 
     private int CalculateForceType(PoleSign first, PoleSign second)
     {
+        // Debug.Log($"{first} - {second}");
         return first == second ? -1 : 1;
     }
 

@@ -27,25 +27,34 @@ public class TrainMotor : MonoBehaviour, IMagnet
     private PoleSign _poleSign;
     private TrainModes _modes;
 
+    public TrainModes Modes => _modes;
+
 
     public void UpdateMode(TrainModes modes)
     {
+        _modes = modes;
         switch (modes)
         {
             case TrainModes.Neutral:
+            {
                 gameObject.tag = "Neutral";
                 gameObject.GetComponent<Renderer>().material = neutralMaterial;
                 break;
+            }
             case TrainModes.N:
+            {
                 gameObject.tag = "Magnet";
                 _poleSign = PoleSign.N;
                 gameObject.GetComponent<Renderer>().material = nMaterial;
                 break;
+            }
             case TrainModes.S:
+            {
                 gameObject.tag = "Magnet";
                 _poleSign = PoleSign.S;
                 gameObject.GetComponent<Renderer>().material = sMaterial;
                 break;
+            }
         }
     }
 
@@ -61,6 +70,8 @@ public class TrainMotor : MonoBehaviour, IMagnet
 
     public void Run()
     {
+        Debug.Log($"{_poleSign}");
+
         if (_rigidbody == null)
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -75,6 +86,8 @@ public class TrainMotor : MonoBehaviour, IMagnet
 
     public PoleSign GetSign()
     {
+        
+        Debug.Log($"{_poleSign}");
         return _poleSign;
     }
 

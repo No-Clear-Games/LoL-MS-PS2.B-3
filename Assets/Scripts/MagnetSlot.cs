@@ -91,6 +91,11 @@ public class MagnetSlot : MonoBehaviour
 
     public void BlinkSilhouetteStart(GameObject obj)
     {
+        if (_occupied)
+        {
+            return;
+        }
+        
         GameObject s = GetSilhouette(obj);
         _silhouette = Instantiate(s, transform, false);
         _silhouette.SetActive(true);
