@@ -20,6 +20,7 @@ MonoBehaviour:
         Mayhem," where we're going to have a blast while learning about the magical
         world of magnets.
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-1-message
       titleLanguageId: 
@@ -30,6 +31,7 @@ MonoBehaviour:
         ball at the front, and your mission is to navigate it safely through a variety
         of obstacles by using magnets. '
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-2-message
       titleLanguageId: 
@@ -39,6 +41,7 @@ MonoBehaviour:
         station to the ending station, but there's a twist \u2013 there's no fixed
         track! You can steer it in different directions using magnets."
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-3-message
       titleLanguageId: 
@@ -48,6 +51,7 @@ MonoBehaviour:
         a high speed to keep its passengers joyful. Your score depends on the final
         speed and the happiness of your roller coaster riders.
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-4-message
       titleLanguageId: 
@@ -64,14 +68,35 @@ MonoBehaviour:
         3. In your inventory, there are 2 Strong
         bar magnets'
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-5-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: In fron of the roller coaster, there is an iron ball attaced. note
+        that magnets attract iron.
+      spr: {fileID: 0}
+      imageObject: {fileID: 2415619406907655616, guid: 3930402d54e4e0e4e83f4ef30f024fa5, type: 3}
+      btnMessage: 
+      messageLanguageId: level-1-tutorial-message-5-1-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: so if you place a magnet near the roller coaser's path, it will attract
+        the iron ball attached to the train, and the train will steer to the direction
+        that the magnet is in.
+      spr: {fileID: 0}
+      imageObject: {fileID: 2415619406907655616, guid: 3930402d54e4e0e4e83f4ef30f024fa5, type: 3}
+      btnMessage: 
+      messageLanguageId: level-1-tutorial-message-5-2-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
       message: Your mission, should you choose to accept it, is to use these magnets
         wisely to steer the roller coaster safely around the red obstacle.
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-6-message
       titleLanguageId: 
@@ -81,6 +106,7 @@ MonoBehaviour:
         can access it anytime by clicking on the "Info" button. The one  that has
         an "i" on it.
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-7-message
       titleLanguageId: 
@@ -91,6 +117,7 @@ MonoBehaviour:
         fun, experiment, and get ready to become a magnetic genius! Good luck, young
         scientist!
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-1-tutorial-message-8-message
       titleLanguageId: 

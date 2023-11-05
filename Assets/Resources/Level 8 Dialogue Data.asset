@@ -10,42 +10,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8788f28f4e4e4db4895250149f552d16, type: 3}
-  m_Name: Level 4 Dialogue Data
+  m_Name: Level 8 Dialogue Data
   m_EditorClassIdentifier: 
   dialogueSequence:
   - id: start
     messages:
     - title: 
-      message: Congrats, You've completed another challege in Magnetic Mayhem.
+      message: Welcome back, magnelectric genius! Professor Magno here, and you've
+        been absolutely crushing it in the previous levels of "Magnetic Mayhem."
+        Now, let's dive into Level 4, where things are about to get even more interesting!
       spr: {fileID: 0}
-      imageObject: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-3-tutorial-message-1-message
+      messageLanguageId: level-4-tutorial-message-1-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: This time, a particle with positive electric charge is on  the  coaster.
-        and you have same particles with negative charge in your inventory.
+      message: "Now, let's talk about Level 4. This level has a unique twist \u2013
+        there are only two obstacles, but there's more than one way to pass them."
       spr: {fileID: 0}
-      imageObject: {fileID: 2415619406907655616, guid: 9be2bb17040c38e498ee0f9db3b7f61c, type: 3}
       btnMessage: 
       messageLanguageId: level-4-tutorial-message-2-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: Two particles with negative charge, like two with positive charge,
-        will repulse each other. So, If you put one near the coaster's path, It will
-        steer away from the particle.
+      message: Your creativity and magnet mastery will shine here. You'll have the
+        freedom to choose your path and strategize to earn the highest score possible.
       spr: {fileID: 0}
-      imageObject: {fileID: 2415619406907655616, guid: 9be2bb17040c38e498ee0f9db3b7f61c, type: 3}
       btnMessage: 
       messageLanguageId: level-4-tutorial-message-3-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: In general, two particles with the same sign will repulse eache other.
+      message: Get ready to unleash your magnetic creativity and have a blast exploring
+        different strategies in this electrifying level. You're on your way to becoming
+        a true magnelectric mastermind.
       spr: {fileID: 0}
-      imageObject: {fileID: 2415619406907655616, guid: 9be2bb17040c38e498ee0f9db3b7f61c, type: 3}
       btnMessage: 
       messageLanguageId: level-4-tutorial-message-4-message
       titleLanguageId: 

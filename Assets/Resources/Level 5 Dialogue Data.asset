@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8788f28f4e4e4db4895250149f552d16, type: 3}
+  m_Name: Level 5 Dialogue Data
+  m_EditorClassIdentifier: 
+  dialogueSequence:
+  - id: start
+    messages:
+    - title: 
+      message: Well done, Let's see anoter combination in the particles
+      spr: {fileID: 0}
+      imageObject: {fileID: 0}
+      btnMessage: 
+      messageLanguageId: level-5-tutorial-message-1-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: In this level, again, there is a particle with negative electric charge
+        attached to the roller coaster. but you have particles with positive charge
+        in your inventory.
+      spr: {fileID: 0}
+      imageObject: {fileID: 2415619406907655616, guid: 9f54aa241c139f64c98c2f8e06b75532, type: 3}
+      btnMessage: 
+      messageLanguageId: level-5-tutorial-message-2-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: A particle with positive  charge will attract a particle with positive
+        charge. So, If you put a positive charge near the coaster's path, the coaster
+        will steer to the way the particle is in.
+      spr: {fileID: 0}
+      imageObject: {fileID: 2415619406907655616, guid: 9f54aa241c139f64c98c2f8e06b75532, type: 3}
+      btnMessage: 
+      messageLanguageId: level-5-tutorial-message-3-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: In general, two particles with different sign in their charge will
+        attract each other
+      spr: {fileID: 0}
+      imageObject: {fileID: 2415619406907655616, guid: 9f54aa241c139f64c98c2f8e06b75532, type: 3}
+      btnMessage: 
+      messageLanguageId: level-5-tutorial-message-4-message
+      titleLanguageId: 
+      btnLanguageId: 
+    claimed: 1

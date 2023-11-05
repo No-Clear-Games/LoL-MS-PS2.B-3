@@ -16,31 +16,39 @@ MonoBehaviour:
   - id: start
     messages:
     - title: 
-      message: Welcome back, magnetic maestro! You've already shown incredible skills
-        in Levels 1 and 2. Now, get ready for Level 3 in "Magnetic Mayhem." You're
-        in for an electrifying challenge!
+      message: Congrats, You've completed another challege in Magnetic Mayhem.
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-3-tutorial-message-1-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: Level 3 introduces a mind-bending twist to the game! You'll face three
-        obstacles blocking the roller coaster's path. However, this time, the iron
-        ball in front of the roller coaster has been replaced with a particle charged
-        with positive electrical charge.
+      message: In this level, again, there is a particle with positive electric charge
+        attached to the roller coaster. but you have particles with negative charge
+        in your inventory.
       spr: {fileID: 0}
+      imageObject: {fileID: 2415619406907655616, guid: aec7950ad3f98ba4b8c0361e8a4546e2, type: 3}
       btnMessage: 
       messageLanguageId: level-3-tutorial-message-2-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: That means any particles that been charged with positive electrical
-        charge will push the roller coaster, and any negative particles that been
-        charged with positive electrical charge will push it..  Let's dive in!
+      message: A particle with negative  charge will attract a particle with positive
+        charge. So, If you put a negative charge near the coaster's path, the coaster
+        will steer to the way the particle is in.
       spr: {fileID: 0}
+      imageObject: {fileID: 2415619406907655616, guid: aec7950ad3f98ba4b8c0361e8a4546e2, type: 3}
       btnMessage: 
       messageLanguageId: level-3-tutorial-message-3-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: Go and do a great job master.
+      spr: {fileID: 0}
+      imageObject: {fileID: 2415619406907655616, guid: aec7950ad3f98ba4b8c0361e8a4546e2, type: 3}
+      btnMessage: 
+      messageLanguageId: level-3-tutorial-message-4-message
       titleLanguageId: 
       btnLanguageId: 
     claimed: 1

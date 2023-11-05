@@ -26,6 +26,7 @@ namespace NoClearGames
 
         [SerializeField] private float delayBetweenTyping = 0.02f;
         [SerializeField] private float delayBetweenTypingAndShowingNextBtn = 2f;
+        [SerializeField] private Transform imageObjectParent;
 
         private Coroutine _coroutine;
 
@@ -85,6 +86,18 @@ namespace NoClearGames
                 img.sprite = _dialogueMessage.messages[_messageId].spr;
 
                 img.gameObject.SetActive(img.sprite != null);
+            }
+
+            GameObject imageObj = _dialogueMessage.messages[_messageId].imageObject;
+
+            if (imageObj)
+            {
+                Instantiate(imageObj, imageObjectParent, false);
+                imageObjectParent.gameObject.SetActive(true);
+            }
+            else
+            {
+                imageObjectParent.gameObject.SetActive(false);
             }
 
             nextBtn.transform.localScale = Vector3.zero;

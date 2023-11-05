@@ -20,18 +20,36 @@ MonoBehaviour:
         conquered Level 1 with flying colors, and now, it's time to dive into Level
         2 of "Magnetic Mayhem." Get ready for an even more electrifying challenge!
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-2-tutorial-message-1-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: In this level, we're cranking up the excitement! You'll face three
-        obstacles blocking the roller coaster's path, and your inventory is stocked
-        with magnets of different poles and powers. It's time to demonstrate your
-        magnetic prowess and navigate your roller coaster to victory!
+      message: In this level, there is a particle with positive electric charge attached
+        to the roller coaster. and you have same particles with positive charge in
+        your inventory.
       spr: {fileID: 0}
+      imageObject: {fileID: 2415619406907655616, guid: fbd0c157c88cd36428b300f2e7ec2e3a, type: 3}
       btnMessage: 
       messageLanguageId: level-2-tutorial-message-2-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: Two particles with positive charge will repulse each other. So, If
+        you put one near the coaster's path, It will steer away from the particle.
+      spr: {fileID: 0}
+      imageObject: {fileID: 2415619406907655616, guid: fbd0c157c88cd36428b300f2e7ec2e3a, type: 3}
+      btnMessage: 
+      messageLanguageId: level-2-tutorial-message-3-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: Use this info to complete this level with success. good luck
+      spr: {fileID: 0}
+      imageObject: {fileID: 2415619406907655616, guid: fbd0c157c88cd36428b300f2e7ec2e3a, type: 3}
+      btnMessage: 
+      messageLanguageId: level-2-tutorial-message-4-message
       titleLanguageId: 
       btnLanguageId: 
     claimed: 1

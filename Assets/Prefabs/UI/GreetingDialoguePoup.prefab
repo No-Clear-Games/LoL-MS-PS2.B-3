@@ -254,6 +254,41 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &2558568281794059768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8963122806887940345}
+  m_Layer: 5
+  m_Name: DescriptionImg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8963122806887940345
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2558568281794059768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6279047845800152307}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 33.089, y: 593}
+  m_SizeDelta: {x: 720.778, y: 720.778}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2754448983965181224
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,12 +446,13 @@ RectTransform:
   - {fileID: 2227936865541761629}
   - {fileID: 3475871927121068367}
   - {fileID: 4971905564264590310}
+  - {fileID: 8963122806887940345}
   m_Father: {fileID: 5284885094111748406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1286.5703, y: 530.1317}
+  m_AnchoredPosition: {x: 0, y: -67}
+  m_SizeDelta: {x: 1286.5703, y: 461}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2005779809622791801
 CanvasRenderer:
@@ -838,7 +874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -287}
   m_SizeDelta: {x: 2048.4463, y: 1152.251}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &257989547403280205
@@ -941,9 +977,9 @@ MonoBehaviour:
   messageText: {fileID: 1166197650457175311}
   btnText: {fileID: 0}
   nextBtn: {fileID: 5508722838383127494}
-  closeBtn: {fileID: 7403546248762167417}
   delayBetweenTyping: 0.01
   delayBetweenTypingAndShowingNextBtn: 1
+  imageObjectParent: {fileID: 8963122806887940345}
 --- !u!1 &8802034205957278107
 GameObject:
   m_ObjectHideFlags: 0

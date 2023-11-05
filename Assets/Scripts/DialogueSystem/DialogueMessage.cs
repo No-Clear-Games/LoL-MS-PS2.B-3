@@ -18,6 +18,7 @@ namespace NoClearGames.DialogueSystem
         public string title;
         [TextArea] public string message;
         public Sprite spr;
+        public GameObject imageObject;
         public string btnMessage;
         public string messageLanguageId;
         public string titleLanguageId;
