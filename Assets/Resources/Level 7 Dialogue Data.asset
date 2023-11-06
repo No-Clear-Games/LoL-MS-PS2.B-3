@@ -16,31 +16,58 @@ MonoBehaviour:
   - id: start
     messages:
     - title: 
-      message: Welcome back, magnetic maestro! You've already shown incredible skills
-        in Levels 1 and 2. Now, get ready for Level 3 in "Magnetic Mayhem." You're
-        in for an electrifying challenge!
+      message: Welcome back,  You've already shown incredible skills in the previous
+        levels. Now, get ready an electrifying challenge!
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-3-tutorial-message-1-message
+      messageLanguageId: level-7-tutorial-message-1-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: Level 3 introduces a mind-bending twist to the game! You'll face three
-        obstacles blocking the roller coaster's path. However, this time, the iron
-        ball in front of the roller coaster has been replaced with a particle charged
-        with positive electrical charge.
+      message: This time, your inventory has been stocked with particles with different
+        signs and power in their charges, and there is a particle with positive charge
+        attached to the coaster.
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-3-tutorial-message-2-message
+      messageLanguageId: level-7-tutorial-message-2-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: That means any particles that been charged with positive electrical
-        charge will push the roller coaster, and any negative particles that been
-        charged with positive electrical charge will push it..  Let's dive in!
+      message: You already know that how does positive and negative charges impact
+        on a positive charge, right?
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-3-tutorial-message-3-message
+      messageLanguageId: level-7-tutorial-message-3-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: Now I must tell you that what difference the power of the charges
+        will make on that impact.
+      spr: {fileID: 0}
+      imageObject: {fileID: 0}
+      btnMessage: 
+      messageLanguageId: level-7-tutorial-message-4-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: It's just like the magnets. a more powerful charge will have a strongetrimpact
+        on the train.
+      spr: {fileID: 0}
+      imageObject: {fileID: 0}
+      btnMessage: 
+      messageLanguageId: level-7-tutorial-message-5-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: for example. a stronger negative particle will attract the train faster
+        and a stronger positive particle will repulse it faster.
+      spr: {fileID: 0}
+      imageObject: {fileID: 0}
+      btnMessage: 
+      messageLanguageId: level-7-tutorial-message-6-message
       titleLanguageId: 
       btnLanguageId: 
     claimed: 1

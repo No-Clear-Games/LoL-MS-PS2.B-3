@@ -16,7 +16,7 @@ MonoBehaviour:
   - id: start
     messages:
     - title: 
-      message: Well done, Let's see anoter combination in the particles
+      message: Well done, Let's see another combination in the particles
       spr: {fileID: 0}
       imageObject: {fileID: 0}
       btnMessage: 

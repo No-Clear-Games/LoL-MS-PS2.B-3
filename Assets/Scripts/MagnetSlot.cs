@@ -12,6 +12,7 @@ public class MagnetSlot : MonoBehaviour
     private bool _highigted;
     private int _objDefaultLayer;
     private GameObject _silhouette;
+    private Tween _silhouetteTween;
 
     private static Dictionary<string, GameObject> _silhouetteCache = new Dictionary<string, GameObject>();
 
@@ -100,11 +101,12 @@ public class MagnetSlot : MonoBehaviour
         _silhouette = Instantiate(s, transform, false);
         _silhouette.SetActive(true);
         _silhouette.transform.localScale = Vector3.one / transform.lossyScale.x;
-        _silhouette.transform.DOScale(Vector3.one * 1.5f, 1f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
+        _silhouetteTween = _silhouette.transform.DOScale(Vector3.one * 1.5f, 1f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
     }
 
     public void BlinkSilhouetteStop()
     {
+        _silhouetteTween.Complete();
         Destroy(_silhouette);
         _silhouette = null;
     }

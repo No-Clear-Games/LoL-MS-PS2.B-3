@@ -16,15 +16,15 @@ MonoBehaviour:
   - id: start
     messages:
     - title: 
-      message: Congrats, You've completed another challege in Magnetic Mayhem.
+      message: Congrats, You're doing great.
       spr: {fileID: 0}
       imageObject: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-3-tutorial-message-1-message
+      messageLanguageId: level-4-tutorial-message-1-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: This time, a particle with positive electric charge is on  the  coaster.
+      message: This time, a particle with negative electric charge is on  the  coaster.
         and you have same particles with negative charge in your inventory.
       spr: {fileID: 0}
       imageObject: {fileID: 2415619406907655616, guid: 9be2bb17040c38e498ee0f9db3b7f61c, type: 3}
@@ -43,7 +43,7 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: In general, two particles with the same sign will repulse eache other.
+      message: In general, two particles with the same sign will repulse each other.
       spr: {fileID: 0}
       imageObject: {fileID: 2415619406907655616, guid: 9be2bb17040c38e498ee0f9db3b7f61c, type: 3}
       btnMessage: 

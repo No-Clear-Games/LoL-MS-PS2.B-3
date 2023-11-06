@@ -18,24 +18,27 @@ MonoBehaviour:
     - title: 
       message: Welcome back, magnelectric genius! Professor Magno here, and you've
         been absolutely crushing it in the previous levels of "Magnetic Mayhem."
-        Now, let's dive into Level 4, where things are about to get even more interesting!
+        Now, let's dive into Level 8, where things are about to get even more interesting!
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-4-tutorial-message-1-message
+      messageLanguageId: level-8-tutorial-message-1-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: "Now, let's talk about Level 4. This level has a unique twist \u2013
-        there are only two obstacles, but there's more than one way to pass them."
+      message: "Now, This level has a unique twist \u2013 there are only two obstacles,
+        but there's more than one way to pass them."
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-4-tutorial-message-2-message
+      messageLanguageId: level-8-tutorial-message-2-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
       message: Your creativity and magnet mastery will shine here. You'll have the
         freedom to choose your path and strategize to earn the highest score possible.
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-4-tutorial-message-3-message
       titleLanguageId: 
@@ -45,8 +48,9 @@ MonoBehaviour:
         different strategies in this electrifying level. You're on your way to becoming
         a true magnelectric mastermind.
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-4-tutorial-message-4-message
+      messageLanguageId: level-8-tutorial-message-4-message
       titleLanguageId: 
       btnLanguageId: 
     claimed: 1

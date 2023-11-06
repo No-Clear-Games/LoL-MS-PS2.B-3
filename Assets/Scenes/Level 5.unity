@@ -4297,7 +4297,7 @@ PrefabInstance:
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: levelDialogueData
       value: 
-      objectReference: {fileID: 11400000, guid: b3b9b446c7ab34447a1ae54ac88b3b8f, type: 2}
+      objectReference: {fileID: 11400000, guid: d8d5bd82d3ce47e4f9737e6a697dca30, type: 2}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: trajectoryController
       value: 

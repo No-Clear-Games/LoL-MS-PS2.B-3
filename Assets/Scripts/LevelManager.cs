@@ -229,6 +229,7 @@ public class LevelManager : MonoBehaviour
     private void TrajectoryControllerOnProjectileChanged(GameObject obj)
     {
         TrajectoryControllerSimulateProjectileMove();
+        trajectoryController.Projectile.GetComponent<TrainMotor>().UpdateMode(train.Motor.Modes);
     }
 
     private void TrajectoryControllerOnObjectRemovedFromSimulation(GameObject obj)
@@ -253,18 +254,18 @@ public class LevelManager : MonoBehaviour
         trajectoryController.ShowDefaultMode();
     }
 
-    private UniTask TrajectoryControllerSimulateProjectileMove()
+    private async UniTaskVoid TrajectoryControllerSimulateProjectileMove()
     {
         if (trajectoryController.HasProjectile)
         {
+            await UniTask.WaitForFixedUpdate();
             trajectoryController.ResetProjectilePosition();
             TrainMotor motor = trajectoryController.Projectile.GetComponent<TrainMotor>();
             motor.UpdateMode(train.Motor.Modes);
+            await UniTask.WaitForFixedUpdate();
             motor.Run();
             trajectoryController.SimulateTrajectory();
         }
-
-        return UniTask.CompletedTask;
     }
 
     private void SetupCameras()

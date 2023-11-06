@@ -70,8 +70,6 @@ public class TrainMotor : MonoBehaviour, IMagnet
 
     public void Run()
     {
-        Debug.Log($"{_poleSign}");
-
         if (_rigidbody == null)
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -86,8 +84,6 @@ public class TrainMotor : MonoBehaviour, IMagnet
 
     public PoleSign GetSign()
     {
-        
-        Debug.Log($"{_poleSign}");
         return _poleSign;
     }
 

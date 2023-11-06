@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 5707169021261724826}
   - component: {fileID: 5064389595610492180}
   m_Layer: 5
-  m_Name: Mganet
+  m_Name: Maganet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,7 +733,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Train with Iron in front of it will be attracted to close magnets
+  m_text: It will be attracted to close magnets
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

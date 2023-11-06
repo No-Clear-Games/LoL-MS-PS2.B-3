@@ -16,7 +16,7 @@ MonoBehaviour:
   - id: start
     messages:
     - title: 
-      message: Congrats, You've completed another challege in Magnetic Mayhem.
+      message: Congrats, You've completed another challenge in Magnetic Mayhem.
       spr: {fileID: 0}
       imageObject: {fileID: 0}
       btnMessage: 
@@ -44,7 +44,7 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: Go and do a great job master.
+      message: Go and do a great job, Master.
       spr: {fileID: 0}
       imageObject: {fileID: 2415619406907655616, guid: aec7950ad3f98ba4b8c0361e8a4546e2, type: 3}
       btnMessage: 

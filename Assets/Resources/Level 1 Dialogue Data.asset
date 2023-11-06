@@ -16,9 +16,8 @@ MonoBehaviour:
   - id: start
     messages:
     - title: 
-      message: Hey there, future magnet master! I'm Professor Magno. Welcome to "Magnetic
-        Mayhem," where we're going to have a blast while learning about the magical
-        world of magnets.
+      message: Hey there, future magnet master! Welcome to "Magnetic Mayhem," where
+        we're going to have a blast while learning about the magical world of magnets.
       spr: {fileID: 0}
       imageObject: {fileID: 0}
       btnMessage: 
@@ -57,16 +56,10 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: 'Let''s jump right in. In this level, you''ll find:
-
-        1. One
-        red obstacle blocking the roller coaster''s path.
-
-        2. Two slots flashing
-        like bright orange circles.
-
-        3. In your inventory, there are 2 Strong
-        bar magnets'
+      message: "Let's jump right in! In this level, you'll find: \r\n1. One red obstacle
+        blocking the roller coaster's path.\r\n2. Two slots flashing like bright
+        orange circles.\r\n3.  In your inventory, there are 2 Strong bar magnets.
+        drag and drop them as you see fit."
       spr: {fileID: 0}
       imageObject: {fileID: 0}
       btnMessage: 
@@ -74,7 +67,7 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: In fron of the roller coaster, there is an iron ball attaced. note
+      message: In front of the roller coaster, there is an iron ball attached. note
         that magnets attract iron.
       spr: {fileID: 0}
       imageObject: {fileID: 2415619406907655616, guid: 3930402d54e4e0e4e83f4ef30f024fa5, type: 3}
@@ -83,7 +76,7 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: so if you place a magnet near the roller coaser's path, it will attract
+      message: so if you place a magnet near the roller coaster's path, it will attract
         the iron ball attached to the train, and the train will steer to the direction
         that the magnet is in.
       spr: {fileID: 0}

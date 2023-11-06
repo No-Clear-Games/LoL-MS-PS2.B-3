@@ -16,22 +16,32 @@ MonoBehaviour:
   - id: start
     messages:
     - title: 
-      message: I couldn't be prouder of your accomplishments so far. You've just
-        conquered Level 1 with flying colors, and now, it's time to dive into Level
-        2 of "Magnetic Mayhem." Get ready for an even more electrifying challenge!
+      message: ' You''ve just conquered Level 5 with flying colors, and now, it''s
+        time to dive into Level 6 of "Magnetic Mayhem." Get ready for an even more
+        electrifying challenge!'
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-2-tutorial-message-1-message
+      messageLanguageId: level-6-tutorial-message-1-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: In this level, we're cranking up the excitement! You'll face three
-        obstacles blocking the roller coaster's path, and your inventory is stocked
-        with magnets of different poles and powers. It's time to demonstrate your
-        magnetic prowess and navigate your roller coaster to victory!
+      message: In this level, you'll face three obstacles blocking the roller coaster's
+        path, and your inventory is stocked with magnets of different powers.
       spr: {fileID: 0}
+      imageObject: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-2-tutorial-message-2-message
+      messageLanguageId: level-6-tutorial-message-2-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
+      message: Magnets with different powers have different impacts on the coaster.
+        If you put a strong magnet in the area, It will pull the coaster harder.
+        and if you put a weak magnet, it will pull the coaster more slightly
+      spr: {fileID: 0}
+      imageObject: {fileID: 0}
+      btnMessage: 
+      messageLanguageId: level-6-tutorial-message-3-message
       titleLanguageId: 
       btnLanguageId: 
     claimed: 1

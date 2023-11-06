@@ -16,9 +16,9 @@ MonoBehaviour:
   - id: start
     messages:
     - title: 
-      message: I couldn't be prouder of your accomplishments so far. You've just
-        conquered Level 1 with flying colors, and now, it's time to dive into Level
-        2 of "Magnetic Mayhem." Get ready for an even more electrifying challenge!
+      message: You've just conquered Level 1 with flying colors, and now, it's time
+        to dive into Level 2 of "Magnetic Mayhem." Get ready for an even more electrifying
+        challenge!
       spr: {fileID: 0}
       imageObject: {fileID: 0}
       btnMessage: 
@@ -45,7 +45,7 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: Use this info to complete this level with success. good luck
+      message: Use this info to complete this level with success. Good luck.
       spr: {fileID: 0}
       imageObject: {fileID: 2415619406907655616, guid: fbd0c157c88cd36428b300f2e7ec2e3a, type: 3}
       btnMessage: 

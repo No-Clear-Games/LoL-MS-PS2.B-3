@@ -15,6 +15,22 @@
         "arrows-hint": 25,
         "congratulations": 25,
 
+
+        "negative-charge": 20,
+        "positive-charge": 20,
+        "Magnet": 10,
+        "repulses": 10,
+        "attracts": 10,
+        "iron": 10,
+        "train-neg-straight-move": 80,
+        "train-pos-straight-move": 80,
+        "train-iron-straight-move": 80,
+        "train-neg-repulsed-move": 80,
+        "train-neg-attracted-move": 80,
+        "train-pos-repulsed-move": 80,
+        "train-pos-attracted-move": 80,
+        "train-iron-attracted-move": 80,
+
         "end-message": 200,
 
 
@@ -62,23 +78,47 @@
          "level-1-tutorial-message-3-message": 200,
          "level-1-tutorial-message-4-message": 200,
          "level-1-tutorial-message-5-message": 200,
-         "level-1-tutorial-message-6-message": 200,
+        "level-1-tutorial-message-5-1-message": 200,
+        "level-1-tutorial-message-5-2-message": 200,
+        "level-1-tutorial-message-6-message": 200,
          "level-1-tutorial-message-7-message": 200,
          "level-1-tutorial-message-8-message": 200,
 
         "level-2-tutorial-message-1-message": 200,
         "level-2-tutorial-message-2-message": 200,
+        "level-2-tutorial-message-3-message": 200,
+        "level-2-tutorial-message-4-message": 200,
 
         "level-3-tutorial-message-1-message": 200,
         "level-3-tutorial-message-2-message": 200,
         "level-3-tutorial-message-3-message": 200,
+        "level-3-tutorial-message-4-message": 200,
 
         "level-4-tutorial-message-1-message": 200,
         "level-4-tutorial-message-2-message": 200,
         "level-4-tutorial-message-3-message": 200,
         "level-4-tutorial-message-4-message": 200,
-        "level-4-tutorial-message-5-message": 200,
-        "level-4-tutorial-message-6-message": 200
+
+        "level-5-tutorial-message-1-message": 200,
+        "level-5-tutorial-message-2-message": 200,
+        "level-5-tutorial-message-3-message": 200,
+        "level-5-tutorial-message-4-message": 200,
+
+        "level-6-tutorial-message-1-message": 200,
+        "level-6-tutorial-message-2-message": 200,
+        "level-6-tutorial-message-3-message": 200,
+
+        "level-7-tutorial-message-1-message": 200,
+        "level-7-tutorial-message-2-message": 200,
+        "level-7-tutorial-message-3-message": 200,
+
+
+        "level-8-tutorial-message-1-message": 200,
+        "level-8-tutorial-message-2-message": 200,
+        "level-8-tutorial-message-3-message": 200,
+        "level-8-tutorial-message-4-message": 200,
+        "level-8-tutorial-message-5-message": 200,
+        "level-8-tutorial-message-6-message": 200
          
        }
      },
@@ -96,6 +136,24 @@
        "win": "Win",
        "arrows-hint": "Press To Change View",
        "congratulations": "Congratulations",
+       
+       
+       
+       "negative-charge": "Negative Charge",
+       "positive-charge": "Positive Charge",
+       "magnet": "magnet",
+       "repulses": "Repulses",
+       "attracts": "Attracts",
+       "iron": "Iron",
+       "train-neg-straight-move": "Train with negative charge in front of it goes straight",
+       "train-pos-straight-move": "Train with positive charge in front of it goes straight",
+       "train-iron-straight-move": "Train with Iron in front of it goes straight",
+       "train-neg-repulsed-move": "It will be repulsed from close negative charges",
+       "train-neg-attracted-move": "It will be attracted to close positive charges",
+       "train-pos-repulsed-move": "It will be repulsed from close positive charges",
+       "train-pos-attracted-move": "It will be attracted to close negative charges",
+       "train-iron-attracted-move": "It will be attracted to close magnets",
+       
        
        "end-message": "Magnetic Master! You've conquered all the challenges and completed 'Magnetic Mayhem.' Your magnetic genius has guided the roller coaster through electrifying adventures. Thanks for exploring the power of magnets with us. Stay tuned for more magnetic mysteries!",
        
@@ -139,25 +197,50 @@
        "general-tutorial-change-view-message": "You can use keyboard's left and right arrows to see the area from different places",
        "general-tutorial-change-view-btn": "Ok",
 
-       "level-1-tutorial-message-1-message": " Hey there!Welcome to \"Magnetic Mayhem,\" where we're going to have a blast while learning about the magical world of magnets.",
-       "level-1-tutorial-message-2-message": "In this game, you'll dive into the fascinating realms of magnetic and electric fields. You'll control a wooden roller coaster with an iron ball at the front, and your mission is to navigate it safely through a variety of obstacles by using magnets. ",
+       "level-1-tutorial-message-1-message": "Hey there!Welcome to \"Magnetic Mayhem,\" where we're going to have a blast while learning about the magical world of magnets.",
+       "level-1-tutorial-message-2-message": "In this game, you'll dive into the fascinating realms of magnetic and electric fields. You'll control a wooden roller coaster with an iron ball at the front, and your mission is to navigate it safely through a variety of obstacles by using magnets.",
        "level-1-tutorial-message-3-message": "The roller coaster moves along a straight path from the starting station to the ending station, but there's a twist – there's no fixed track! You can steer it in different directions using magnets.",
        "level-1-tutorial-message-4-message": "Your job is to make sure the roller coaster avoids obstacles and maintains a high speed to keep its passengers joyful. Your score depends on the final speed and the happiness of your roller coaster riders.",
        "level-1-tutorial-message-5-message": "Let's jump right in! In this level, you'll find: \n1. One red obstacle blocking the roller coaster's path.\n2. Two slots flashing like bright orange circles.\n3.  In your inventory, there are 2 Strong bar magnets. drag and drop them as you see fit.",
+       "level-1-tutorial-message-5-1-message": "In front of the roller coaster, there is an iron ball attached. note that magnets attract iron.",
+       "level-1-tutorial-message-5-2-message": "So if you place a magnet near the roller coaster's path, it will attract the iron ball attached to the train, and the train will steer to the direction that the magnet is in.",
        "level-1-tutorial-message-6-message": "Your mission, should you choose to accept it, is to use these magnets wisely to steer the roller coaster safely around the red obstacle.",
        "level-1-tutorial-message-7-message": "For your ease. I've put a handbook about how things work here. you can access it anytime by clicking on the \"Info\" button. The one  that has an \"i\" on it.",
        "level-1-tutorial-message-8-message": "Have fun, experiment, and get ready to become a magnetic genius! Good luck, young scientist!",
 
        "level-2-tutorial-message-1-message": "You've just conquered Level 1 with flying colors, and now, it's time to dive into Level 2 of \"Magnetic Mayhem.\" Get ready for an even more electrifying challenge!",
-       "level-2-tutorial-message-2-message": "In this level, You'll face three obstacles blocking the roller coaster's path, and your inventory is stocked with magnets of different powers. It's time to demonstrate your magnetic prowess and navigate your roller coaster to victory!",
+       "level-2-tutorial-message-2-message": "In this level, there is a particle with positive electric charge attached to the roller coaster. and you have same particles with positive charge in your inventory.",
+       "level-2-tutorial-message-3-message": "Two particles with positive charge will repulse each other. So, If you put one near the coaster's path, It will steer away from the particle.",
+       "level-2-tutorial-message-4-message": "Use this info to complete this level with success. Good luck.",
 
-       "level-3-tutorial-message-1-message": "You've already shown incredible skills in Levels 1 and 2. Now, get ready for Level 3 in \"Magnetic Mayhem.\" You're in for an electrifying challenge!",
-       "level-3-tutorial-message-2-message": "In level 3 you'll face three obstacles blocking the roller coaster's path. However, this time, the iron ball in front of the roller coaster has been replaced with a particle charged with positive electrical charge.",
-       "level-3-tutorial-message-3-message": "That means any particles that been charged with positive electrical charge will push the roller coaster, and any negative particles that been charged with positive electrical charge will push it..  Let's dive in!",
+       "level-3-tutorial-message-1-message": "Congrats, You've completed another challenge in Magnetic Mayhem.",
+       "level-3-tutorial-message-2-message": "In this level, again, there is a particle with positive electric charge attached to the roller coaster. but you have particles with negative charge in your inventory.",
+       "level-3-tutorial-message-3-message": "A particle with negative  charge will attract a particle with positive charge. So, If you put a negative charge near the coaster's path, the coaster will steer to the way the particle is in.",
+       "level-3-tutorial-message-4-message": "Go and do a great job, Master.",
 
-       "level-4-tutorial-message-1-message": "Welcome back, you've been absolutely crushing it in the previous levels Now, let's dive into Level 4!",
-       "level-4-tutorial-message-2-message": "Now, let's talk about Level 4. This level has a unique twist – there are only two obstacles, but there's more than one way to pass them.",
-       "level-4-tutorial-message-3-message": "Your creativity and magnet mastery will shine here. You'll have the freedom to choose your path and strategize to earn the highest score possible.",
-       "level-4-tutorial-message-4-message": "Get ready to unleash your magnetic creativity and have a blast exploring different strategies in this level."
+       "level-4-tutorial-message-1-message": "Congrats, You're doing great.",
+       "level-4-tutorial-message-2-message": "This time, a particle with negative electric charge is on  the  coaster. and you have same particles with negative charge in your inventory.",
+       "level-4-tutorial-message-3-message": "Two particles with negative charge, like two with positive charge, will repulse each other. So, If you put one near the coaster's path, It will steer away from the particle.",
+       "level-4-tutorial-message-4-message": "In general, two particles with the same sign will repulse each other.",
+       
+       "level-5-tutorial-message-1-message": "Well done, Let's see another combination in the particles",
+       "level-5-tutorial-message-2-message": "In this level, again, there is a particle with negative electric charge attached to the roller coaster. but you have particles with positive charge in your inventory.",
+       "level-5-tutorial-message-3-message": "A particle with positive  charge will attract a particle with positive charge. So, If you put a positive charge near the coaster's path, the coaster will steer to the way the particle is in.",
+       "level-5-tutorial-message-4-message": "In general, two particles with different sign in their charge will attract each other",
+       
+       "level-6-tutorial-message-1-message": "You've just conquered Level 5 with flying colors, and now, it's time to dive into Level 6 of \"Magnetic Mayhem.\" Get ready for an even more electrifying challenge!",
+       "level-6-tutorial-message-2-message": "In this level, You'll face three obstacles blocking the roller coaster's path, and your inventory is stocked with magnets of different powers!",
+       "level-6-tutorial-message-3-message": "Magnets with different powers have different impacts on the coaster. If you put a strong magnet in the area, It will pull the coaster harder. and if you put a weak magnet, it will pull the coaster more slightly",
+
+       "level-7-tutorial-message-1-message": "You've already shown incredible skills in Levels 1 and 2. Now, get ready for Level 3 in \"Magnetic Mayhem.\" You're in for an electrifying challenge!",
+       "level-7-tutorial-message-2-message": "In level 7 you'll face three obstacles blocking the roller coaster's path. However, this time, the iron ball in front of the roller coaster has been replaced with a particle charged with positive electrical charge.",
+       "level-7-tutorial-message-3-message": "That means any particles that been charged with positive electrical charge will push the roller coaster, and any negative particles that been charged with positive electrical charge will push it..  Let's dive in!",
+
+       "level-8-tutorial-message-1-message": "Welcome back, You've already shown incredible skills in the previous levels. Now, get ready an electrifying challenge!",
+       "level-8-tutorial-message-2-message": "This time, your inventory has been stocked with particles with different signs and power in their charges, and there is a particle with positive charge attached to the coaster.",
+       "level-8-tutorial-message-3-message": "You already know that how does positive and negative charges impact on a positive charge, right?",
+       "level-8-tutorial-message-4-message": "Now I must tell you that what difference the power of the charges will make on that impact.",
+       "level-8-tutorial-message-5-message": "It's just like the magnets. a more powerful charge will have a stronger impact on the train.",
+       "level-8-tutorial-message-6-message": "for example. a stronger negative particle will attract the train faster and a stronger positive particle will repulse it faster."
      }
    }

@@ -53,9 +53,9 @@ public class  TrajectoryController : MonoBehaviour
         
         
 
-        NewObjectAddedToSimulationScene += o => SimulateTrajectory();
-        ObjectInSimulationSceneMoved += o => SimulateTrajectory();
-        ProjectileChanged += o => SimulateTrajectory();
+        // NewObjectAddedToSimulationScene += o => SimulateTrajectory();
+        // ObjectInSimulationSceneMoved += o => SimulateTrajectory();
+        // ProjectileChanged += o => SimulateTrajectory();
     }
 
     public void ShowErrorMode()
@@ -131,10 +131,11 @@ public class  TrajectoryController : MonoBehaviour
     public void ResetProjectilePosition()
     {
         _projectile.transform.position = _originalProjectile.transform.position;
+        
         Rigidbody rb = _projectile.GetComponent<Rigidbody>();
-        _projectile.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
         rb.AddForce(-rb.GetAccumulatedForce());
-        Debug.Log(rb.GetAccumulatedForce());
     }
     
     private void CreatePhysicsScene()
