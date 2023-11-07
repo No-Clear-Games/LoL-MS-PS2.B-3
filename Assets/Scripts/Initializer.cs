@@ -29,15 +29,16 @@ namespace NoClearGames
             var index = SceneManager.GetActiveScene().buildIndex;
             index++;
 
+            Save(new MainMenuPage.PlayerState() {lastSceneName = index});
             if (index >= SceneManager.sceneCountInBuildSettings)
             {
                 UIManager.Instance.resultPop.Hide();
                 UIManager.Instance.endGamePopUp.Show();
+                Debug.Log("CompleteGame");
                 LOLSDK.Instance.CompleteGame();
                 return;
             }
 
-            Save(new MainMenuPage.PlayerState() {lastSceneName = index});
             SceneManager.LoadScene(index, LoadSceneMode.Single);
         }
 
