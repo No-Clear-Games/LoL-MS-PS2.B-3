@@ -40,7 +40,7 @@ MonoBehaviour:
       spr: {fileID: 0}
       imageObject: {fileID: 0}
       btnMessage: 
-      messageLanguageId: level-4-tutorial-message-3-message
+      messageLanguageId: level-8-tutorial-message-3-message
       titleLanguageId: 
       btnLanguageId: 
     - title: 
