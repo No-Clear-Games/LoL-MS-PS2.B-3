@@ -229,18 +229,19 @@
        "level-5-tutorial-message-4-message": "In general, two particles with different sign in their charge will attract each other",
        
        "level-6-tutorial-message-1-message": "You've just conquered Level 5 with flying colors, and now, it's time to dive into Level 6 of \"Magnetic Mayhem.\" Get ready for an even more electrifying challenge!",
-       "level-6-tutorial-message-2-message": "In this level, You'll face three obstacles blocking the roller coaster's path, and your inventory is stocked with magnets of different powers!",
+       "level-6-tutorial-message-2-message": "In this level, You'll face 2 obstacles blocking the roller coaster's path, and your inventory is stocked with magnets of different powers!",
        "level-6-tutorial-message-3-message": "Magnets with different powers have different impacts on the coaster. If you put a strong magnet in the area, It will pull the coaster harder. and if you put a weak magnet, it will pull the coaster more slightly",
+       
+       "level-7-tutorial-message-1-message": "Welcome back, You've already shown incredible skills in the previous levels. Now, get ready an electrifying challenge!",
+       "level-7-tutorial-message-2-message": "This time, your inventory has been stocked with particles with different signs and power in their charges, and there is a particle with positive charge attached to the coaster.",
+       "level-7-tutorial-message-3-message": "You already know that how does positive and negative charges impact on a positive charge, right?",
+       "level-7-tutorial-message-4-message": "Now I must tell you that what difference the power of the charges will make on that impact.",
+       "level-7-tutorial-message-5-message": "It's just like the magnets. a more powerful charge will have a stronger impact on the train.",
+       "level-7-tutorial-message-6-message": "for example. a stronger negative particle will attract the train faster and a stronger positive particle will repulse it faster.",
 
-       "level-7-tutorial-message-1-message": "You've already shown incredible skills in Levels 1 and 2. Now, get ready for Level 3 in \"Magnetic Mayhem.\" You're in for an electrifying challenge!",
-       "level-7-tutorial-message-2-message": "In level 7 you'll face three obstacles blocking the roller coaster's path. However, this time, the iron ball in front of the roller coaster has been replaced with a particle charged with positive electrical charge.",
-       "level-7-tutorial-message-3-message": "That means any particles that been charged with positive electrical charge will push the roller coaster, and any negative particles that been charged with positive electrical charge will push it..  Let's dive in!",
-
-       "level-8-tutorial-message-1-message": "Welcome back, You've already shown incredible skills in the previous levels. Now, get ready an electrifying challenge!",
-       "level-8-tutorial-message-2-message": "This time, your inventory has been stocked with particles with different signs and power in their charges, and there is a particle with positive charge attached to the coaster.",
-       "level-8-tutorial-message-3-message": "You already know that how does positive and negative charges impact on a positive charge, right?",
-       "level-8-tutorial-message-4-message": "Now I must tell you that what difference the power of the charges will make on that impact.",
-       "level-8-tutorial-message-5-message": "It's just like the magnets. a more powerful charge will have a stronger impact on the train.",
-       "level-8-tutorial-message-6-message": "for example. a stronger negative particle will attract the train faster and a stronger positive particle will repulse it faster."
+       "level-8-tutorial-message-1-message": "Welcome back, magnelectric genius! Professor Magno here, and you've been absolutely crushing it in the previous levels of \"Magnetic Mayhem.\" Now, let's dive into Level 8, where things are about to get even more interesting!",
+       "level-8-tutorial-message-2-message": "Now, This level has a unique twist – there are only two obstacles, but there's more than one way to pass them.",
+       "level-8-tutorial-message-3-message": "Your creativity and magnet mastery will shine here. You'll have the freedom to choose your path to earn the highest score possible.",
+       "level-8-tutorial-message-4-message": "Get ready to unleash your magnetic creativity and have a blast exploring different strategies in this electrifying level. You're on your way to becoming a true mastermind."
      }
    }

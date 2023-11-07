@@ -128,6 +128,14 @@ public class MagnetController : MonoBehaviour, ICollectible, IMagnet
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Magnet") || other.CompareTag("Neutral"))
+        {
+            Debug.Log(other.gameObject.transform.position);
+        }
+    }
+
     public PoleSign GetSign()
     {
         return sign;

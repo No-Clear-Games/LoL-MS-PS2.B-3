@@ -97,7 +97,10 @@ namespace NoClearGames
             }
             else
             {
-                imageObjectParent.gameObject.SetActive(false);
+                if(imageObjectParent)
+                {
+                    imageObjectParent.gameObject.SetActive(false);
+                }
             }
 
             nextBtn.transform.localScale = Vector3.zero;

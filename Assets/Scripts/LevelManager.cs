@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -50,7 +51,7 @@ public class LevelManager : MonoBehaviour
     private float _lastScore;
     private bool _lost;
     private bool _pathIsValid;
-    private MagnetSlot[] _magnetSlots;
+    private List<MagnetSlot> _magnetSlots = new List<MagnetSlot>();
 
     public bool PathIsValid => _pathIsValid;
 
@@ -86,7 +87,8 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _magnetSlots = FindObjectsByType<MagnetSlot>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        _magnetSlots.Clear();
+        _magnetSlots.AddRange(FindObjectsByType<MagnetSlot>(FindObjectsInactive.Include, FindObjectsSortMode.None));
         _lost = false;
         SetupObstacles();
         SetupInputs();
@@ -137,6 +139,7 @@ public class LevelManager : MonoBehaviour
 
     private void SetupTrain()
     {
+        train.Motor.UpdateMode(trainMode);
         startStation.PlaceTrainInStation(train);
         endStation.TrainEntered += EndStationOnTrainEntered;
         train.SpeedChanged += CalcAndSetScore;
@@ -258,11 +261,10 @@ public class LevelManager : MonoBehaviour
     {
         if (trajectoryController.HasProjectile)
         {
-            await UniTask.WaitForFixedUpdate();
+            trajectoryController.ForceFinishSimulation();
             trajectoryController.ResetProjectilePosition();
             TrainMotor motor = trajectoryController.Projectile.GetComponent<TrainMotor>();
             motor.UpdateMode(train.Motor.Modes);
-            await UniTask.WaitForFixedUpdate();
             motor.Run();
             trajectoryController.SimulateTrajectory();
         }

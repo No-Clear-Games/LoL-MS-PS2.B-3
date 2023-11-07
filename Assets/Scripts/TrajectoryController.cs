@@ -82,6 +82,7 @@ public class  TrajectoryController : MonoBehaviour
         NewObjectAddedToSimulationScene?.Invoke(go);
         return go;
     }
+    
 
     public void RemoveObjectFromSimulation(Transform t)
     {
@@ -133,6 +134,10 @@ public class  TrajectoryController : MonoBehaviour
         _projectile.transform.position = _originalProjectile.transform.position;
         
         Rigidbody rb = _projectile.GetComponent<Rigidbody>();
+        rb.isKinematic = true;
+        _projectile.SetActive(false);
+        _projectile.SetActive(true);
+        rb.isKinematic = false;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         rb.AddForce(-rb.GetAccumulatedForce());

@@ -66,7 +66,7 @@ public class MagnetSlot : MonoBehaviour
 
     private GameObject GetSilhouette(GameObject obj)
     {
-        if (_silhouetteCache.ContainsKey(obj.name))
+        if (_silhouetteCache.ContainsKey(obj.name) && _silhouetteCache[obj.name] != null)
         {
             return _silhouetteCache[obj.name];
         }

@@ -26,7 +26,7 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: In this level, you'll face three obstacles blocking the roller coaster's
+      message: In this level, you'll face 2 obstacles blocking the roller coaster's
         path, and your inventory is stocked with magnets of different powers.
       spr: {fileID: 0}
       imageObject: {fileID: 0}

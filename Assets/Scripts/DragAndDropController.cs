@@ -82,6 +82,7 @@ public class DragAndDropController
                     if (!mSlot.Occupied)
                     {
                         mSlot.Occupy(draggedObject);
+                        Debug.Log("AAA Occupy");
                         OccupySlotAction?.Invoke(mSlot, draggedObject);
                         _gotCurrentSlot = true;
                     }
