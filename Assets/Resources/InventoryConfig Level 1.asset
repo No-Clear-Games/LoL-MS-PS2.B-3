@@ -15,3 +15,5 @@ MonoBehaviour:
   inventorySupplies:
   - item: {fileID: 6856708287060132310, guid: b4e0ae97bc9885b4d836a011724b0ea0, type: 3}
     count: 2
+  - item: {fileID: 6856708287060132310, guid: 8321e9e0cd596a646804bbac7fa02cfa, type: 3}
+    count: 2

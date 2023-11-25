@@ -34,7 +34,7 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: A particle with positive  charge will attract a particle with positive
+      message: A particle with positive  charge will attract a particle with negative
         charge. So, If you put a positive charge near the coaster's path, the coaster
         will steer to the way the particle is in.
       spr: {fileID: 0}

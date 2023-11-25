@@ -9,15 +9,24 @@ public class MagnetSlot : MonoBehaviour
 
     private bool _occupied;
     private GameObject _obj;
+    private MagnetController _placedMagnet;
     private bool _highigted;
     private int _objDefaultLayer;
     private GameObject _silhouette;
     private Tween _silhouetteTween;
+    private bool _isLocked;
 
     private static Dictionary<string, GameObject> _silhouetteCache = new Dictionary<string, GameObject>();
 
     public bool Occupied => _occupied;
-    
+    public bool IsLocked => _isLocked;
+    public MagnetController PlacedMagnet => _placedMagnet;
+
+
+    public void LockSlot(bool locked)
+    {
+        _isLocked = locked;
+    }
 
     public void Occupy(GameObject obj)
     {
@@ -26,12 +35,14 @@ public class MagnetSlot : MonoBehaviour
         obj.transform.localPosition = Vector3.zero;
         _highigted = obj.layer == LayerMask.NameToLayer("Highlighted");
         _occupied = true;
+        _placedMagnet = _obj.GetComponent<MagnetController>();
     }
 
     public GameObject Release()
     {
         _obj.transform.parent = null;
         _occupied = false;
+        _placedMagnet = null;
         _highigted = false;
         GameObject tmp = _obj;
         _obj = null;
@@ -92,7 +103,7 @@ public class MagnetSlot : MonoBehaviour
 
     public void BlinkSilhouetteStart(GameObject obj)
     {
-        if (_occupied)
+        if (_occupied || _isLocked)
         {
             return;
         }
@@ -106,9 +117,13 @@ public class MagnetSlot : MonoBehaviour
 
     public void BlinkSilhouetteStop()
     {
-        _silhouetteTween.Complete();
-        Destroy(_silhouette);
-        _silhouette = null;
+        _silhouetteTween?.Complete();
+
+        if(_silhouette != null)
+        {
+            Destroy(_silhouette);
+            _silhouette = null;
+        }
     }
 
 }

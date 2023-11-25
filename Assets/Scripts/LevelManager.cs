@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private StationController endStation;
     [SerializeField] private TrainController train;
 
+    [SerializeField] private HintManager hintManager;
     [SerializeField] private InventoryManager inventoryManager;
     [SerializeField] private InventoryConfig inventoryConfig;
 
@@ -97,14 +98,17 @@ public class LevelManager : MonoBehaviour
         SetupInventory();
         SetupCameras();
         SetupDragAndDrop();
+        SetupHintManager();
 
         if (!PlayerPrefs.HasKey(SceneManager.GetActiveScene().name))
         {
             ShowDialoguePage(hudPage.StartInfoButtonAnimation);
+            dialoguePopUp.OnHide += StartHintInterval;
         }
         else
         {
             hudPage.StartInfoButtonAnimation();
+            hintManager.StartHintInterval(this);
         }
 
 
@@ -126,6 +130,11 @@ public class LevelManager : MonoBehaviour
         scoreText.text = _lastScore.ToString();
     }
 
+    private void StartHintInterval()
+    {
+        hintManager.StartHintInterval(this);
+    }
+
     private void OnValidate()
     {
         if (train != null) train.Motor.UpdateMode(trainMode);
@@ -135,6 +144,56 @@ public class LevelManager : MonoBehaviour
     {
         obstacleMaterial.SetFloat(DissolveProgress, 1);
         obstacleMaterial.DOFloat(0, DissolveProgress, obstaclesDissolveDuration);
+    }
+
+    private void SetupHintManager()
+    {
+        hintManager.Initialize();
+        hintManager.HintIntervalReachedAction += HintManagerOnHintIntervalReachedAction;
+        hintManager.SlotIsBlankAction += HintManagerOnSlotIsBlankAction;
+        hintManager.ShowDescriptionOnCorrectAction += HintManagerOnShowDescriptionOnCorrectAction;
+        hintManager.ShowHintOnWrongAction += HintManagerOnShowHintOnWrongAction;
+        hintManager.CorrectItemPlacedOnTheSlotAction += HintManagerOnCorrectItemPlacedOnTheSlotAction;
+        hintManager.WrongItemPlacedOnTheSlotAction += HintManagerOnWrongItemPlacedOnTheSlotAction;
+        
+        dragAndDropController.OccupySlotAction += CheckSlotCorrectness;
+    }
+
+    private void HintManagerOnWrongItemPlacedOnTheSlotAction(HintItem hint)
+    {
+        Debug.Log("HintManager OnWrongItemPlacedOnTheSlot Action Invoked");
+    }
+
+    private void HintManagerOnCorrectItemPlacedOnTheSlotAction(HintItem hint)
+    {
+        Debug.Log("HintManager OnCorrectItemPlacedOnTheSlot Action Invoked");
+        
+        hintManager.RestartHintInterval(this);
+    }
+
+    private void HintManagerOnShowHintOnWrongAction(HintItem hint)
+    {
+        Debug.Log("HintManager OnShowHintOnWrong Action Invoked");
+    }
+
+    private void HintManagerOnShowDescriptionOnCorrectAction(HintItem hint)
+    {
+        Debug.Log("HintManager OnShowDescriptionOnCorrect Action Invoked");
+    }
+
+    private void HintManagerOnSlotIsBlankAction(HintItem hint)
+    {
+        Debug.Log("HintManager OnSlotIsBlank Action Invoked");
+    }
+
+    private void HintManagerOnHintIntervalReachedAction()
+    {
+        Debug.Log("HintManager OnHintIntervalReached Action Invoked");
+    }
+
+    private void CheckSlotCorrectness(MagnetSlot slot, GameObject obj)
+    {
+        hintManager.CheckSlotState(slot);
     }
 
     private void SetupTrain()
@@ -358,7 +417,7 @@ public class LevelManager : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 100, LayerMask.GetMask("Slots")))
         {
             MagnetSlot slot = hit.collider.gameObject.GetComponent<MagnetSlot>();
-            if (!slot.Occupied)
+            if (!slot.Occupied || slot.IsLocked)
             {
                 return;
             }
@@ -393,7 +452,7 @@ public class LevelManager : MonoBehaviour
 
 
                 MagnetSlot slot = hit.collider.gameObject.GetComponent<MagnetSlot>();
-                if (!slot.Occupied)
+                if (!slot.Occupied || slot.IsLocked)
                 {
                     continue;
                 }

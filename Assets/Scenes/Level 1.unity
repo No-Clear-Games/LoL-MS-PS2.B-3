@@ -207,6 +207,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d93f92f99e9d4f49a2c5bfeeffa6f4c, type: 3}
   m_PrefabInstance: {fileID: 743674302}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &117791273 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 3282844107934670971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &122893282 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d93f92f99e9d4f49a2c5bfeeffa6f4c, type: 3}
@@ -1481,6 +1492,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d93f92f99e9d4f49a2c5bfeeffa6f4c, type: 3}
+--- !u!114 &851787253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 512890564}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &853032577
 GameObject:
   m_ObjectHideFlags: 0
@@ -4307,6 +4329,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1671506287}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showHintOnWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showOneSlotAtATime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: cameraController.virtualCameras.Array.data[0]
       value: 
       objectReference: {fileID: 1930274379}
@@ -4322,6 +4352,30 @@ PrefabInstance:
       propertyPath: cameraController.virtualCameras.Array.data[3]
       value: 
       objectReference: {fileID: 641560378}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showDescriptionOnCorrect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].magnetSlot
+      value: 
+      objectReference: {fileID: 117791273}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].magnetSlot
+      value: 
+      objectReference: {fileID: 851787253}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: b4e0ae97bc9885b4d836a011724b0ea0, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: b4e0ae97bc9885b4d836a011724b0ea0, type: 3}
     - target: {fileID: 2834028192430793137, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.912057
