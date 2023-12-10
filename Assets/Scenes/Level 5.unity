@@ -4393,6 +4393,22 @@ PrefabInstance:
       value: Great. The positive charge bellow the train's path will pull it down
         and make it head to the destination
       objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnBlankLanguageId
+      value: level-5-slot-1-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnBlankLanguageId
+      value: level-5-slot-2-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].detailsOnCorrectLanguageId
+      value: level-5-slot-1-hint-on-correct
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].detailsOnCorrectLanguageId
+      value: level-5-slot-2-hint-on-correct
+      objectReference: {fileID: 0}
     - target: {fileID: 2834028192430793137, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.912057

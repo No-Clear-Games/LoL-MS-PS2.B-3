@@ -251,7 +251,13 @@
        "level-5-tutorial-message-2-message": "In this level, again, there is a particle with negative electric charge attached to the roller coaster. but you have particles with positive charge in your inventory.",
        "level-5-tutorial-message-3-message": "A particle with positive charge will attract a particle with negative charge. So, If you put a positive charge near the coaster's path, the coaster will steer to the way the particle is in.",
        "level-5-tutorial-message-4-message": "In general, two particles with different sign in their charge will attract each other",
-       
+
+       "level-5-slot-1-hint-on-blank": "Put a positive charge above the train's path. It will attract the negative charge on the train and make it go up.",
+       "level-5-slot-1-hint-on-correct": "Correct. The positive charge above the train's path will attract the negative charge on the train and make it go up.",
+       "level-5-slot-2-hint-on-blank": "The train needs to head back to it's destination instead of going up. So place a positive charge bellow it's path so it will pull it down and make it head to the destination",
+       "level-5-slot-2-hint-on-correct": "Great. The positive charge bellow the train's path will pull it down and make it head to the destination",
+
+
        "level-6-tutorial-message-1-message": "You've just conquered Level 5 with flying colors, and now, it's time to dive into Level 6 of \"Magnetic Mayhem.\" Get ready for an even more electrifying challenge!",
        "level-6-tutorial-message-2-message": "In this level, You'll face 2 obstacles blocking the roller coaster's path, and your inventory is stocked with magnets of different powers!",
        "level-6-tutorial-message-3-message": "Magnets with different powers have different impacts on the coaster. If you put a strong magnet in the area, It will pull the coaster harder. and if you put a weak magnet, it will pull the coaster more slightly",
