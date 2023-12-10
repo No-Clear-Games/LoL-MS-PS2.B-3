@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySupplies:
   - item: {fileID: 6856708287060132310, guid: d6359525df7214a44b537be140b58211, type: 3}
-    count: 3
+    count: 2

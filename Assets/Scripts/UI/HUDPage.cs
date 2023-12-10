@@ -2,6 +2,7 @@ using System;
 using DG.Tweening;
 using NoClearGames.Manager;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace NoClearGames.UI
@@ -11,9 +12,13 @@ namespace NoClearGames.UI
         [SerializeField] private Button pauseBtn;
         [SerializeField] private Button tutorialBtn;
         [SerializeField] private Button startTrainBtn;
-        [SerializeField] private Button proffesorBtn;
+        [FormerlySerializedAs("proffesorBtn")] [SerializeField] private Button professorBtn;
+        [SerializeField] private Button hintBtn;
+
 
         [SerializeField] private LevelManager levelManager;
+
+        public event Action HintButtonClickAction;
 
         public override void Awake()
         {
@@ -21,8 +26,20 @@ namespace NoClearGames.UI
             pauseBtn.onClick.AddListener(ShowPause);
             tutorialBtn.onClick.AddListener(ShowTutorial);
             startTrainBtn.onClick.AddListener(StartTrain);
-            proffesorBtn.onClick.AddListener(OnProfessorBtnClick);
+            professorBtn.onClick.AddListener(OnProfessorBtnClick);
+            hintBtn.onClick.AddListener(OnHintButtonClicked);
+            SetHintBtnActive(false);
         }
+
+        public void StartBtnStartBlinking()
+        {
+            startTrainBtn.transform.DOScale(Vector3.one * 1.2f, 0.5f).SetLoops(-1, LoopType.Yoyo);
+        }
+        
+        public void StartBtnStopBlinking()
+        {
+            startTrainBtn.transform.DOKill();
+        } 
 
         private void Start()
         {
@@ -35,7 +52,28 @@ namespace NoClearGames.UI
 
         public void SetProfessorBtnActive(bool active)
         {
-            proffesorBtn.gameObject.SetActive(active);
+            professorBtn.gameObject.SetActive(active);
+        }
+        
+        public void SetHintBtnActive(bool active)
+        {
+            if (hintBtn.gameObject.activeSelf == active)
+            {
+                return;
+            }
+            
+            hintBtn.gameObject.SetActive(active);
+
+            if (active)
+            {
+                hintBtn.transform.DOScale(Vector3.one * 1.2f, 0.5f).SetLoops(-1, LoopType.Yoyo);
+            }
+            else
+            {
+                Transform transform1;
+                (transform1 = hintBtn.transform).DOKill();
+                transform1.localScale = Vector3.one;
+            }
         }
 
         private void StartTrain()
@@ -44,11 +82,17 @@ namespace NoClearGames.UI
             {
                 startTrainBtn.interactable = false;
                 levelManager.StartTrain();
+                StartBtnStopBlinking();
             }
             else
             {
                 levelManager.ShowInvalidStartTutorial();
             }
+        }
+
+        private void OnHintButtonClicked()
+        {
+            HintButtonClickAction?.Invoke();
         }
 
         private void ShowTutorial()

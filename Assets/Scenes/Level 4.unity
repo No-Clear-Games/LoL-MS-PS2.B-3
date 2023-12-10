@@ -713,6 +713,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+--- !u!114 &481586610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 481586609}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &484857170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -843,6 +854,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+--- !u!114 &512890565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 512890564}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &569853514 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3712041617328297164, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
@@ -4303,6 +4325,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+--- !u!114 &3282844107934670972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 3282844107934670971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3802310605030822202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4387,6 +4420,90 @@ PrefabInstance:
       propertyPath: cameraController.virtualCameras.Array.data[3]
       value: 
       objectReference: {fileID: 641560378}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].magnetSlot
+      value: 
+      objectReference: {fileID: 3282844107934670972}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].magnetSlot
+      value: 
+      objectReference: {fileID: 512890565}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].magnetSlot
+      value: 
+      objectReference: {fileID: 481586610}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnBlank
+      value: Put a negative charge bellow the train's path. It will repel the negative
+        charge on the train and make it go up.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnBlank
+      value: The train still needs to go a little higher to avoid the obstacle. So,
+        again put a negative charge bellow the train's path to repel the negative
+        charge on the train and make it go upper.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].hintOnBlank
+      value: The train needs to head back to it's destination instead of going up.
+        So place a negative charge above it's path so it will push it down and make
+        it head to the destination
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 65fd127dd9ba6b445966b1a98e346bc7, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 65fd127dd9ba6b445966b1a98e346bc7, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 65fd127dd9ba6b445966b1a98e346bc7, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].detailsOnCorrect
+      value: Great, the negative charge you've just placed will repel the negative
+        charge on the train and make it go up.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].detailsOnCorrect
+      value: Good, the negative charge you've placed will push the train higher and
+        helps it avoid the obstacle.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].detailsOnCorrect
+      value: Great. The negative charge above train's path will push it down and
+        make it head to the destination
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnBlankLanguageId
+      value: level-4-slot-1-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnBlankLanguageId
+      value: level-4-slot-2-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].hintOnBlankLanguageId
+      value: level-4-slot-3-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].detailsOnCorrectLanguageId
+      value: level-4-slot-1-hint-on-correct
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].detailsOnCorrectLanguageId
+      value: level-4-slot-2-hint-on-correct
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].detailsOnCorrectLanguageId
+      value: level-4-slot-3-hint-on-correct
+      objectReference: {fileID: 0}
     - target: {fileID: 2834028192430793137, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.912057

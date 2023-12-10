@@ -35,22 +35,13 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
-      message: Your creativity and magnet mastery will shine here. You'll have the
-        freedom to choose your path and strategize to earn the highest score possible.
+      message: As there are no right or wrongs in this level, there isn't any hints
+        there. Feel free to try any object in any slot that you like. Good luck and
+        have fun.
       spr: {fileID: 0}
       imageObject: {fileID: 0}
       btnMessage: 
       messageLanguageId: level-8-tutorial-message-3-message
-      titleLanguageId: 
-      btnLanguageId: 
-    - title: 
-      message: Get ready to unleash your magnetic creativity and have a blast exploring
-        different strategies in this electrifying level. You're on your way to becoming
-        a true magnelectric mastermind.
-      spr: {fileID: 0}
-      imageObject: {fileID: 0}
-      btnMessage: 
-      messageLanguageId: level-8-tutorial-message-4-message
       titleLanguageId: 
       btnLanguageId: 
     claimed: 1

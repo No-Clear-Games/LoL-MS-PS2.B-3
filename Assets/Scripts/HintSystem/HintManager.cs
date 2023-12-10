@@ -17,15 +17,29 @@ namespace NoClearGames
         public event Action<HintItem>  ShowDescriptionOnCorrectAction;
         public event Action<HintItem>  ShowHintOnWrongAction;
 
+        public event Action AllSlotsFilledCorrectly;
+
 
         private WaitForSeconds _hintWaitForSeconds;
         private Coroutine _hintIntervalCoroutine;
         private MonoBehaviour _hintIntervalCoroutineHandler;
         private MagnetSlot _currentActiveSlot;
 
+        public MagnetSlot CurrentActiveSlot => _currentActiveSlot;
+
         public bool ShowOneSlotAtATime => hintData.ShowOneSlotAtATime;
         public bool ShowHintOnWrong => hintData.ShowHintOnWrong;
         public bool ShowDescriptionOnCorrect => hintData.ShowDescriptionOnCorrect;
+
+        public HintData.SlotState GetActiveSlotState()
+        {
+            return CheckSlotState(_currentActiveSlot, false);
+        }
+
+        public HintItem GetActiveSlotHintItem()
+        {
+            return GetSlotHint(_currentActiveSlot);
+        }
         
         private IEnumerator HintOnInterval()
         {
@@ -35,6 +49,7 @@ namespace NoClearGames
                 HintIntervalReachedAction?.Invoke();
             }
         }
+        
         
 
         private void ActivateNextSlot(HintItem currentSlotHintItem)
@@ -90,11 +105,17 @@ namespace NoClearGames
         public void ActivateFirstBlankSlot()
         {
             HintItem hintItem = hintData.GetFirstHintItemBlank();
+            Debug.Log($"AAA {hintItem}");
             if(hintItem != null)
             {
                 _currentActiveSlot = hintItem.MagnetSlot;
                 _currentActiveSlot.gameObject.SetActive(true);
                 LockSlot(_currentActiveSlot, false);
+            }
+            else
+            {
+                Debug.Log(1);
+                AllSlotsFilledCorrectly?.Invoke();
             }
             
         }
@@ -112,9 +133,13 @@ namespace NoClearGames
             }
         }
         
-        public HintData.SlotState CheckSlotState(MagnetSlot slot)
+        public HintData.SlotState CheckSlotState(MagnetSlot slot, bool invokeActions)
         {
             HintData.SlotState slotState = hintData.GetSlotState(slot);
+            if (!invokeActions)
+            {
+                return slotState;
+            }
             HintItem slotHint = hintData.GetSlotHintItem(slot);
             switch (slotState)
             {

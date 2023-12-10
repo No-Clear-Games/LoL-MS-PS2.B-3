@@ -36,6 +36,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Material obstacleMaterial;
     [SerializeField] private DialoguePopUp tutorialPopUp;
     [SerializeField] private DialoguePopUp dialoguePopUp;
+    [SerializeField] private HintPopup hintPopup;
     [SerializeField] private HUDPage hudPage;
     [SerializeField] private LevelDialogueData tutorialDialogueData;
     [SerializeField] private LevelDialogueData levelDialogueData;
@@ -53,6 +54,7 @@ public class LevelManager : MonoBehaviour
     private bool _lost;
     private bool _pathIsValid;
     private List<MagnetSlot> _magnetSlots = new List<MagnetSlot>();
+    private MagnetSlot _slotToCheckCorrectness;
 
     public bool PathIsValid => _pathIsValid;
 
@@ -155,29 +157,89 @@ public class LevelManager : MonoBehaviour
         hintManager.ShowHintOnWrongAction += HintManagerOnShowHintOnWrongAction;
         hintManager.CorrectItemPlacedOnTheSlotAction += HintManagerOnCorrectItemPlacedOnTheSlotAction;
         hintManager.WrongItemPlacedOnTheSlotAction += HintManagerOnWrongItemPlacedOnTheSlotAction;
+        hintManager.AllSlotsFilledCorrectly += HintManagerOnAllSlotsFilledCorrectly;
         
-        dragAndDropController.OccupySlotAction += CheckSlotCorrectness;
+        dragAndDropController.OccupySlotAction += SetSlotToCheckCorrectness;
+        dragAndDropController.ReleaseSlotAction += ResetSlotToCheckCorrectness;
+        dragAndDropController.DropAction += TryCheckSlotState;
+        
+        hudPage.HintButtonClickAction += ShowHintOnBtnClick;
+        
+        
+    }
+
+    private void HintManagerOnAllSlotsFilledCorrectly()
+    {
+        hudPage.StartBtnStartBlinking();
+    }
+
+    private void ShowHintOnBtnClick()
+    {
+        HintData.SlotState slotState = hintManager.GetActiveSlotState();
+        HintItem hintItem = hintManager.GetActiveSlotHintItem();
+
+        if (hintPopup.show)
+        {
+            hintPopup.Hide();
+        }
+
+        MagnetController wrongMagnet = null; 
+        if (slotState == HintData.SlotState.Wrong)
+        {
+            wrongMagnet = hintManager.CurrentActiveSlot.PlacedMagnet;
+        }
+        hintPopup.Show(hintItem, slotState, wrongMagnet);
+        hudPage.SetHintBtnActive(false);
+        hintManager.RestartHintInterval(this);
+    }
+    
+
+    private void TryCheckSlotState(GameObject obj)
+    {
+        if (_slotToCheckCorrectness != null)
+        {
+            hintManager.CheckSlotState(_slotToCheckCorrectness, true);
+        }
+    }
+
+    private void ResetSlotToCheckCorrectness(MagnetSlot slot, GameObject obj)
+    {
+        _slotToCheckCorrectness = null;
     }
 
     private void HintManagerOnWrongItemPlacedOnTheSlotAction(HintItem hint)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.wrongSfx);
+
         Debug.Log("HintManager OnWrongItemPlacedOnTheSlot Action Invoked");
     }
 
     private void HintManagerOnCorrectItemPlacedOnTheSlotAction(HintItem hint)
     {
         Debug.Log("HintManager OnCorrectItemPlacedOnTheSlot Action Invoked");
-        
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.correctSfx);
         hintManager.RestartHintInterval(this);
     }
 
     private void HintManagerOnShowHintOnWrongAction(HintItem hint)
     {
+        
+        hintPopup.Show(hint, HintData.SlotState.Wrong, hintManager.CurrentActiveSlot.PlacedMagnet);
+        hudPage.SetHintBtnActive(false);
+        hintManager.RestartHintInterval(this);
         Debug.Log("HintManager OnShowHintOnWrong Action Invoked");
     }
 
     private void HintManagerOnShowDescriptionOnCorrectAction(HintItem hint)
     {
+
+        if (hintPopup.show)
+        {
+            hintPopup.Hide();
+        }
+        hintPopup.Show(hint, HintData.SlotState.Correct, null);
+        hudPage.SetHintBtnActive(false);
+        hintManager.RestartHintInterval(this);
         Debug.Log("HintManager OnShowDescriptionOnCorrect Action Invoked");
     }
 
@@ -188,12 +250,12 @@ public class LevelManager : MonoBehaviour
 
     private void HintManagerOnHintIntervalReachedAction()
     {
-        Debug.Log("HintManager OnHintIntervalReached Action Invoked");
+        hudPage.SetHintBtnActive(true);
     }
 
-    private void CheckSlotCorrectness(MagnetSlot slot, GameObject obj)
+    private void SetSlotToCheckCorrectness(MagnetSlot slot, GameObject obj)
     {
-        hintManager.CheckSlotState(slot);
+        _slotToCheckCorrectness = slot;
     }
 
     private void SetupTrain()

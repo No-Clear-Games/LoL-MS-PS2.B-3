@@ -27,6 +27,7 @@ namespace NoClearGames
         [SerializeField] private float delayBetweenTyping = 0.02f;
         [SerializeField] private float delayBetweenTypingAndShowingNextBtn = 2f;
         [SerializeField] private Transform imageObjectParent;
+        [SerializeField] private bool skipTypingOnInput;
 
         private Coroutine _coroutine;
 
@@ -109,7 +110,7 @@ namespace NoClearGames
 
             foreach (char ctx in translatedMessage)
             {
-                if (Input.anyKey)
+                if (skipTypingOnInput && Input.anyKey)
                 {
                     messageText.text = translatedMessage;
                     break;
@@ -144,6 +145,7 @@ namespace NoClearGames
                     StopCoroutine(_coroutine);
                 }
 
+                nextBtn.transform.DOKill();
                 StartCoroutine(TypingMessage());
                 // TypingMessage().Forget();
             });

@@ -73,3 +73,13 @@ MonoBehaviour:
       Volume: 1
       Pitch: 1
       Loop: 0
+    correctSfx:
+      Clip: {fileID: 8300000, guid: b8b554a9f8bfe034ebbc1b18f5baf644, type: 3}
+      Volume: 1
+      Pitch: 1
+      Loop: 0
+    wrongSfx:
+      Clip: {fileID: 8300000, guid: 9c67a195db2427747bec367c4b7f990d, type: 3}
+      Volume: 1
+      Pitch: 1
+      Loop: 0

@@ -400,6 +400,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d93f92f99e9d4f49a2c5bfeeffa6f4c, type: 3}
   m_PrefabInstance: {fileID: 388639163}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &219434680 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 1139604477}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &222373491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1287,6 +1298,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d93f92f99e9d4f49a2c5bfeeffa6f4c, type: 3}
+--- !u!114 &776174522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 643538819352427552, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
+  m_PrefabInstance: {fileID: 169472200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e8678200f44f0419d748a1e333073f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &777917705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d93f92f99e9d4f49a2c5bfeeffa6f4c, type: 3}
@@ -3170,6 +3192,17 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1708266787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 923546854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1721771519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4283,6 +4316,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 169472205}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintPopup
+      value: 
+      objectReference: {fileID: 776174522}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 169472203}
@@ -4335,6 +4372,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1671506287}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showHintOnWrong
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showOneSlotAtATime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.hintIntervalSeconds
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: cameraController.virtualCameras.Array.data[0]
       value: 
       objectReference: {fileID: 714048015}
@@ -4350,6 +4399,90 @@ PrefabInstance:
       propertyPath: cameraController.virtualCameras.Array.data[3]
       value: 
       objectReference: {fileID: 1153355151}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showDescriptionOnCorrect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].magnetSlot
+      value: 
+      objectReference: {fileID: 1708266787}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].magnetSlot
+      value: 
+      objectReference: {fileID: 219434680}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnBlank
+      value: You need to guid the train a bit upwards to help it avoid the obstacle.
+        Try magnets from your inventory and find the one that not pulls it too much.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnBlank
+      value: You must put a magnet in the slot with enough power to pull the train
+        down and make it head to the station
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 9e89ae8b4389eb04891cf4076e7b7f5d, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: d03c15e34fac81d47b60c0eb792efe3b, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].detailsOnCorrect
+      value: Good. this magnet is weak, and pull the iron ball on the train slightly
+        enough.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].detailsOnCorrect
+      value: Correct. The train will safely reach it's destination
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[0].hint
+      value: This magnet is medium and not pulsl the train too much. but still you
+        need a magnet with less power.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[1].hint
+      value: This magnet is strong and pulls the train too much. try another magnet.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[0].hint
+      value: This magnet pulls the train too much. try another magnet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[1].hint
+      value: This magnet can't pull the train enough. try another magnet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[0].wrongMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: d03c15e34fac81d47b60c0eb792efe3b, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[1].wrongMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: b4e0ae97bc9885b4d836a011724b0ea0, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[0].wrongMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: b4e0ae97bc9885b4d836a011724b0ea0, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[1].wrongMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 9e89ae8b4389eb04891cf4076e7b7f5d, type: 3}
     - target: {fileID: 2834028192430793137, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.912057

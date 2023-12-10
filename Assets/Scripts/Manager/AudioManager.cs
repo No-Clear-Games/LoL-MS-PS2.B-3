@@ -176,6 +176,8 @@ namespace NoClearGames.Manager
             public SoundClass clickSfx;
             public SoundClass winSfx;
             public SoundClass loseSfx;
+            public SoundClass correctSfx;
+            public SoundClass wrongSfx;
         }
 
         public SFXClass SFX;

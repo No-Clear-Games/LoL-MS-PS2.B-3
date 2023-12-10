@@ -7,6 +7,12 @@ namespace NoClearGames.UI
 {
     public abstract class BasePage : MonoBehaviour
     {
+        public enum HideType
+        {
+            Vertical,
+            Horizontal,
+        }
+        
         [HideInInspector] public bool show;
         public GameObject root;
         public float durationTime = .6f;
@@ -38,22 +44,22 @@ namespace NoClearGames.UI
                 sequence.Kill();
             }
 
+            show = true;
+
+            root.gameObject.SetActive(true);
             foreach (GameObject item in items)
             {
                 item.transform.localScale = Vector3.zero;
             }
 
-            show = true;
-
             root.transform.localScale = Vector3.zero;
-            root.gameObject.SetActive(true);
-
             root.transform.DOScale(Vector3.one, durationTime).SetEase(ease).onComplete += () =>
             {
                 doneAction?.Invoke();
                 OnShow?.Invoke();
                 StartCoroutine(ScaleUp());
             };
+            
         }
 
         private System.Collections.IEnumerator ScaleUp()
@@ -79,7 +85,7 @@ namespace NoClearGames.UI
 
             root.transform.DOScale(Vector3.zero, durationTime).SetEase(ease).onComplete += () =>
             {
-                root.SetActive(false);
+                root.SetActive(show);
                 doneAction?.Invoke();
                 OnHide?.Invoke();
             };

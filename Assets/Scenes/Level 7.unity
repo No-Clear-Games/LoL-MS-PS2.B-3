@@ -933,6 +933,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+--- !u!114 &512890565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 512890564}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &571738512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d93f92f99e9d4f49a2c5bfeeffa6f4c, type: 3}
@@ -1882,6 +1893,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+--- !u!114 &1097046770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 1097046769}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1122355749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d93f92f99e9d4f49a2c5bfeeffa6f4c, type: 3}
@@ -1948,6 +1970,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+--- !u!114 &1139604478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 1139604477}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1149568918 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d93f92f99e9d4f49a2c5bfeeffa6f4c, type: 3}
@@ -2517,6 +2550,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98d05eb1d9036f04baecd083a8c7e668, type: 3}
+--- !u!114 &1380461238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 923546854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1422152053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d93f92f99e9d4f49a2c5bfeeffa6f4c, type: 3}
@@ -3157,28 +3201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 11400000, guid: 3bd57279b75a0144591a4e7abf2a9bd5, type: 2}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1671506290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4315,6 +4337,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1671506287}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showOneSlotAtATime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.hintIntervalSeconds
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: cameraController.virtualCameras.Array.data[0]
       value: 
       objectReference: {fileID: 9065800082423176458}
@@ -4330,6 +4360,156 @@ PrefabInstance:
       propertyPath: cameraController.virtualCameras.Array.data[3]
       value: 
       objectReference: {fileID: 9065800082423176455}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].magnetSlot
+      value: 
+      objectReference: {fileID: 1380461238}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].magnetSlot
+      value: 
+      objectReference: {fileID: 1139604478}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].magnetSlot
+      value: 
+      objectReference: {fileID: 1097046770}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[3].magnetSlot
+      value: 
+      objectReference: {fileID: 512890565}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnBlank
+      value: You need to put something in the slot to pull the train a little up,
+        but not too much. there is a positive charge on the train. what in your inventory
+        does that?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnBlank
+      value: Find a particle that pushes the train down. There is a positive charge
+        on the train. which type of particles pushes that?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].hintOnBlank
+      value: You must use someting that pulls the train up again. what was pulling
+        positive charges? cause there is a positive charge on the train
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[3].hintOnBlank
+      value: You have to use a charge to push the train down. and there is a positive
+        charge on the train. So the particle is...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: adb638bbab5bb0e40a9245648bf4bfe3, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: d6359525df7214a44b537be140b58211, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 8321e9e0cd596a646804bbac7fa02cfa, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[3].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 82fd42f53237e064f856702262000332, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].detailsOnCorrect
+      value: Correct. the weak negative charge fits here. it pulls the positive charge
+        up. and not too much.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].detailsOnCorrect
+      value: Nice work. the positive particle pushes the positive particle of the
+        train, and it the medium one just not pushes it a lot.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].detailsOnCorrect
+      value: Great. the negative charge pulls the train just right.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[3].detailsOnCorrect
+      value: Good job. the negative charge pushes the train just right.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].hintOnWrong.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[0].hint
+      value: This particle pulls the train too much and it's hard to guid it down
+        again. Use a weaker one to pull it less.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[1].hint
+      value: This charge pushes the train down. Use a negative charge to pull it
+        up.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[2].hint
+      value: This charge pushes the train down. Use a negative charge to pull it
+        up.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[0].hint
+      value: Negative charges pull positive ones. To push the train down you must
+        use a negative particle.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[1].hint
+      value: Negative charges pull positive ones. To push the train down you must
+        use a negative particle.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[2].hint
+      value: This positive charge is pushing the train down and that great. but it
+        pushes the train too much. try a weaker one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].hintOnWrong.Array.data[0].hint
+      value: Positive charge pushes the train down, because there is also a positive
+        charge on the train. Use a negative charge to pull it up.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[0].wrongMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 8321e9e0cd596a646804bbac7fa02cfa, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[1].wrongMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: d6359525df7214a44b537be140b58211, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[2].wrongMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 82fd42f53237e064f856702262000332, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[0].wrongMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: adb638bbab5bb0e40a9245648bf4bfe3, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[1].wrongMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 8321e9e0cd596a646804bbac7fa02cfa, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[2].wrongMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 82fd42f53237e064f856702262000332, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].hintOnWrong.Array.data[0].wrongMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 82fd42f53237e064f856702262000332, type: 3}
     - target: {fileID: 2834028192430793137, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.912057

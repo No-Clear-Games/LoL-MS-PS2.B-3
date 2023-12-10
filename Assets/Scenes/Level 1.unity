@@ -594,6 +594,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d93f92f99e9d4f49a2c5bfeeffa6f4c, type: 3}
   m_PrefabInstance: {fileID: 695714560}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &363128281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 643538819352427552, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
+  m_PrefabInstance: {fileID: 2838777336166515917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e8678200f44f0419d748a1e333073f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &388639163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4095,6 +4106,10 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 625825749}
+    - target: {fileID: 3754254597687940633, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5943881532852832941, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4179,11 +4194,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8359573426778438095, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5943881532852832941, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
-      insertIndex: -1
+      insertIndex: 6
       addedObject: {fileID: 785180930}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
@@ -4281,6 +4300,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2838777336166515919}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintPopup
+      value: 
+      objectReference: {fileID: 363128281}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 569853514}
@@ -4330,7 +4353,7 @@ PrefabInstance:
       objectReference: {fileID: 1671506287}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.showHintOnWrong
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.showOneSlotAtATime
@@ -4338,7 +4361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.hintIntervalSeconds
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: cameraController.virtualCameras.Array.data[0]
@@ -4358,7 +4381,7 @@ PrefabInstance:
       objectReference: {fileID: 641560378}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.showDescriptionOnCorrect
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.sortedHintItems.Array.size
@@ -4373,6 +4396,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 851787253}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnBlank
+      value: Put a magnet on the blinking slot to attract the train to the right
+        and avoid the obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnBlank
+      value: Put a magnet on the blinking slot to attract the train to the left and
+        make it head back to the destination station.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].correctMagnet
       value: 
       objectReference: {fileID: 6970959151560278074, guid: b4e0ae97bc9885b4d836a011724b0ea0, type: 3}
@@ -4380,6 +4413,45 @@ PrefabInstance:
       propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].correctMagnet
       value: 
       objectReference: {fileID: 6970959151560278074, guid: b4e0ae97bc9885b4d836a011724b0ea0, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].detailsOnCorrect
+      value: Good. The magnet You have just put, pulls the iron ball attached to
+        the train to the right. this makes the train to head right and avoid the
+        obstacle.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].detailsOnCorrect
+      value: Correct. The magnet You have just put, pulls the iron ball attached
+        to the train to the left. this makes the train to head left to the destination.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnBlankLanguageId
+      value: level-1-slot-1-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnBlankLanguageId
+      value: level-1-slot-2-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].detailsOnCorrectLanguageId
+      value: level-1-slot-1-hint-on-correct
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].detailsOnCorrectLanguageId
+      value: level-1-slot-2-hint-on-correct
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[0].hint
+      value: AAAAAAAAAAAAAA
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[0].wrongMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: 8321e9e0cd596a646804bbac7fa02cfa, type: 3}
     - target: {fileID: 2834028192430793137, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.912057

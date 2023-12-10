@@ -782,6 +782,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+--- !u!114 &512890565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 512890564}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &569853514 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3712041617328297164, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
@@ -4246,6 +4257,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+--- !u!114 &3282844107934670972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3282844108677979766, guid: 94c61be7cf893aa499d7744fccb8286d, type: 3}
+  m_PrefabInstance: {fileID: 3282844107934670971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b21ec662e7e8b46826c7a2b8da9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3802310605030822202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4315,6 +4337,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1671506287}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showHintOnWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showOneSlotAtATime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: cameraController.virtualCameras.Array.data[0]
       value: 
       objectReference: {fileID: 1930274379}
@@ -4330,6 +4360,69 @@ PrefabInstance:
       propertyPath: cameraController.virtualCameras.Array.data[3]
       value: 
       objectReference: {fileID: 641560378}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showDescriptionOnCorrect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].magnetSlot
+      value: 
+      objectReference: {fileID: 3282844107934670972}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].magnetSlot
+      value: 
+      objectReference: {fileID: 512890565}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnBlank
+      value: Put a positive charged particle under the train's path. It will push
+        the positive particle attached to the train up and makes the train avoid
+        the obstacle.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnBlank
+      value: Put a positive charged particle above the train's path. It will push
+        the positive particle attached to the train down and makes it head to the
+        destination.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: d6359525df7214a44b537be140b58211, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].correctMagnet
+      value: 
+      objectReference: {fileID: 6970959151560278074, guid: d6359525df7214a44b537be140b58211, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].detailsOnCorrect
+      value: Great, You have put a positive charged particle under the train's path.
+        It will push the train up and makes it avoid the obstacle.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].detailsOnCorrect
+      value: Good job, the positive charged particle you have just put above the
+        train's path will push the positive particle attached to the train down and
+        makes it head to the destination.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnBlankLanguageId
+      value: level-2-slot-1-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnBlankLanguageId
+      value: level-2-slot-2-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].detailsOnCorrectLanguageId
+      value: level-2-slot-1-hint-on-correct
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].detailsOnCorrectLanguageId
+      value: level-2-slot-2-hint-on-correct
+      objectReference: {fileID: 0}
     - target: {fileID: 2834028192430793137, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.912057
