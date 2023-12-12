@@ -61,7 +61,6 @@ namespace NoClearGames.UI
                 continueBtn.onClick.RemoveAllListeners();
                 continueBtn.onClick.AddListener(() =>
                 {
-                    Debug.Log(_playerState.lastSceneName);
                     StartGame(_playerState.lastSceneName);
                     Hide();
                 });
@@ -85,6 +84,7 @@ namespace NoClearGames.UI
         private void StartGame(int level)
         {
             Hide();
+            level = Mathf.Clamp(level, 2, SceneManager.sceneCountInBuildSettings - 1);
             SceneManager.LoadScene(level, LoadSceneMode.Single);
             AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
         }
