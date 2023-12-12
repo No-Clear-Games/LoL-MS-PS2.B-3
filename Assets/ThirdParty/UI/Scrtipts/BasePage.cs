@@ -12,7 +12,7 @@ namespace NoClearGames.UI
             Vertical,
             Horizontal,
         }
-        
+
         [HideInInspector] public bool show;
         public GameObject root;
         public float durationTime = .6f;
@@ -28,7 +28,6 @@ namespace NoClearGames.UI
         {
             if (backBtn != null)
                 backBtn.onClick.AddListener(BackManager.Instance.ApplyBack);
-
         }
 
         public virtual void Show(Action doneAction = null)
@@ -59,7 +58,6 @@ namespace NoClearGames.UI
                 OnShow?.Invoke();
                 StartCoroutine(ScaleUp());
             };
-            
         }
 
         private System.Collections.IEnumerator ScaleUp()
@@ -89,6 +87,18 @@ namespace NoClearGames.UI
                 doneAction?.Invoke();
                 OnHide?.Invoke();
             };
+        }
+
+        protected virtual void ForceHide()
+        {
+            if (!show)
+            {
+                return;
+            }
+
+            show = false;
+
+            root.SetActive(show);
         }
     }
 }

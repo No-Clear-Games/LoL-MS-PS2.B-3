@@ -14,13 +14,12 @@ namespace NoClearGames
 {
     public class HintPopup : BasePage
     {
-
         [SerializeField] private Image CorrectIcon;
         [SerializeField] private Image WrongIcon;
         [SerializeField] private Image HintIcon;
-        
+
         public TextMeshProUGUI messageText;
-        
+
         public float hidePositionX;
         public float moveDuration = 0.1f;
         public float showDuration = 5;
@@ -28,11 +27,12 @@ namespace NoClearGames
         private Coroutine _waitForHideCoroutine;
         private Vector3 _defaultPosition;
         private bool _defaultPosSet = false;
-        
-        public void MoveLeft()
+        private Tween tweener;
+
+        public void MoveRight()
         {
             var transform1 = transform;
-            if(!_defaultPosSet)
+            if (!_defaultPosSet)
             {
                 _defaultPosSet = true;
                 _defaultPosition = transform1.position;
@@ -46,19 +46,23 @@ namespace NoClearGames
             transform1.DOMove(_defaultPosition, moveDuration);
         }
 
-        public Tween MoveRight()
+        public Tween MoveLeft(bool forceDuration = false)
         {
             var transform1 = transform;
             var defaultPosition = transform1.position;
 
             Vector3 hidePos = defaultPosition;
             hidePos.x = hidePositionX;
-            return transform1.DOMove(hidePos, moveDuration);
+            return transform1.DOMove(hidePos, forceDuration ? 0 : moveDuration);
         }
-        
+
         public void Show(HintItem hintItem, HintData.SlotState hintType, MagnetController wrongMagnet)
         {
-            if(!_defaultPosSet)
+            MoveLeft(true);
+            tweener?.Kill();
+            ForceHide();
+
+            if (!_defaultPosSet)
             {
                 _defaultPosSet = true;
                 var transform1 = transform;
@@ -68,25 +72,24 @@ namespace NoClearGames
 
                 transform1.position = hidePos;
             }
-            
 
 
             CorrectIcon.gameObject.SetActive(hintType == HintData.SlotState.Correct);
             WrongIcon.gameObject.SetActive(hintType == HintData.SlotState.Wrong);
             HintIcon.gameObject.SetActive(hintType == HintData.SlotState.Blank);
-            
-           
 
-            if ( !SetMessage(hintItem, hintType, wrongMagnet))
+
+            if (!SetMessage(hintItem, hintType, wrongMagnet))
             {
-                return;    
+                return;
             }
 
             AudioManager.Instance.StopMusic();
             // AudioManager.Instance.PauseSounds();
-            Show(doneAction:(() =>
+
+            Show(doneAction: (() =>
             {
-                MoveLeft();
+                MoveRight();
 
                 if (_waitForHideCoroutine != null)
                 {
@@ -95,7 +98,6 @@ namespace NoClearGames
 
                 StartCoroutine(WaitForHide());
             }));
-           
         }
 
         private IEnumerator WaitForHide()
@@ -107,12 +109,11 @@ namespace NoClearGames
 
         public override void Hide(Action doneAction = null)
         {
-            MoveRight().OnComplete(() =>
+            tweener = MoveLeft().OnComplete(() =>
             {
                 AudioManager.Instance.UnPauseSounds();
                 AudioManager.Instance.PlaySFX(AudioManager.Instance.SFX.clickSfx);
                 AudioManager.Instance.PlayMusic(AudioManager.Instance.Music.inGame);
-                root.SetActive(false);
                 base.Hide(doneAction);
             });
         }
@@ -127,7 +128,7 @@ namespace NoClearGames
             {
                 return false;
             }
-            
+
             messageText.text = hintText;
             return true;
         }
