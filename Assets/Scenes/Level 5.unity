@@ -4192,6 +4192,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8555e58682484f47b6848367a24ee79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2838777336166515920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 643538819352427552, guid: 5980d3b147891d641a4db4030cb5295b, type: 3}
+  m_PrefabInstance: {fileID: 2838777336166515917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e8678200f44f0419d748a1e333073f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3282844107934670971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4281,6 +4292,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2838777336166515919}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintPopup
+      value: 
+      objectReference: {fileID: 2838777336166515920}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 569853514}
@@ -4333,6 +4348,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1671506287}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showHintOnWrong
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showOneSlotAtATime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.hintIntervalSeconds
       value: 1
       objectReference: {fileID: 0}
@@ -4352,6 +4375,10 @@ PrefabInstance:
       propertyPath: cameraController.virtualCameras.Array.data[3]
       value: 
       objectReference: {fileID: 641560378}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.showDescriptionOnCorrect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.sortedHintItems.Array.size
       value: 2
