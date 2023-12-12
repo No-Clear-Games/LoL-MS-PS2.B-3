@@ -4393,7 +4393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].hintOnBlank
-      value: You must use someting that pulls the train up again. what was pulling
+      value: You must use something that pulls the train up again. what was pulling
         positive charges? cause there is a positive charge on the train
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
@@ -4429,7 +4429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].detailsOnCorrect
-      value: Great. the negative charge pulls the train just right.
+      value: Great. the negative charge pulls the train up just as needed.
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.sortedHintItems.Array.data[3].detailsOnCorrect
@@ -4449,8 +4449,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[0].hint
-      value: This particle pulls the train too much and it's hard to guid it down
-        again. Use a weaker one to pull it less.
+      value: This charge pulls the train too much and it's hard to guid it down again.
+        Use a weaker one to pull it less.
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[1].hint
