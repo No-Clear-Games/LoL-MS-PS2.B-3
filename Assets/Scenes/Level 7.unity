@@ -4361,7 +4361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.hintIntervalSeconds
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: cameraController.virtualCameras.Array.data[0]
@@ -4459,6 +4459,22 @@ PrefabInstance:
       value: Good job. the negative charge pushes the train just right.
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnBlankLanguageId
+      value: level-7-slot-1-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnBlankLanguageId
+      value: level-7-slot-2-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].hintOnBlankLanguageId
+      value: level-7-slot-3-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[3].hintOnBlankLanguageId
+      value: level-7-slot-4-hint-on-blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -4469,6 +4485,22 @@ PrefabInstance:
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].hintOnWrong.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].detailsOnCorrectLanguageId
+      value: level-7-slot-1-hint-on-correct
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].detailsOnCorrectLanguageId
+      value: level-7-slot-2-hint-on-correct
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].detailsOnCorrectLanguageId
+      value: level-7-slot-3-hint-on-correct
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[3].detailsOnCorrectLanguageId
+      value: level-7-slot-4-hint-on-correct
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[0].hint
@@ -4533,6 +4565,34 @@ PrefabInstance:
       propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].hintOnWrong.Array.data[0].wrongMagnet
       value: 
       objectReference: {fileID: 6970959151560278074, guid: 82fd42f53237e064f856702262000332, type: 3}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[0].hintLanguageKey
+      value: level-7-slot-1-hint-on-wrong-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[1].hintLanguageKey
+      value: level-7-slot-1-hint-on-wrong-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[0].hintOnWrong.Array.data[2].hintLanguageKey
+      value: level-7-slot-1-hint-on-wrong-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[0].hintLanguageKey
+      value: level-7-slot-2-hint-on-wrong-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[1].hintLanguageKey
+      value: level-7-slot-2-hint-on-wrong-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[1].hintOnWrong.Array.data[2].hintLanguageKey
+      value: level-7-slot-2-hint-on-wrong-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
+      propertyPath: hintManager.hintData.sortedHintItems.Array.data[2].hintOnWrong.Array.data[0].hintLanguageKey
+      value: level-7-slot-3-hint-on-wrong-1
+      objectReference: {fileID: 0}
     - target: {fileID: 2834028192430793137, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.912057

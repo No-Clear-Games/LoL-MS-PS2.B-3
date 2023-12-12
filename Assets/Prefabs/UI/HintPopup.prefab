@@ -545,4 +545,4 @@ MonoBehaviour:
   messageText: {fileID: 1166197650457175311}
   hidePositionX: -1000
   moveDuration: 0.3
-  showDuration: 5
+  showDuration: 10

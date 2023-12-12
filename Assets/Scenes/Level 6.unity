@@ -4381,7 +4381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: hintManager.hintData.hintIntervalSeconds
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1793630337581836996, guid: 1769c599f6e32664da0d0582ab7f35e3, type: 3}
       propertyPath: cameraController.virtualCameras.Array.data[0]

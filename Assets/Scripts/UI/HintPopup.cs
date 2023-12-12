@@ -86,16 +86,19 @@ namespace NoClearGames
 
             AudioManager.Instance.StopMusic();
             // AudioManager.Instance.PauseSounds();
+            if (_waitForHideCoroutine != null)
+            {
+                StopCoroutine(_waitForHideCoroutine);
+                _waitForHideCoroutine = null;
+                    
+            }
 
             Show(doneAction: (() =>
             {
+
+                
+
                 MoveRight();
-
-                if (_waitForHideCoroutine != null)
-                {
-                    StopCoroutine(_waitForHideCoroutine);
-                }
-
                 StartCoroutine(WaitForHide());
             }));
         }

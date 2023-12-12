@@ -195,9 +195,9 @@
        "general-tutorial-message-pick-magnet-again-title": "Pick Already Placed Magnets",
        "general-tutorial-message-pick-magnet-again-message": "If you've placed a magnet in a slot and want to pick it up again, there is no problem, just hover the mouse on the magnet and then press and hold mouse buttont.",
        "general-tutorial-message-pick-magnet-again-btn": "Ok",
-       "general-tutorial-change-view-title": "Change The View",
-       "general-tutorial-change-view-message": "You can use keyboard's left and right arrows to see the area from different places",
-       "general-tutorial-change-view-btn": "Ok",
+       "general-tutorial-message-change-view-title": "Change The View",
+       "general-tutorial-message-change-view-message": "You can use keyboard's left and right arrows to see the area from different places",
+       "general-tutorial-message-change-view-btn": "Ok",
 
        "level-1-tutorial-message-1-message": "Hey there!Welcome to \"Magnetic Mayhem,\" where we're going to have a blast while learning about the magical world of magnets.",
        "level-1-tutorial-message-2-message": "In this game, you'll dive into the fascinating realms of magnetic and electric fields. You'll control a wooden roller coaster with an iron ball at the front, and your mission is to navigate it safely through a variety of obstacles by using magnets.",
@@ -263,7 +263,7 @@
        "level-6-tutorial-message-2-message": "In this level, You'll face 2 obstacles blocking the roller coaster's path, and your inventory is stocked with magnets of different powers!",
        "level-6-tutorial-message-3-message": "Magnets with different powers have different impacts on the coaster. If you put a strong magnet in the area, It will pull the coaster harder. and if you put a weak magnet, it will pull the coaster more slightly",
 
-       "level-6-slot-1-hint-on-blank": "You need to guid the train a bit upwards to help it avoid the obstacle. Try magnets from your inventory and find the one that not pulls it too much.",
+       "level-6-slot-1-hint-on-blank": "You need to guid the train a bit upwards to help it avoid the obstacle. Try magnets from your inventory and find the one that doesn't pull it too much.",
        "level-6-slot-1-hint-on-correct": "Good. this magnet is weak, and pull the iron ball on the train slightly enough.",
        "level-6-slot-1-hint-on-wrong-1": "This magnet is medium and doesn't pull the train too much. but still you need a magnet with less power.",
        "level-6-slot-1-hint-on-wrong-2": "This magnet is strong and pulls the train too much. try another magnet.",
@@ -274,10 +274,10 @@
        
        "level-7-tutorial-message-1-message": "Welcome back, You've already shown incredible skills in the previous levels. Now, get ready an electrifying challenge!",
        "level-7-tutorial-message-2-message": "This time, your inventory has been stocked with particles with different signs and power in their charges, and there is a particle with positive charge attached to the coaster.",
-       "level-7-tutorial-message-3-message": "You already know that how does positive and negative charges impact on a positive charge, right?",
+       "level-7-tutorial-message-3-message": "You already know that how positive and negative charges impact on a positive charge, right?",
        "level-7-tutorial-message-4-message": "Now I must tell you that what difference the power of the charges will make on that impact.",
        "level-7-tutorial-message-5-message": "It's just like the magnets. a more powerful charge will have a stronger impact on the train.",
-       "level-7-tutorial-message-6-message": "for example. a stronger negative particle will attract the train faster and a stronger positive particle will repel it faster.",
+       "level-7-tutorial-message-6-message": "for example. a stronger negative particle will attract the train harder and a stronger positive particle will repel it harder.",
 
        "level-7-slot-1-hint-on-blank": "You need to put something in the slot to pull the train a little up, but not too much. there is a positive charge on the train. what in your inventory does that?",
        "level-7-slot-1-hint-on-correct": "Correct. the weak negative charge fits here. it pulls the positive charge up. and not too much.",
@@ -289,10 +289,10 @@
        "level-7-slot-2-hint-on-wrong-1": "Negative charges pull positive ones. To push the train down you must use a negative particle.",
        "level-7-slot-2-hint-on-wrong-2": "Negative charges pull positive ones. To push the train down you must use a negative particle.",
        "level-7-slot-2-hint-on-wrong-3": "This positive charge is pushing the train down and that great. but it pushes the train too much. try a weaker one.",
-       "level-7-slot-3-hint-on-blank": "You must use something that pulls the train up again. what was pulling positive charges? cause there is a positive charge on the train",
+       "level-7-slot-3-hint-on-blank": "You must use something that pulls the train up again. what pulls positive charges? Right, a negative one.",
        "level-7-slot-3-hint-on-correct": "Great. the negative charge pulls the train up just as needed.",
        "level-7-slot-3-hint-on-wrong-1": "Positive charge pushes the train down, because there is also a positive charge on the train. Use a negative charge to pull it up.",
-       "level-7-slot-4-hint-on-blank": "You have to use a charge to push the train down. and there is a positive charge on the train. So the particle is...",
+       "level-7-slot-4-hint-on-blank": "You have to use a charge to push the train down. and there is a positive charge on the train. So the needed charge is ... Right, a positive one",
        "level-7-slot-4-hint-on-correct": "Good job. the negative charge pushes the train just right.",
        
        "level-8-tutorial-message-1-message": "Welcome back, magnelectric genius! Professor Magno here, and you've been absolutely crushing it in the previous levels of \"Magnetic Mayhem.\" Now, let's dive into Level 8, where things are about to get even more interesting!",
