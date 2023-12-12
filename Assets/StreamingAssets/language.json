@@ -144,15 +144,15 @@
        "negative-charge": "Negative Charge",
        "positive-charge": "Positive Charge",
        "magnet": "magnet",
-       "repulses": "Repulses",
+       "repulses": "repels",
        "attracts": "Attracts",
        "iron": "Iron",
        "train-neg-straight-move": "Train with negative charge in front of it goes straight",
        "train-pos-straight-move": "Train with positive charge in front of it goes straight",
        "train-iron-straight-move": "Train with Iron in front of it goes straight",
-       "train-neg-repulsed-move": "It will be repulsed from close negative charges",
+       "train-neg-repulsed-move": "It will be repelled from close negative charges",
        "train-neg-attracted-move": "It will be attracted to close positive charges",
-       "train-pos-repulsed-move": "It will be repulsed from close positive charges",
+       "train-pos-repulsed-move": "It will be repelled from close positive charges",
        "train-pos-attracted-move": "It will be attracted to close negative charges",
        "train-iron-attracted-move": "It will be attracted to close magnets",
        
@@ -204,6 +204,7 @@
        "level-1-tutorial-message-3-message": "The roller coaster moves along a straight path from the starting station to the ending station, but there's a twist – there's no fixed track! You can steer it in different directions using magnets.",
        "level-1-tutorial-message-4-message": "Your job is to make sure the roller coaster avoids obstacles and maintains a high speed to keep its passengers joyful. Your score depends on the final speed and the happiness of your roller coaster riders.",
        "level-1-tutorial-message-5-message": "Let's jump right in! In this level, you'll find: \n1. One red obstacle blocking the roller coaster's path.\n2. Two slots flashing like bright orange circles.\n3.  In your inventory, there are 2 Strong bar magnets. drag and drop them as you see fit.",
+       "level-1-tutorial-message-5-1-1-message": "At first you can see just one slot flashing. as soon as you put the correct magnet in that slot, the next slot will start flashing. The moment the train is good to start it's path, the \"Start Train\" button will blink to you.",
        "level-1-tutorial-message-5-1-message": "In front of the roller coaster, there is an iron ball attached. note that magnets attract iron.",
        "level-1-tutorial-message-5-2-message": "So if you place a magnet near the roller coaster's path, it will attract the iron ball attached to the train, and the train will steer to the direction that the magnet is in.",
        "level-1-tutorial-message-6-message": "Your mission, should you choose to accept it, is to use these magnets wisely to steer the roller coaster safely around the red obstacle.",
@@ -217,7 +218,7 @@
 
        "level-2-tutorial-message-1-message": "You've just conquered Level 1 with flying colors, and now, it's time to dive into Level 2 of \"Magnetic Mayhem.\" Get ready for an even more electrifying challenge!",
        "level-2-tutorial-message-2-message": "In this level, there is a particle with positive electric charge attached to the roller coaster. and you have same particles with positive charge in your inventory.",
-       "level-2-tutorial-message-3-message": "Two particles with positive charge will repulse each other. So, If you put one near the coaster's path, It will steer away from the particle.",
+       "level-2-tutorial-message-3-message": "Two particles with positive charge will repel each other. So, If you put one near the coaster's path, It will steer away from the particle.",
        "level-2-tutorial-message-4-message": "Use this info to complete this level with success. Good luck.",
 
        "level-2-slot-1-hint-on-blank": "Put a positive charged particle under the train's path. It will push the positive particle attached to the train up and makes the train avoid the obstacle.",
@@ -237,8 +238,8 @@
 
        "level-4-tutorial-message-1-message": "Congrats, You're doing great.",
        "level-4-tutorial-message-2-message": "This time, a particle with negative electric charge is on  the  coaster. and you have same particles with negative charge in your inventory.",
-       "level-4-tutorial-message-3-message": "Two particles with negative charge, like two with positive charge, will repulse each other. So, If you put one near the coaster's path, It will steer away from the particle.",
-       "level-4-tutorial-message-4-message": "In general, two particles with the same sign will repulse each other.",
+       "level-4-tutorial-message-3-message": "Two particles with negative charge, like two with positive charge, will repel each other. So, If you put one near the coaster's path, It will steer away from the particle.",
+       "level-4-tutorial-message-4-message": "In general, two particles with the same sign will repel each other.",
 
        "level-4-slot-1-hint-on-blank": "Put a negative charge bellow the train's path. It will repel the negative charge on the train and make it go up.",
        "level-4-slot-1-hint-on-correct": "Great, the negative charge you've just placed will repel the negative charge on the train and make it go up.",
@@ -261,17 +262,42 @@
        "level-6-tutorial-message-1-message": "You've just conquered Level 5 with flying colors, and now, it's time to dive into Level 6 of \"Magnetic Mayhem.\" Get ready for an even more electrifying challenge!",
        "level-6-tutorial-message-2-message": "In this level, You'll face 2 obstacles blocking the roller coaster's path, and your inventory is stocked with magnets of different powers!",
        "level-6-tutorial-message-3-message": "Magnets with different powers have different impacts on the coaster. If you put a strong magnet in the area, It will pull the coaster harder. and if you put a weak magnet, it will pull the coaster more slightly",
+
+       "level-6-slot-1-hint-on-blank": "You need to guid the train a bit upwards to help it avoid the obstacle. Try magnets from your inventory and find the one that not pulls it too much.",
+       "level-6-slot-1-hint-on-correct": "Good. this magnet is weak, and pull the iron ball on the train slightly enough.",
+       "level-6-slot-1-hint-on-wrong-1": "This magnet is medium and doesn't pull the train too much. but still you need a magnet with less power.",
+       "level-6-slot-1-hint-on-wrong-2": "This magnet is strong and pulls the train too much. try another magnet.",
+       "level-6-slot-2-hint-on-blank": "You must put a magnet in the slot with enough power to pull the train down and make it head to the station",
+       "level-6-slot-2-hint-on-correct": "Correct. The train will safely reach it's destination",
+       "level-6-slot-2-hint-on-wrong-1": "This magnet pulls the train too much. try another magnet",
+       "level-6-slot-2-hint-on-wrong-2": "This magnet can't pull the train enough. try another magnet",
        
        "level-7-tutorial-message-1-message": "Welcome back, You've already shown incredible skills in the previous levels. Now, get ready an electrifying challenge!",
        "level-7-tutorial-message-2-message": "This time, your inventory has been stocked with particles with different signs and power in their charges, and there is a particle with positive charge attached to the coaster.",
        "level-7-tutorial-message-3-message": "You already know that how does positive and negative charges impact on a positive charge, right?",
        "level-7-tutorial-message-4-message": "Now I must tell you that what difference the power of the charges will make on that impact.",
        "level-7-tutorial-message-5-message": "It's just like the magnets. a more powerful charge will have a stronger impact on the train.",
-       "level-7-tutorial-message-6-message": "for example. a stronger negative particle will attract the train faster and a stronger positive particle will repulse it faster.",
+       "level-7-tutorial-message-6-message": "for example. a stronger negative particle will attract the train faster and a stronger positive particle will repel it faster.",
 
+       "level-7-slot-1-hint-on-blank": "You need to put something in the slot to pull the train a little up, but not too much. there is a positive charge on the train. what in your inventory does that?",
+       "level-7-slot-1-hint-on-correct": "Correct. the weak negative charge fits here. it pulls the positive charge up. and not too much.",
+       "level-7-slot-1-hint-on-wrong-1": "This charge pulls the train too much and it's hard to guid it down again. Use a weaker one to pull it less.",
+       "level-7-slot-1-hint-on-wrong-2": "This charge pushes the train down. Use a negative charge to pull it up.",
+       "level-7-slot-1-hint-on-wrong-3": "This charge pushes the train down. Use a negative charge to pull it up.",
+       "level-7-slot-2-hint-on-blank": "Find a particle that pushes the train down. There is a positive charge on the train. which type of particles pushes that?",
+       "level-7-slot-2-hint-on-correct": "Nice work. the positive particle pushes the positive particle of the train, and it the medium one just not pushes it a lot.",
+       "level-7-slot-2-hint-on-wrong-1": "Negative charges pull positive ones. To push the train down you must use a negative particle.",
+       "level-7-slot-2-hint-on-wrong-2": "Negative charges pull positive ones. To push the train down you must use a negative particle.",
+       "level-7-slot-2-hint-on-wrong-3": "This positive charge is pushing the train down and that great. but it pushes the train too much. try a weaker one.",
+       "level-7-slot-3-hint-on-blank": "You must use something that pulls the train up again. what was pulling positive charges? cause there is a positive charge on the train",
+       "level-7-slot-3-hint-on-correct": "Great. the negative charge pulls the train up just as needed.",
+       "level-7-slot-3-hint-on-wrong-1": "Positive charge pushes the train down, because there is also a positive charge on the train. Use a negative charge to pull it up.",
+       "level-7-slot-4-hint-on-blank": "You have to use a charge to push the train down. and there is a positive charge on the train. So the particle is...",
+       "level-7-slot-4-hint-on-correct": "Good job. the negative charge pushes the train just right.",
+       
        "level-8-tutorial-message-1-message": "Welcome back, magnelectric genius! Professor Magno here, and you've been absolutely crushing it in the previous levels of \"Magnetic Mayhem.\" Now, let's dive into Level 8, where things are about to get even more interesting!",
        "level-8-tutorial-message-2-message": "Now, This level has a unique twist – there are only two obstacles, but there's more than one way to pass them.",
-       "level-8-tutorial-message-3-message": "As there are no right or wrongs in this level, there isn't any hints there. Feel free to try any object in any slot that you like. Good luck and have fun.",
+       "level-8-tutorial-message-3-message": "As there are no right or wrongs in this level, there isn't any hints there. Feel free to try any object in any slot that you like. Good luck and have fun."
        
        
      }

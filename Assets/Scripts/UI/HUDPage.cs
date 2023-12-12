@@ -113,5 +113,10 @@ namespace NoClearGames.UI
             tutorialBtn.transform.DOScale(1.2f, .5f).SetEase(Ease.InOutBack).SetLoops(10, LoopType.Yoyo).onComplete +=
                 () => { tutorialBtn.transform.localScale = Vector3.one; };
         }
+
+        private void OnDestroy()
+        {
+            
+        }
     }
 }

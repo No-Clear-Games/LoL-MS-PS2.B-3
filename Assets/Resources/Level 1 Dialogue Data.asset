@@ -67,6 +67,17 @@ MonoBehaviour:
       titleLanguageId: 
       btnLanguageId: 
     - title: 
+      message: At first you can see just one slot flashing. as soon as you put the
+        correct magnet in that slot, the next slot will start flashing. The moment
+        the train is good to start it's path, the "Start Train" button will blink
+        to you.
+      spr: {fileID: 0}
+      imageObject: {fileID: 0}
+      btnMessage: 
+      messageLanguageId: level-1-tutorial-message-5-1-1-message
+      titleLanguageId: 
+      btnLanguageId: 
+    - title: 
       message: In front of the roller coaster, there is an iron ball attached. note
         that magnets attract iron.
       spr: {fileID: 0}

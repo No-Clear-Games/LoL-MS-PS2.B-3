@@ -53,6 +53,7 @@ namespace NoClearGames
             {
                 Hide();
                 endAction?.Invoke();
+                dialogueMessage.onEndAction = null;
             };
 
             Show(() =>
